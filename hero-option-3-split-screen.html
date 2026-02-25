@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Shertok - Hero Option 3: Split Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .hero-left {
+            background: #C96A4D;
+            padding: 96px 64px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+
+        .hero-left-content {
+            max-width: 500px;
+        }
+
+        .hero-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 32px;
+        }
+
+        .hero-left p {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .hero-left .states {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 40px;
+        }
+
+        .btn-white {
+            background: #FFFFFF;
+            color: #C96A4D;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .btn-white:hover {
+            background: #FDFBF7;
+            transform: translateY(-2px);
+        }
+
+        .hero-right {
+            background: #FDFBF7;
+            padding: 96px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-right-content {
+            text-align: center;
+        }
+
+        .stat {
+            margin-bottom: 48px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #C96A4D;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #6B6B6B;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-left {
+                padding: 64px 32px;
+            }
+
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-right {
+                padding: 64px 32px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-left">
+            <div class="hero-left-content">
+                <h1>Real Change Is Possible</h1>
+                <p>I don't just listen - I give you practical tools you can use right away. Together, we'll find what works for you.</p>
+                <p class="states">Licensed in Georgia, Illinois & Wisconsin | Telehealth available</p>
+                <a href="#contact" class="btn-white">Let's Talk</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-right-content">
+                <div class="stat">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">States Licensed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Clients Helped</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

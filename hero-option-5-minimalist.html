@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Shertok - Hero Option 5: Minimalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            min-height: 100vh;
+        }
+
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 160px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 400;
+            color: #1A1A1A;
+            line-height: 1.1;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #C96A4D;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #2D2D2D;
+            line-height: 1.7;
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .divider {
+            width: 80px;
+            height: 3px;
+            background: #C96A4D;
+            margin: 0 auto 48px;
+        }
+
+        .cta-single {
+            display: inline-block;
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 20px 48px;
+            border-radius: 100px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-single:hover {
+            background: #C96A4D;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(201, 106, 77, 0.2);
+        }
+
+        .states {
+            margin-top: 48px;
+            font-size: 0.875rem;
+            color: #6B6B6B;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 96px 24px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h1 span {
+                font-size: 0.875rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>
+            <span>Psychotherapy</span>
+            Nancy Shertok, MSW, LCSW
+        </h1>
+        <div class="divider"></div>
+        <p>Practical tools for anxiety, relationships, and life transitions. 30 years of experience helping clients feel like themselves again.</p>
+        <a href="#contact" class="cta-single">Get Started</a>
+        <p class="states">Georgia • Illinois • Wisconsin</p>
+    </div>
+</body>
+</html>
