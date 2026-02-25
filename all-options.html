@@ -12,6 +12,40 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
+            padding: 0;
+        }
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #C96A4D;
+        }
+        .main-content {
             padding: 32px;
         }
         .header {
@@ -55,6 +89,19 @@
     </style>
 </head>
 <body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
+
+<div class="main-content">
     <div class="header">
         <h1>Website Hero Options</h1>
         <p>Nancy Shertok, MSW, LCSW - Choose your favorite design</p>
@@ -92,5 +139,7 @@
         <div class="option-label">Option 5: Minimalist Elegant</div>
         <iframe src="hero-option-5-minimalist.html"></iframe>
     </div>
+</div>
+
 </body>
 </html>
