@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Nancy Shertok, MSW, LCSW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FDFBF7;
+            color: #1A1A1A;
+            line-height: 1.7;
+        }
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #C96A4D;
+        }
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            color: #2D2D2D;
+        }
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 48px 64px;
+        }
+        .faq-category {
+            margin-bottom: 48px;
+        }
+        .faq-category h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #E8E4DD;
+        }
+        .faq-item {
+            background: #FFFFFF;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #1A1A1A;
+            position: relative;
+            padding-right: 48px;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #C96A4D;
+        }
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: #2D2D2D;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        .footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        .footer p {
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            color: #9B9B9B;
+        }
+        .footer a {
+            color: #C96A4D;
+            text-decoration: none;
+        }
+        @media (max-width: 968px) {
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Quick answers to common questions. Don't see yours? Contact me.</p>
+</div>
+
+<div class="faq-section">
+    <div class="faq-category">
+        <h2>Getting Started</h2>
+        <div class="faq-item">
+            <div class="faq-question">What can I expect in the first session?</div>
+            <div class="faq-answer">Our first session is about getting to know each other. I'll ask about what brings you to therapy, your history, and your goals. It's also your chance to ask questions and see if we're a good fit. There's no pressure - just an open conversation.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How long does therapy usually take?</div>
+            <div class="faq-answer">It varies. Some people see progress in 8-12 sessions, others benefit from longer-term work. We'll discuss your goals and regularly check in on progress. You're always in control of the pace.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you offer a free consultation?</div>
+            <div class="faq-answer">Yes! I offer a free 15-minute phone consultation so we can talk about what you're looking for and see if we're a good match. No obligation.</div>
+        </div>
+    </div>
+
+    <div class="faq-category">
+        <h2>Logistics</h2>
+        <div class="faq-item">
+            <div class="faq-question">What are your hours?</div>
+            <div class="faq-answer">I offer flexible scheduling including evenings and weekends. Contact me to find a time that works for you.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you offer evening/weekend appointments?</div>
+            <div class="faq-answer">Yes, I have evening and weekend availability. Just reach out and we'll find a time that fits your schedule.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do telehealth sessions work?</div>
+            <div class="faq-answer">We'll meet via secure video. You'll get a link before our session. All you need is a private space, internet connection, and a device with a camera. It's confidential and convenient.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What if I need to cancel?</div>
+            <div class="faq-answer">I ask for 24-hour notice for cancellations. Late cancellations may be charged the full session fee. Emergencies happen - just let me know as soon as you can.</div>
+        </div>
+    </div>
+
+    <div class="faq-category">
+        <h2>Payment & Insurance</h2>
+        <div class="faq-item">
+            <div class="faq-question">What are your fees?</div>
+            <div class="faq-answer">Individual therapy (50 min): $195<br>Couples therapy (80 min): $250<br>Free 15-minute phone consultation</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you accept insurance?</div>
+            <div class="faq-answer">I'm in-network with Aetna. For other insurances, I can provide a superbill for out-of-network reimbursement. Many clients receive 50-80% reimbursement.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What's a superbill?</div>
+            <div class="faq-answer">A superbill is a receipt you submit to your insurance for reimbursement. I provide these after each session. Contact your insurance to learn about your out-of-network benefits.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What payment methods do you accept?</div>
+            <div class="faq-answer">Credit cards (Visa, Discover, American Express), HSA/FSA cards, Zelle, and Venmo. Payment is due at the time of session.</div>
+        </div>
+    </div>
+
+    <div class="faq-category">
+        <h2>Therapy Process</h2>
+        <div class="faq-item">
+            <div class="faq-question">Is everything confidential?</div>
+            <div class="faq-answer">Yes, with a few legal exceptions. I can't share what we discuss without your permission. Exceptions include if there's immediate risk of harm to yourself or others, or if I'm required by law. We'll go over this in detail before our first session.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How will I know if therapy is working?</div>
+            <div class="faq-answer">We'll set clear goals and check in regularly. You should feel heard, understood, and see progress toward your goals. If something isn't working, we'll adjust our approach.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What if I don't feel a connection?</div>
+            <div class="faq-answer">The therapeutic relationship is crucial. If we're not a good fit, I'll help you find someone who is. It's important you feel comfortable with your therapist.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How often do we meet?</div>
+            <div class="faq-answer">Usually weekly, especially at the beginning. As you make progress, we might meet less frequently. We'll find what works best for you.</div>
+        </div>
+    </div>
+
+    <div class="faq-category">
+        <h2>Telehealth</h2>
+        <div class="faq-item">
+            <div class="faq-question">What technology do I need?</div>
+            <div class="faq-answer">A device with a camera and microphone (phone, tablet, or computer), a private space, and reliable internet. That's it!</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is telehealth as effective as in-person?</div>
+            <div class="faq-answer">Research shows telehealth is just as effective for most issues. Many clients prefer it for convenience. I've been doing telehealth for years with great results.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I see you if I live in [GA/IL/WI]?</div>
+            <div class="faq-answer">Yes! I'm licensed in Georgia, Illinois, and Wisconsin. As long as you're physically in one of those states during our session, we can work together.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What if I travel between states?</div>
+            <div class="faq-answer">As long as you're in GA, IL, or WI during our session, we can meet. If you travel to another state, we'll need to reschedule.</div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
+    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
+    <p>Licensed in Georgia, Illinois & Wisconsin</p>
+    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

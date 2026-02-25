@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nancy Shertok Website - Hero Design Options</title>
+    <title>Nancy Shertok - Hero Option 2: Photo + Clean</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,817 +16,131 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            padding: 48px 24px;
+            background: #FFFFFF;
+            min-height: 100vh;
         }
 
-        .container {
+        .hero {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 16px;
-            color: #1A1A1A;
-        }
-
-        .header p {
-            font-size: 1.125rem;
-            color: #6B6B6B;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .options-grid {
-            display: grid;
-            gap: 48px;
-        }
-
-        .option {
-            background: #FFFFFF;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-
-        .option-header {
-            padding: 32px;
-            border-bottom: 1px solid #E8E4DD;
-        }
-
-        .option-number {
-            display: inline-block;
-            background: #C96A4D;
-            color: #FFFFFF;
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .option-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .option-description {
-            color: #6B6B6B;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .option-preview {
-            padding: 0;
-            background: #FDFBF7;
-            min-height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .preview-label {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(26, 26, 26, 0.7);
-            color: #FFFFFF;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            z-index: 10;
-        }
-
-        .option-footer {
-            padding: 32px;
-            background: #FFFFFF;
-        }
-
-        .pros-cons {
+            padding: 96px 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            gap: 64px;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .pros h4, .cons h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #2D2D2D;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .hero-content .states {
+            font-size: 1rem;
             color: #6B6B6B;
+            margin-bottom: 40px;
         }
 
-        .pros ul, .cons ul {
-            list-style: none;
-        }
-
-        .pros li, .cons li {
-            padding: 8px 0;
-            font-size: 0.9375rem;
-            line-height: 1.5;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .pros li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #5B7B6A;
-            font-weight: 600;
-        }
-
-        .cons li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #C96A4D;
-            font-weight: 600;
-        }
-
-        .color-palette {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid #E8E4DD;
-        }
-
-        .color-palette h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            color: #6B6B6B;
-        }
-
-        .colors {
+        .hero-photo {
+            background: #E8E4DD;
+            height: 500px;
+            border-radius: 16px;
             display: flex;
-            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #6B6B6B;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .color-swatch {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .swatch {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .color-name {
-            font-size: 0.75rem;
-            color: #6B6B6B;
-        }
-
-        /* Hero Option 1 Preview Styles */
-        .hero-1-preview {
-            background: linear-gradient(135deg, #FDFBF7 0%, #E8E4DD 100%);
-            padding: 96px 48px;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-1-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #1A1A1A;
-            margin-bottom: 24px;
-        }
-
-        .hero-1-content h1 .accent {
-            color: #C96A4D;
-        }
-
-        .hero-1-content p {
-            font-size: 1.125rem;
-            color: #2D2D2D;
-            margin-bottom: 16px;
-            max-width: 600px;
-        }
-
-        .hero-1-content .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #C96A4D;
-            color: #FFFFFF;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-right: 12px;
-            margin-top: 8px;
-        }
-
-        /* Hero Option 2 Preview Styles */
-        .hero-2-preview {
-            background: #FFFFFF;
-            padding: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-            min-height: 500px;
-        }
-
-        .hero-2-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #1A1A1A;
-            margin-bottom: 16px;
-        }
-
-        .hero-2-content p {
-            font-size: 1rem;
-            color: #2D2D2D;
-            margin-bottom: 12px;
-        }
-
-        .hero-2-photo {
-            background: #E8E4DD;
-            height: 300px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6B6B6B;
-        }
-
-        .hero-2-content .btn {
-            display: inline-block;
-            padding: 12px 24px;
+        .btn-primary {
             background: #5B7B6A;
             color: #FFFFFF;
+            padding: 16px 32px;
+            border: none;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-right: 12px;
-        }
-
-        /* Hero Option 3 Preview Styles */
-        .hero-3-preview {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 500px;
-        }
-
-        .hero-3-left {
-            background: #C96A4D;
-            padding: 48px;
-            display: flex;
-            align-items: center;
-            color: #FFFFFF;
-        }
-
-        .hero-3-left h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .hero-3-left p {
             font-size: 1rem;
-            margin-bottom: 12px;
-            opacity: 0.95;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
         }
 
-        .hero-3-left .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #FFFFFF;
-            color: #C96A4D;
+        .btn-primary:hover {
+            background: #4A6357;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #5B7B6A;
+            padding: 16px 32px;
+            border: 2px solid #5B7B6A;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .hero-3-right {
-            background: #FDFBF7;
-            padding: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .stat {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #C96A4D;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: #6B6B6B;
-        }
-
-        /* Hero Option 4 Preview Styles */
-        .hero-4-preview {
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), #E8E4DD;
-            padding: 96px 48px;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            color: #FFFFFF;
-        }
-
-        .hero-4-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .hero-4-content p {
-            font-size: 1.125rem;
-            margin-bottom: 12px;
-            opacity: 0.95;
-        }
-
-        .hero-4-content .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #C96A4D;
-            color: #FFFFFF;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-right: 12px;
-            margin-top: 8px;
-        }
-
-        /* Hero Option 5 Preview Styles */
-        .hero-5-preview {
-            background: #FFFFFF;
-            padding: 96px 48px;
-            text-align: center;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-5-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            color: #1A1A1A;
-        }
-
-        .hero-5-content h1 span {
-            display: block;
-            font-size: 0.875rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: #C96A4D;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 12px;
-        }
-
-        .hero-5-content .divider {
-            width: 60px;
-            height: 3px;
-            background: #C96A4D;
-            margin: 0 auto 24px;
-        }
-
-        .hero-5-content p {
-            font-size: 1.125rem;
-            color: #2D2D2D;
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-
-        .hero-5-content .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            background: #1A1A1A;
-            color: #FFFFFF;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .response-section {
-            margin-top: 64px;
-            background: #FFFFFF;
-            padding: 48px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-
-        .response-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .response-section p {
             font-size: 1rem;
-            line-height: 1.7;
-            color: #2D2D2D;
-            margin-bottom: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
         }
 
-        .contact-info {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #E8E4DD;
+        .btn-secondary:hover {
+            background: #5B7B6A;
+            color: #FFFFFF;
         }
 
-        .contact-info p {
-            font-size: 0.875rem;
-            color: #6B6B6B;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .pros-cons {
+        @media (max-width: 968px) {
+            .hero {
                 grid-template-columns: 1fr;
+                text-align: center;
+                padding: 64px 24px;
             }
 
-            .hero-2-preview, .hero-3-preview {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-2-photo, .hero-3-right {
+            .hero-photo {
                 order: -1;
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-group {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Website Hero Design Options</h1>
-            <p>Hi Nancy! I've created 5 different hero page designs for your new therapy website. Each has a different feel - modern, professional, bold, or minimalist. Take a look and let me know which direction resonates with you.</p>
-        </div>
-
-        <div class="options-grid">
-            <!-- Option 1 -->
-            <div class="option">
-                <div class="option-header">
-                    <span class="option-number">Option 1</span>
-                    <h2 class="option-title">Bold Typography</h2>
-                    <p class="option-description">Large, impactful headline with terracotta accent. Clean cream background with subtle gradient. Modern and confident.</p>
-                </div>
-                <div class="option-preview">
-                    <span class="preview-label">Desktop Preview</span>
-                    <div class="hero-1-preview">
-                        <div class="hero-1-content">
-                            <h1>Therapy That Fits <span class="accent">Your Life</span></h1>
-                            <p>Hi, I'm Nancy. I help people navigate anxiety, relationships, and life transitions with practical tools and 30 years of experience.</p>
-                            <p style="color: #6B6B6B; font-size: 0.9375rem;">Licensed in Georgia, Illinois & Wisconsin</p>
-                            <a href="#" class="btn">Schedule Free Consultation</a>
-                            <a href="#" class="btn" style="background: transparent; color: #1A1A1A; border: 2px solid #1A1A1A;">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="option-footer">
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Strengths</h4>
-                            <ul>
-                                <li>Modern and bold</li>
-                                <li>Easy to read on all devices</li>
-                                <li>Fast loading (no photos needed)</li>
-                                <li>Conveys confidence</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Considerations</h4>
-                            <ul>
-                                <li>Less personal without photo</li>
-                                <li>Bold style may feel too modern</li>
-                                <li>Simple design</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="color-palette">
-                        <h4>Colors Used</h4>
-                        <div class="colors">
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FDFBF7;"></div>
-                                <span class="color-name">Cream</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #E8E4DD;"></div>
-                                <span class="color-name">Sand</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #C96A4D;"></div>
-                                <span class="color-name">Terracotta</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #1A1A1A;"></div>
-                                <span class="color-name">Charcoal</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Option 2 -->
-            <div class="option">
-                <div class="option-header">
-                    <span class="option-number">Option 2</span>
-                    <h2 class="option-title">Photo + Clean Layout</h2>
-                    <p class="option-description">Professional headshot on the right, bio on the left. Warm sage green accents. Balanced and approachable.</p>
-                </div>
-                <div class="option-preview">
-                    <span class="preview-label">Desktop Preview</span>
-                    <div class="hero-2-preview">
-                        <div class="hero-2-content">
-                            <h1>Hi, I'm Nancy</h1>
-                            <p>For 30 years, I've helped people find clarity, build stronger relationships, and create lasting change.</p>
-                            <p style="color: #6B6B6B; font-size: 0.875rem;">Licensed in Georgia, Illinois & Wisconsin</p>
-                            <a href="#" class="btn">Schedule Free Consultation</a>
-                            <a href="#" class="btn" style="background: transparent; color: #5B7B6A; border: 2px solid #5B7B6A;">My Approach</a>
-                        </div>
-                        <div class="hero-2-photo">
-                            [Your Photo Here]
-                        </div>
-                    </div>
-                </div>
-                <div class="option-footer">
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Strengths</h4>
-                            <ul>
-                                <li>Personal and warm</li>
-                                <li>Professional headshot builds trust</li>
-                                <li>Easy to scan</li>
-                                <li>Classic therapy website style</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Considerations</h4>
-                            <ul>
-                                <li>Requires professional photo</li>
-                                <li>More traditional approach</li>
-                                <li>Photo quality important</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="color-palette">
-                        <h4>Colors Used</h4>
-                        <div class="colors">
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FFFFFF;"></div>
-                                <span class="color-name">White</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #5B7B6A;"></div>
-                                <span class="color-name">Sage</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #E8E4DD;"></div>
-                                <span class="color-name">Sand</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Option 3 -->
-            <div class="option">
-                <div class="option-header">
-                    <span class="option-number">Option 3</span>
-                    <h2 class="option-title">Split Screen Bold</h2>
-                    <p class="option-description">Terracotta left panel with white text, light right panel with key stats. Dramatic and modern.</p>
-                </div>
-                <div class="option-preview">
-                    <span class="preview-label">Desktop Preview</span>
-                    <div class="hero-3-preview">
-                        <div class="hero-3-left">
-                            <div>
-                                <h1>Real Change Is Possible</h1>
-                                <p>I don't just listen - I give you practical tools you can use right away.</p>
-                                <a href="#" class="btn">Let's Talk</a>
-                            </div>
-                        </div>
-                        <div class="hero-3-right">
-                            <div>
-                                <div class="stat">
-                                    <span class="stat-number">30+</span>
-                                    <span class="stat-label">Years Experience</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">3</span>
-                                    <span class="stat-label">States Licensed</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">1000+</span>
-                                    <span class="stat-label">Clients Helped</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="option-footer">
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Strengths</h4>
-                            <ul>
-                                <li>Unique and memorable</li>
-                                <li>Highlights experience</li>
-                                <li>No photo required</li>
-                                <li>Strong visual impact</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Considerations</h4>
-                            <ul>
-                                <li>Very modern/bold style</li>
-                                <li>Less personal</li>
-                                <li>Not typical therapist site</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="color-palette">
-                        <h4>Colors Used</h4>
-                        <div class="colors">
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #C96A4D;"></div>
-                                <span class="color-name">Terracotta</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FFFFFF;"></div>
-                                <span class="color-name">White</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FDFBF7;"></div>
-                                <span class="color-name">Cream</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Option 4 -->
-            <div class="option">
-                <div class="option-header">
-                    <span class="option-number">Option 4</span>
-                    <h2 class="option-title">Full-Width Photo</h2>
-                    <p class="option-description">Full-screen background photo with dark overlay and white text. Cinematic and emotional.</p>
-                </div>
-                <div class="option-preview">
-                    <span class="preview-label">Desktop Preview</span>
-                    <div class="hero-4-preview">
-                        <div class="hero-4-content">
-                            <h1>Feel Like Yourself Again</h1>
-                            <p>Anxiety, relationship issues, life transitions - whatever you're facing, you don't have to face it alone.</p>
-                            <p style="font-size: 0.875rem; opacity: 0.85;">Licensed in Georgia, Illinois & Wisconsin | 30+ years experience</p>
-                            <a href="#" class="btn">Schedule Free Consultation</a>
-                            <a href="#" class="btn" style="background: transparent; border: 2px solid rgba(255,255,255,0.7);">How I Can Help</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="option-footer">
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Strengths</h4>
-                            <ul>
-                                <li>Emotional and impactful</li>
-                                <li>Shows personality</li>
-                                <li>Cinematic feel</li>
-                                <li>Modern and bold</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Considerations</h4>
-                            <ul>
-                                <li>Requires high-quality photo</li>
-                                <li>Photo selection critical</li>
-                                <li>Text readability depends on photo</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="color-palette">
-                        <h4>Colors Used</h4>
-                        <div class="colors">
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #1A1A1A;"></div>
-                                <span class="color-name">Charcoal</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FFFFFF;"></div>
-                                <span class="color-name">White</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #C96A4D;"></div>
-                                <span class="color-name">Terracotta</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Option 5 -->
-            <div class="option">
-                <div class="option-header">
-                    <span class="option-number">Option 5</span>
-                    <h2 class="option-title">Minimalist Elegant</h2>
-                    <p class="option-description">Clean white background, centered text, elegant typography. Simple and sophisticated.</p>
-                </div>
-                <div class="option-preview">
-                    <span class="preview-label">Desktop Preview</span>
-                    <div class="hero-5-preview">
-                        <div class="hero-5-content">
-                            <h1>
-                                <span>Psychotherapy</span>
-                                Nancy Shertok, MSW, LCSW
-                            </h1>
-                            <div class="divider"></div>
-                            <p>Practical tools for anxiety, relationships, and life transitions. 30 years of experience.</p>
-                            <a href="#" class="btn">Get Started</a>
-                            <p style="margin-top: 32px; font-size: 0.75rem; color: #6B6B6B; letter-spacing: 0.05em;">Georgia • Illinois • Wisconsin</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="option-footer">
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Strengths</h4>
-                            <ul>
-                                <li>Clean and sophisticated</li>
-                                <li>Fast loading</li>
-                                <li>Works without photo</li>
-                                <li>Timeless design</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Considerations</h4>
-                            <ul>
-                                <li>Very simple</li>
-                                <li>Less visual interest</li>
-                                <li>May feel too minimal</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="color-palette">
-                        <h4>Colors Used</h4>
-                        <div class="colors">
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #FFFFFF;"></div>
-                                <span class="color-name">White</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #1A1A1A;"></div>
-                                <span class="color-name">Charcoal</span>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="swatch" style="background: #C96A4D;"></div>
-                                <span class="color-name">Terracotta</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Nancy</h1>
+            <p>For 30 years, I've helped people find clarity, build stronger relationships, and create lasting change. Let's talk about what you're going through.</p>
+            <p class="states">Licensed in Georgia, Illinois & Wisconsin</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">Schedule Free Consultation</a>
+                <a href="#about" class="btn-secondary">My Approach</a>
             </div>
         </div>
-
-        <div class="response-section">
-            <h2>What Do You Think?</h2>
-            <p>Take your time looking through these options. There's no wrong answer - it's about what feels right for you and your practice.</p>
-            <p><strong>Things to consider:</strong></p>
-            <ul style="margin: 16px 0 16px 32px; line-height: 1.8;">
-                <li>Which option feels most "you"?</li>
-                <li>Do you want to include a professional photo? (Options 2 and 4)</li>
-                <li>Do you prefer bold and modern, or clean and classic?</li>
-                <li>What would your ideal client respond to?</li>
-            </ul>
-            <p><strong>My recommendation:</strong> Option 1 or Option 2. Option 1 is modern and doesn't require a photo yet. Option 2 is more personal but needs a good headshot.</p>
-
-            <div class="contact-info">
-                <p><strong>Reply to:</strong> yourtherapyconnection@gmail.com or call/text (414) 736-6228</p>
-                <p><strong>Or reply to Jonathan:</strong> shertokj@gmail.com</p>
-            </div>
+        <div class="hero-photo" style="background: url('nancy-photo.jpg') center / cover; border-radius: 16px;">
         </div>
     </div>
 </body>

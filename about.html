@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nancy Shertok - MSW, LCSW Psychotherapist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FDFBF7;
+            color: #1A1A1A;
+            line-height: 1.7;
+        }
+
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #C96A4D;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: #2D2D2D;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 500px;
+            background: url('nancy-photo.jpg') center / cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .credentials {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 48px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            margin-bottom: 64px;
+        }
+
+        .credentials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A1A1A;
+            margin-bottom: 32px;
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .credential-item {
+            padding: 24px;
+            background: #FDFBF7;
+            border-radius: 12px;
+            border-left: 4px solid #C96A4D;
+        }
+
+        .credential-item strong {
+            display: block;
+            color: #C96A4D;
+            margin-bottom: 8px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .credential-item span {
+            color: #1A1A1A;
+            font-size: 1rem;
+        }
+
+        .approaches {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 48px;
+        }
+
+        .approaches h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A1A1A;
+            margin-bottom: 32px;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .approach-item {
+            padding: 32px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .approach-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+        }
+
+        .approach-item p {
+            color: #6B6B6B;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFBF7 0%, #E8E4DD 100%);
+            border-radius: 24px;
+            margin-bottom: 64px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #2D2D2D;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #C96A4D;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #E88A7A;
+        }
+
+        .footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 64px 48px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            color: #9B9B9B;
+        }
+
+        .footer a {
+            color: #C96A4D;
+            text-decoration: none;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 64px 24px;
+            }
+
+            .hero-photo {
+                order: -1;
+                height: 400px;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm Nancy</h1>
+        <p>I've spent the last 30 years helping people like you navigate life's challenges. Whether you're struggling with anxiety, relationship issues, or just feeling stuck, I provide a safe, confidential space where we can work together to find a path forward.</p>
+        <p>I graduated from New York University and am licensed in Georgia, Illinois, and Wisconsin. But more importantly, I've helped hundreds of clients feel like themselves again.</p>
+        <p>My approach is direct but compassionate. I won't just nod and ask "how does that make you feel?" - I'll give you practical tools and strategies you can use right away.</p>
+    </div>
+    <div class="hero-photo"></div>
+</div>
+
+<div class="credentials">
+    <h2>Credentials & Licenses</h2>
+    <div class="credential-grid">
+        <div class="credential-item">
+            <strong>Education</strong>
+            <span>MSW, New York University</span>
+        </div>
+        <div class="credential-item">
+            <strong>Licenses</strong>
+            <span>LCSW (Georgia, Illinois, Wisconsin)</span>
+        </div>
+        <div class="credential-item">
+            <strong>Experience</strong>
+            <span>30+ years private practice</span>
+        </div>
+        <div class="credential-item">
+            <strong>Verified</strong>
+            <span>Psychology Today Profile</span>
+        </div>
+    </div>
+</div>
+
+<div class="approaches">
+    <h2>Treatment Approaches</h2>
+    <div class="approach-grid">
+        <div class="approach-item">
+            <h3>Cognitive Behavioral Therapy (CBT)</h3>
+            <p>Identify and change negative thought patterns that affect your emotions and behavior.</p>
+        </div>
+        <div class="approach-item">
+            <h3>Gottman Method (Couples)</h3>
+            <p>Research-based approach to improve communication, resolve conflict, and rebuild connection.</p>
+        </div>
+        <div class="approach-item">
+            <h3>Psychodynamic Therapy</h3>
+            <p>Explore how past experiences shape present behaviors and relationships.</p>
+        </div>
+        <div class="approach-item">
+            <h3>Eclectic Approach</h3>
+            <p>Draw from multiple therapeutic techniques to create a personalized treatment plan.</p>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2>Ready to Take the First Step?</h2>
+    <p>Schedule a free 15-minute phone consultation to see if we're a good fit.</p>
+    <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
+</div>
+
+<footer class="footer">
+    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
+    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
+    <p>Licensed in Georgia, Illinois & Wisconsin</p>
+    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

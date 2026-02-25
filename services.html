@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Nancy Shertok, MSW, LCSW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FDFBF7;
+            color: #1A1A1A;
+            line-height: 1.7;
+        }
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #C96A4D;
+        }
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #2D2D2D;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px 64px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: #FFFFFF;
+            padding: 48px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+        }
+        .service-card p {
+            color: #6B6B6B;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .service-card .btn {
+            display: inline-block;
+            background: #C96A4D;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+        .service-card .btn:hover {
+            background: #E88A7A;
+        }
+        .specialties {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 48px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            margin-bottom: 64px;
+        }
+        .specialties h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A1A1A;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .specialty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .specialty-item {
+            background: #FDFBF7;
+            padding: 16px 24px;
+            border-radius: 8px;
+            text-align: center;
+            color: #2D2D2D;
+            font-size: 0.9375rem;
+        }
+        .footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        .footer p {
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            color: #9B9B9B;
+        }
+        .footer a {
+            color: #C96A4D;
+            text-decoration: none;
+        }
+        @media (max-width: 968px) {
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Services</h1>
+    <p>One-size-fits-all doesn't work in therapy. I tailor my approach to your unique needs, providing practical tools and strategies you can use right away.</p>
+</div>
+
+<div class="services-grid">
+    <div class="service-card">
+        <div class="service-icon">👤</div>
+        <h3>Individual Therapy</h3>
+        <p>Whether you're dealing with anxiety, depression, grief, or life transitions, individual therapy provides a confidential space to explore, heal, and grow.</p>
+        <a href="contact.html" class="btn">Schedule Session</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">💑</div>
+        <h3>Couples Therapy</h3>
+        <p>Using the Gottman Method, I help couples rebuild connection, improve communication, and rediscover intimacy. Research-based and results-driven.</p>
+        <a href="contact.html" class="btn">Schedule Session</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Telehealth</h3>
+        <p>Licensed in Georgia, Illinois, and Wisconsin. Secure video sessions from your home, office, or anywhere you feel comfortable. No commute, no waiting room.</p>
+        <a href="contact.html" class="btn">Schedule Session</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Deaf/HoH Services</h3>
+        <p>Accessible therapy for Deaf and Hard of Hearing clients. I provide a supportive, understanding environment for all communication needs.</p>
+        <a href="contact.html" class="btn">Schedule Session</a>
+    </div>
+</div>
+
+<div class="specialties">
+    <h2>Specialty Areas</h2>
+    <div class="specialty-grid">
+        <div class="specialty-item">Anxiety & Depression</div>
+        <div class="specialty-item">Grief & Loss</div>
+        <div class="specialty-item">Life Transitions</div>
+        <div class="specialty-item">Parenting & Co-parenting</div>
+        <div class="specialty-item">Work/Career Issues</div>
+        <div class="specialty-item">Postpartum Depression</div>
+        <div class="specialty-item">Anger Management</div>
+        <div class="specialty-item">Divorce & Separation</div>
+        <div class="specialty-item">Imposter Syndrome</div>
+        <div class="specialty-item">Midlife Crisis</div>
+        <div class="specialty-item">Trauma</div>
+        <div class="specialty-item">Relationship Issues</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
+    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
+    <p>Licensed in Georgia, Illinois & Wisconsin</p>
+    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
