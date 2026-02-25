@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nancy Shertok - Hero Option 2: Photo + Clean</title>
+    <title>Nancy Shertok - MSW, LCSW Psychotherapist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +17,44 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
-            min-height: 100vh;
+            color: #1A1A1A;
+            line-height: 1.7;
+        }
+
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #5B7B6A;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #5B7B6A;
         }
 
         .hero {
@@ -28,7 +65,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 64px;
             align-items: center;
-            min-height: 100vh;
+            min-height: 80vh;
         }
 
         .hero-content h1 {
@@ -54,14 +91,10 @@
         }
 
         .hero-photo {
-            background: #E8E4DD;
+            background: url('nancy-photo.jpg') center / cover;
             height: 500px;
             border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #6B6B6B;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
         .cta-group {
@@ -107,16 +140,102 @@
             color: #FFFFFF;
         }
 
+        .services-preview {
+            background: #FDFBF7;
+            padding: 96px 48px;
+        }
+
+        .services-preview h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A1A1A;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .service-item {
+            background: #FFFFFF;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+        }
+
+        .service-item p {
+            color: #6B6B6B;
+            font-size: 0.9375rem;
+        }
+
+        .cta-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 96px 48px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFBF7 0%, #E8E4DD 100%);
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #2D2D2D;
+            margin-bottom: 32px;
+        }
+
+        .footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 64px 48px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            color: #9B9B9B;
+        }
+
+        .footer a {
+            color: #5B7B6A;
+            text-decoration: none;
+        }
+
         @media (max-width: 968px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding: 64px 24px;
+                min-height: auto;
             }
 
             .hero-photo {
                 order: -1;
-                height: 300px;
+                height: 400px;
             }
 
             .hero-content h1 {
@@ -126,22 +245,79 @@
             .cta-group {
                 justify-content: center;
             }
+
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm Nancy</h1>
-            <p>For 30 years, I've helped people find clarity, build stronger relationships, and create lasting change. Let's talk about what you're going through.</p>
-            <p class="states">Licensed in Georgia, Illinois & Wisconsin</p>
-            <div class="cta-group">
-                <a href="#contact" class="btn-primary">Schedule Free Consultation</a>
-                <a href="#about" class="btn-secondary">My Approach</a>
-            </div>
-        </div>
-        <div class="hero-photo" style="background: url('nancy-photo.jpg') center / cover; border-radius: 16px;">
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm Nancy</h1>
+        <p>For 30 years, I've helped people find clarity, build stronger relationships, and create lasting change. Let's talk about what you're going through.</p>
+        <p class="states">Licensed in Georgia, Illinois & Wisconsin</p>
+        <div class="cta-group">
+            <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
+            <a href="about.html" class="btn-secondary">My Approach</a>
         </div>
     </div>
+    <div class="hero-photo"></div>
+</div>
+
+<div class="services-preview">
+    <h2>How I Can Help</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Individual Therapy</h3>
+            <p>Anxiety, depression, grief, life transitions</p>
+        </div>
+        <div class="service-item">
+            <h3>Couples Therapy</h3>
+            <p>Communication, conflict resolution, intimacy</p>
+        </div>
+        <div class="service-item">
+            <h3>Telehealth</h3>
+            <p>Secure video sessions from anywhere in GA, IL, WI</p>
+        </div>
+        <div class="service-item">
+            <h3>Free Consultation</h3>
+            <p>15-minute call to see if we're a good fit</p>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2>Ready to Take the First Step?</h2>
+    <p>Schedule a free 15-minute phone consultation. No pressure, no commitment.</p>
+    <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
+</div>
+
+<footer class="footer">
+    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
+    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
+    <p>Licensed in Georgia, Illinois & Wisconsin</p>
+    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
