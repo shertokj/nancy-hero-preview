@@ -15,6 +15,34 @@
             color: #1A1A1A;
             line-height: 1.7;
         }
+        .nav {
+            background: #FFFFFF;
+            padding: 24px 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #C96A4D;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-links a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #C96A4D;
+        }
         .alert-banner {
             background: #C96A4D;
             color: #FFFFFF;
@@ -166,6 +194,17 @@
     </style>
 </head>
 <body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">Nancy Shertok</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+    </div>
+</nav>
 
 <div class="alert-banner">
     <h1>Need Immediate Help?</h1>
