@@ -3,303 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crisis Resources - Nancy Shertok, MSW, LCSW</title>
+    <title>Crisis Resources | Nancy Shertok, LCSW</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            line-height: 1.7;
+            background: #FFFFFF;
+            color: #2D2D2D;
+            line-height: 1.8;
         }
+
+        /* Navigation */
         .nav {
             background: #FFFFFF;
-            padding: 24px 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E8E4DD;
         }
+
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #C96A4D;
+            font-size: 1.4rem;
+            color: #1A1A1A;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
+
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
+
         .nav-links a {
-            color: #2D2D2D;
+            color: #6B6B6B;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
+
         .nav-links a:hover {
-            color: #C96A4D;
+            color: #1A1A1A;
         }
-        .alert-banner {
-            background: #C96A4D;
+
+        /* Crisis Banner */
+        .crisis-banner {
+            background: #1A1A1A;
             color: #FFFFFF;
             padding: 32px 48px;
             text-align: center;
         }
-        .alert-banner h1 {
+
+        .crisis-banner h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            font-weight: 600;
             margin-bottom: 16px;
         }
-        .alert-banner p {
-            font-size: 1.125rem;
+
+        .crisis-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto 16px;
+            margin: 0 auto;
         }
-        .alert-banner .hotline {
+
+        .crisis-banner .phone {
             display: inline-block;
-            background: #FFFFFF;
-            color: #C96A4D;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 1.25rem;
-            font-weight: 700;
+            margin-top: 24px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFFFFF;
             text-decoration: none;
-            margin-top: 8px;
+            padding: 16px 32px;
+            border: 2px solid #FFFFFF;
+            border-radius: 4px;
+            transition: background 0.2s;
         }
+
+        .crisis-banner .phone:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Resources Section */
         .resources-section {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 64px 48px;
         }
+
         .resources-section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             color: #1A1A1A;
             margin-bottom: 32px;
+            font-weight: 600;
+            text-align: center;
         }
-        .resource-grid {
+
+        .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-bottom: 48px;
         }
+
         .resource-card {
-            background: #FFFFFF;
+            background: #FDFBF7;
             padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
         }
+
         .resource-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #1A1A1A;
             margin-bottom: 12px;
+            font-weight: 600;
         }
+
         .resource-card p {
+            font-size: 0.95rem;
             color: #6B6B6B;
-            font-size: 0.9375rem;
             margin-bottom: 16px;
+            line-height: 1.7;
         }
-        .resource-card a {
-            color: #C96A4D;
+
+        .resource-card .phone-link {
+            display: block;
+            font-size: 1.1rem;
+            color: #1A1A1A;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 600;
-            display: block;
             margin-bottom: 8px;
         }
-        .resource-card .phone {
-            font-size: 1.125rem;
-            color: #1A1A1A;
-            font-weight: 600;
+
+        .resource-card .phone-link:hover {
+            text-decoration: underline;
         }
-        .er-section {
-            background: #FFFFFF;
-            padding: 48px;
-            border-radius: 16px;
-            margin-bottom: 48px;
-        }
-        .er-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #1A1A1A;
-            margin-bottom: 24px;
-        }
-        .er-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-        }
-        .er-item {
-            background: #FDFBF7;
-            padding: 16px;
-            border-radius: 8px;
-            border-left: 4px solid #C96A4D;
-        }
-        .er-item strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #1A1A1A;
-        }
-        .er-item span {
+
+        .resource-card .website-link {
+            font-size: 0.9rem;
             color: #6B6B6B;
-            font-size: 0.875rem;
+            text-decoration: none;
         }
-        .when-to-call {
-            background: #FFF3E0;
-            border-left: 4px solid #FF9800;
-            padding: 32px;
-            border-radius: 8px;
-            margin-bottom: 48px;
-        }
-        .when-to-call h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+
+        .resource-card .website-link:hover {
             color: #1A1A1A;
-            margin-bottom: 16px;
         }
-        .when-to-call ul {
-            margin-left: 24px;
-        }
-        .when-to-call li {
-            margin-bottom: 8px;
-            color: #2D2D2D;
-        }
-        .footer {
-            background: #1A1A1A;
-            color: #FFFFFF;
+
+        /* Immediate Help Section */
+        .immediate-help {
+            background: #FDFBF7;
             padding: 64px 48px;
+        }
+
+        .immediate-help-content {
+            max-width: 700px;
+            margin: 0 auto;
             text-align: center;
         }
-        .footer p {
-            margin-bottom: 16px;
-            font-size: 0.875rem;
-            color: #9B9B9B;
+
+        .immediate-help h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+            font-weight: 600;
         }
+
+        .immediate-help p {
+            font-size: 1.05rem;
+            color: #6B6B6B;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .immediate-help ul {
+            text-align: left;
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .immediate-help li {
+            font-size: 1.05rem;
+            color: #2D2D2D;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .disclaimer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: #E8E4DD;
+            padding: 48px;
+            text-align: center;
+        }
+
         .footer a {
-            color: #C96A4D;
+            color: #E8E4DD;
             text-decoration: none;
         }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
         @media (max-width: 968px) {
-            .alert-banner h1 {
-                font-size: 2rem;
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px 24px;
             }
-            .alert-banner {
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .crisis-banner {
+                padding: 32px 24px;
+            }
+
+            .crisis-banner h1 {
+                font-size: 1.6rem;
+            }
+
+            .resources-section {
                 padding: 48px 24px;
             }
         }
     </style>
 </head>
 <body>
-
-<nav class="nav">
-    <a href="index.html" class="nav-logo">Nancy Shertok</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</nav>
-
-<div class="alert-banner">
-    <h1>Need Immediate Help?</h1>
-    <p>If you're in immediate danger, call 911 or go to your nearest emergency room.</p>
-    <p><strong>If you're having suicidal thoughts, call or text now:</strong></p>
-    <a href="tel:988" class="hotline">988 - Suicide & Crisis Lifeline</a>
-</div>
-
-<div class="resources-section">
-    <h2>Crisis Hotlines</h2>
-    <div class="resource-grid">
-        <div class="resource-card">
-            <h3>National Suicide Prevention Lifeline</h3>
-            <p>Available 24/7, free and confidential</p>
-            <a href="tel:988" class="phone">988 (Call or Text)</a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
+    </nav>
 
-        <div class="resource-card">
-            <h3>Crisis Text Line</h3>
-            <p>Free 24/7 text-based support</p>
-            <a href="sms:741741?body=HOME" class="phone">Text HOME to 741741</a>
-        </div>
+    <!-- Crisis Banner -->
+    <section class="crisis-banner">
+        <h1>Need Immediate Help?</h1>
+        <p>
+            If you are in crisis or having thoughts of suicide, please reach out 
+            for help right now. You are not alone.
+        </p>
+        <a href="tel:988" class="phone">Call or Text 988</a>
+    </section>
 
-        <div class="resource-card">
-            <h3>National Domestic Violence Hotline</h3>
-            <p>24/7 confidential support</p>
-            <a href="tel:18007997233" class="phone">1-800-799-7233</a>
-            <a href="tel:18007873224">TTY: 1-800-787-3224</a>
-        </div>
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <h2>Crisis Resources</h2>
 
-        <div class="resource-card">
-            <h3>SAMHSA National Helpline</h3>
-            <p>Substance abuse and mental health</p>
-            <a href="tel:18006624357" class="phone">1-800-662-4357</a>
-        </div>
-    </div>
-
-    <div class="er-section">
-        <h2>Local Emergency Rooms</h2>
-
-        <h3 style="margin-top: 24px; margin-bottom: 16px; color: #C96A4D;">Georgia (Alpharetta/Atlanta Area)</h3>
-        <div class="er-list">
-            <div class="er-item">
-                <strong>Northside Hospital Forsyth</strong>
-                <span>1200 Sanders Rd, Cumming</span>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <h3>988 Suicide & Crisis Lifeline</h3>
+                <p>Free, confidential support for people in distress, 24/7.</p>
+                <a href="tel:988" class="phone-link">Call or Text 988</a>
+                <a href="https://988lifeline.org" target="_blank" rel="noopener" class="website-link">988lifeline.org</a>
             </div>
-            <div class="er-item">
-                <strong>Emory Johns Creek Hospital</strong>
-                <span>6325 Hospital Pkwy, Johns Creek</span>
-            </div>
-        </div>
 
-        <h3 style="margin-top: 24px; margin-bottom: 16px; color: #C96A4D;">Illinois (Chicago Area)</h3>
-        <div class="er-list">
-            <div class="er-item">
-                <strong>NorthShore Evanston</strong>
-                <span>2650 Ridge Ave, Evanston</span>
+            <div class="resource-card">
+                <h3>Crisis Text Line</h3>
+                <p>Text with a trained crisis counselor for free, 24/7.</p>
+                <a href="sms:741741&body=HOME" class="phone-link">Text HOME to 741741</a>
+                <a href="https://crisistextline.org" target="_blank" rel="noopener" class="website-link">crisistextline.org</a>
             </div>
-            <div class="er-item">
-                <strong>Highland Park Hospital</strong>
-                <span>718 Glenview Ave, Highland Park</span>
+
+            <div class="resource-card">
+                <h3>Veterans Crisis Line</h3>
+                <p>Confidential support for veterans and service members.</p>
+                <a href="tel:988" class="phone-link">Call 988, Press 1</a>
+                <a href="https://www.veteranscrisisline.net" target="_blank" rel="noopener" class="website-link">veteranscrisisline.net</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>The Trevor Project</h3>
+                <p>Crisis intervention and suicide prevention for LGBTQ youth.</p>
+                <a href="tel:18664887386" class="phone-link">1-866-488-7386</a>
+                <a href="https://www.thetrevorproject.org" target="_blank" rel="noopener" class="website-link">thetrevorproject.org</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>National Domestic Violence Hotline</h3>
+                <p>Support for those experiencing domestic violence.</p>
+                <a href="tel:18007997233" class="phone-link">1-800-799-7233</a>
+                <a href="https://www.thehotline.org" target="_blank" rel="noopener" class="website-link">thehotline.org</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>SAMHSA National Helpline</h3>
+                <p>Treatment referral and information for mental health and substance use.</p>
+                <a href="tel:18006624357" class="phone-link">1-800-662-4357</a>
+                <a href="https://www.samhsa.gov" target="_blank" rel="noopener" class="website-link">samhsa.gov</a>
             </div>
         </div>
+    </section>
 
-        <h3 style="margin-top: 24px; margin-bottom: 16px; color: #C96A4D;">Wisconsin (Milwaukee Area)</h3>
-        <div class="er-list">
-            <div class="er-item">
-                <strong>Aurora Sinai Medical Center</strong>
-                <span>945 N 12th St, Milwaukee</span>
-            </div>
-            <div class="er-item">
-                <strong>Froedtert Hospital</strong>
-                <span>9200 W Wisconsin Ave, Milwaukee</span>
-            </div>
+    <!-- Immediate Help Section -->
+    <section class="immediate-help">
+        <div class="immediate-help-content">
+            <h2>If You Are in Immediate Danger</h2>
+            <p>
+                If you are in immediate danger or have a medical emergency, please 
+                call 911 or go to your nearest emergency room.
+            </p>
+            <p>What to do right now:</p>
+            <ul>
+                <li>Call 911 if you are in immediate danger</li>
+                <li>Call 988 if you are having suicidal thoughts</li>
+                <li>Go to your nearest emergency room</li>
+                <li>Reach out to a trusted friend or family member</li>
+                <li>Stay in a safe, public place until help arrives</li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="when-to-call">
-        <h2>When to Call 911</h2>
-        <ul>
-            <li>Immediate danger to self or others</li>
-            <li>Overdose or poisoning</li>
-            <li>Severe injury</li>
-            <li>Loss of consciousness</li>
-            <li>Any life-threatening emergency</li>
-        </ul>
-    </div>
-</div>
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <p>
+            <strong>Important:</strong> This page provides crisis resources for immediate 
+            support. I am not a crisis service and may not be available outside of 
+            scheduled sessions. If you are experiencing a mental health emergency, 
+            please use the resources above or call 911.
+        </p>
+    </section>
 
-<footer class="footer">
-    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
-    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
-    <p>Licensed in Georgia, Illinois & Wisconsin</p>
-    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
-</footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
 </body>
 </html>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Nancy Shertok - MSW, LCSW Psychotherapist</title>
+    <title>About Nancy Shertok, LCSW | Confidential Therapy for Professionals</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,319 +16,385 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            line-height: 1.7;
+            background: #FFFFFF;
+            color: #2D2D2D;
+            line-height: 1.8;
         }
 
+        /* Navigation */
         .nav {
             background: #FFFFFF;
-            padding: 24px 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E8E4DD;
         }
 
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #C96A4D;
+            font-size: 1.4rem;
+            color: #1A1A1A;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
 
         .nav-links a {
-            color: #2D2D2D;
+            color: #6B6B6B;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: #C96A4D;
+            color: #1A1A1A;
         }
 
-        .hero {
+        /* About Hero */
+        .about-hero {
             max-width: 1200px;
             margin: 0 auto;
             padding: 96px 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            gap: 80px;
             align-items: center;
         }
 
-        .hero-content h1 {
+        .about-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 600;
             color: #1A1A1A;
-            line-height: 1.2;
-            margin-bottom: 24px;
+            line-height: 1.3;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
         }
 
-        .hero-content p {
-            font-size: 1.125rem;
+        .about-content p {
+            font-size: 1.05rem;
             color: #2D2D2D;
-            line-height: 1.7;
-            margin-bottom: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .hero-photo {
+        .about-photo {
             width: 100%;
-            height: 500px;
-            background: url('nancy-photo.jpg') center / cover;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            aspect-ratio: 3/4;
+            background: #FDFBF7;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Credentials Section */
         .credentials {
-            max-width: 1200px;
+            background: #FDFBF7;
+            padding: 96px 48px;
+        }
+
+        .credentials-content {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 64px 48px;
-            background: #FFFFFF;
-            border-radius: 16px;
-            margin-bottom: 64px;
         }
 
         .credentials h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #1A1A1A;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
+            text-align: center;
+            font-weight: 600;
         }
 
         .credential-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
         }
 
         .credential-item {
-            padding: 24px;
-            background: #FDFBF7;
-            border-radius: 12px;
-            border-left: 4px solid #C96A4D;
+            background: #FFFFFF;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
+            text-align: center;
         }
 
-        .credential-item strong {
-            display: block;
-            color: #C96A4D;
-            margin-bottom: 8px;
-            font-size: 0.875rem;
+        .credential-item h3 {
+            font-size: 0.85rem;
+            color: #6B6B6B;
+            margin-bottom: 12px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.5px;
         }
 
-        .credential-item span {
+        .credential-item p {
+            font-size: 1.05rem;
             color: #1A1A1A;
-            font-size: 1rem;
+            font-weight: 500;
         }
 
+        /* Approaches Section */
         .approaches {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 64px 48px;
+            padding: 96px 48px;
         }
 
         .approaches h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #1A1A1A;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
+            text-align: center;
+            font-weight: 600;
         }
 
         .approach-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 24px;
         }
 
         .approach-item {
             padding: 32px;
             background: #FFFFFF;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
         }
 
         .approach-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #1A1A1A;
             margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .approach-item p {
+            font-size: 0.95rem;
             color: #6B6B6B;
-            font-size: 0.9375rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* CTA Section */
         .cta-section {
-            max-width: 800px;
-            margin: 0 auto;
+            background: #FDFBF7;
             padding: 96px 48px;
             text-align: center;
-            background: linear-gradient(135deg, #FDFBF7 0%, #E8E4DD 100%);
-            border-radius: 24px;
-            margin-bottom: 64px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .cta-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #1A1A1A;
             margin-bottom: 24px;
+            font-weight: 600;
         }
 
         .cta-section p {
-            font-size: 1.125rem;
-            color: #2D2D2D;
+            font-size: 1.05rem;
+            color: #6B6B6B;
             margin-bottom: 32px;
         }
 
-        .btn-primary {
+        .cta-section .cta {
             display: inline-block;
-            background: #C96A4D;
+            background: #1A1A1A;
             color: #FFFFFF;
-            padding: 16px 32px;
-            border-radius: 8px;
+            padding: 14px 40px;
             text-decoration: none;
-            font-weight: 600;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
             transition: background 0.2s;
         }
 
-        .btn-primary:hover {
-            background: #E88A7A;
+        .cta-section .cta:hover {
+            background: #2D2D2D;
         }
 
+        /* Footer */
         .footer {
             background: #1A1A1A;
-            color: #FFFFFF;
-            padding: 64px 48px;
+            color: #E8E4DD;
+            padding: 48px;
             text-align: center;
         }
 
-        .footer p {
-            margin-bottom: 16px;
-            font-size: 0.875rem;
-            color: #9B9B9B;
-        }
-
         .footer a {
-            color: #C96A4D;
+            color: #E8E4DD;
             text-decoration: none;
         }
 
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
         @media (max-width: 968px) {
-            .hero {
+            .about-hero {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 48px;
                 padding: 64px 24px;
             }
 
-            .hero-photo {
+            .about-photo {
                 order: -1;
-                height: 400px;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             .nav {
                 flex-direction: column;
                 gap: 16px;
+                padding: 16px 24px;
             }
 
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 24px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+        </div>
+    </nav>
 
-<nav class="nav">
-    <a href="index.html" class="nav-logo">Nancy Shertok</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</nav>
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-content">
+            <h1>About Nancy</h1>
+            <p>
+                I have spent over 30 years helping professionals navigate anxiety, burnout, 
+                and relationship challenges. My approach is direct, collaborative, and tailored 
+                to the unique pressures you face.
+            </p>
+            <p>
+                I graduated from New York University and am licensed in Georgia, Illinois, 
+                and Wisconsin. What matters more than credentials is this: I have helped 
+                hundreds of clients feel like themselves again.
+            </p>
+            <p>
+                I will not just nod and ask how that makes you feel. I will give you 
+                practical tools and strategies you can use right away.
+            </p>
+        </div>
+        <div class="about-photo">
+            <img src="nancy-photo.jpg" alt="Nancy Shertok, LCSW">
+        </div>
+    </section>
 
-<div class="hero">
-    <div class="hero-content">
-        <h1>Hi, I'm Nancy</h1>
-        <p>I've spent the last 30 years helping people like you navigate life's challenges. Whether you're struggling with anxiety, relationship issues, or just feeling stuck, I provide a safe, confidential space where we can work together to find a path forward.</p>
-        <p>I graduated from New York University and am licensed in Georgia, Illinois, and Wisconsin. But more importantly, I've helped hundreds of clients feel like themselves again.</p>
-        <p>My approach is direct but compassionate. I won't just nod and ask "how does that make you feel?" - I'll give you practical tools and strategies you can use right away.</p>
-    </div>
-    <div class="hero-photo"></div>
-</div>
+    <!-- Credentials Section -->
+    <section class="credentials">
+        <div class="credentials-content">
+            <h2>Credentials & Licenses</h2>
+            <div class="credential-grid">
+                <div class="credential-item">
+                    <h3>Education</h3>
+                    <p>MSW, New York University</p>
+                </div>
+                <div class="credential-item">
+                    <h3>Licenses</h3>
+                    <p>LCSW (GA, IL, WI)</p>
+                </div>
+                <div class="credential-item">
+                    <h3>Experience</h3>
+                    <p>30+ Years Practice</p>
+                </div>
+                <div class="credential-item">
+                    <h3>Verified</h3>
+                    <p>Psychology Today</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="credentials">
-    <h2>Credentials & Licenses</h2>
-    <div class="credential-grid">
-        <div class="credential-item">
-            <strong>Education</strong>
-            <span>MSW, New York University</span>
+    <!-- Approaches Section -->
+    <section class="approaches">
+        <h2>Treatment Approaches</h2>
+        <div class="approach-grid">
+            <div class="approach-item">
+                <h3>Cognitive Behavioral Therapy</h3>
+                <p>Identify and change negative thought patterns that affect your emotions and behavior.</p>
+            </div>
+            <div class="approach-item">
+                <h3>Gottman Method</h3>
+                <p>Research-based approach for couples to improve communication and rebuild connection.</p>
+            </div>
+            <div class="approach-item">
+                <h3>Psychodynamic Therapy</h3>
+                <p>Explore how past experiences shape present behaviors and relationships.</p>
+            </div>
+            <div class="approach-item">
+                <h3>Integrative Approach</h3>
+                <p>Draw from multiple techniques to create a personalized treatment plan.</p>
+            </div>
         </div>
-        <div class="credential-item">
-            <strong>Licenses</strong>
-            <span>LCSW (Georgia, Illinois, Wisconsin)</span>
-        </div>
-        <div class="credential-item">
-            <strong>Experience</strong>
-            <span>30+ years private practice</span>
-        </div>
-        <div class="credential-item">
-            <strong>Verified</strong>
-            <span>Psychology Today Profile</span>
-        </div>
-    </div>
-</div>
+    </section>
 
-<div class="approaches">
-    <h2>Treatment Approaches</h2>
-    <div class="approach-grid">
-        <div class="approach-item">
-            <h3>Cognitive Behavioral Therapy (CBT)</h3>
-            <p>Identify and change negative thought patterns that affect your emotions and behavior.</p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Take the First Step?</h2>
+            <p>Schedule a free 15-minute phone consultation to see if we are a good fit.</p>
+            <a href="contact.html" class="cta">Schedule Free Consultation</a>
         </div>
-        <div class="approach-item">
-            <h3>Gottman Method (Couples)</h3>
-            <p>Research-based approach to improve communication, resolve conflict, and rebuild connection.</p>
-        </div>
-        <div class="approach-item">
-            <h3>Psychodynamic Therapy</h3>
-            <p>Explore how past experiences shape present behaviors and relationships.</p>
-        </div>
-        <div class="approach-item">
-            <h3>Eclectic Approach</h3>
-            <p>Draw from multiple therapeutic techniques to create a personalized treatment plan.</p>
-        </div>
-    </div>
-</div>
+    </section>
 
-<div class="cta-section">
-    <h2>Ready to Take the First Step?</h2>
-    <p>Schedule a free 15-minute phone consultation to see if we're a good fit.</p>
-    <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
-</div>
-
-<footer class="footer">
-    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
-    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
-    <p>Licensed in Georgia, Illinois & Wisconsin</p>
-    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
-</footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
 </body>
 </html>

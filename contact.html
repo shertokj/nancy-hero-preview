@@ -3,291 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Nancy Shertok, MSW, LCSW</title>
+    <title>Contact | Nancy Shertok, LCSW - Confidential Therapy for Professionals</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            line-height: 1.7;
+            background: #FFFFFF;
+            color: #2D2D2D;
+            line-height: 1.8;
         }
+
+        /* Navigation */
         .nav {
             background: #FFFFFF;
-            padding: 24px 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E8E4DD;
         }
+
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #C96A4D;
+            font-size: 1.4rem;
+            color: #1A1A1A;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
+
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
+
         .nav-links a {
-            color: #2D2D2D;
+            color: #6B6B6B;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
+
         .nav-links a:hover {
-            color: #C96A4D;
+            color: #1A1A1A;
         }
-        .contact-section {
-            max-width: 1200px;
+
+        /* Page Header */
+        .page-header {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 96px 48px;
+            padding: 96px 48px 64px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #6B6B6B;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Content */
+        .contact-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 48px 96px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.5fr;
             gap: 64px;
         }
-        .contact-info h1 {
+
+        /* Contact Info */
+        .contact-info h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 1.5rem;
             color: #1A1A1A;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            font-weight: 600;
         }
-        .contact-info p {
-            font-size: 1.125rem;
-            color: #2D2D2D;
-            margin-bottom: 24px;
+
+        .contact-item {
+            margin-bottom: 32px;
         }
-        .contact-details {
-            background: #FFFFFF;
-            padding: 32px;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-top: 32px;
+
+        .contact-item h3 {
+            font-size: 0.85rem;
+            color: #6B6B6B;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .contact-details h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+
+        .contact-item p {
+            font-size: 1.05rem;
             color: #1A1A1A;
-            margin-bottom: 16px;
         }
-        .contact-details p {
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-        .contact-details a {
-            color: #C96A4D;
+
+        .contact-item a {
+            color: #1A1A1A;
             text-decoration: none;
         }
-        .contact-form {
-            background: #FFFFFF;
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
+
+        .states {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #E8E4DD;
+        }
+
+        .states h3 {
+            font-size: 0.85rem;
+            color: #6B6B6B;
+            margin-bottom: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .states-list {
+            display: flex;
+            gap: 16px;
+        }
+
+        .state-tag {
+            background: #FDFBF7;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #1A1A1A;
+            font-weight: 500;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #FDFBF7;
+            padding: 48px;
+            border-radius: 8px;
+        }
+
         .contact-form h2 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: #1A1A1A;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            font-weight: 600;
         }
+
         .form-group {
             margin-bottom: 24px;
         }
+
         .form-group label {
             display: block;
-            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1A1A1A;
             margin-bottom: 8px;
-            color: #2D2D2D;
-            font-size: 0.9375rem;
+            font-weight: 500;
         }
+
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 16px;
             border: 1px solid #E8E4DD;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 4px;
             font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #1A1A1A;
+            background: #FFFFFF;
             transition: border-color 0.2s;
         }
+
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #C96A4D;
+            border-color: #1A1A1A;
         }
+
         .form-group textarea {
             min-height: 120px;
             resize: vertical;
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 24px;
         }
-        .btn-primary {
+
+        .submit-btn {
             width: 100%;
-            background: #C96A4D;
+            background: #1A1A1A;
             color: #FFFFFF;
-            padding: 16px;
+            padding: 16px 32px;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
             cursor: pointer;
             transition: background 0.2s;
         }
-        .btn-primary:hover {
-            background: #E88A7A;
+
+        .submit-btn:hover {
+            background: #2D2D2D;
         }
-        .note {
-            background: #E8F5E9;
-            border-left: 4px solid #4CAF50;
-            padding: 16px;
-            margin-top: 24px;
-            font-size: 0.875rem;
-            color: #2D2D2D;
+
+        .form-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #6B6B6B;
         }
+
+        /* Footer */
         .footer {
             background: #1A1A1A;
-            color: #FFFFFF;
-            padding: 64px 48px;
+            color: #E8E4DD;
+            padding: 48px;
             text-align: center;
         }
-        .footer p {
-            margin-bottom: 16px;
-            font-size: 0.875rem;
-            color: #9B9B9B;
-        }
+
         .footer a {
-            color: #C96A4D;
+            color: #E8E4DD;
             text-decoration: none;
         }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
         @media (max-width: 968px) {
-            .contact-section {
-                grid-template-columns: 1fr;
-                padding: 64px 24px;
-            }
             .nav {
                 flex-direction: column;
                 gap: 16px;
+                padding: 16px 24px;
             }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 24px;
             }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                padding: 0 24px 64px;
+            }
+
             .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+        </div>
+    </nav>
 
-<nav class="nav">
-    <a href="index.html" class="nav-logo">Nancy Shertok</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</nav>
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Contact</h1>
+        <p>
+            Ready to take the first step? Schedule a free 15-minute consultation 
+            to see if we are a good fit.
+        </p>
+    </section>
 
-<div class="contact-section">
-    <div class="contact-info">
-        <h1>Let's Connect</h1>
-        <p>Ready to take the first step? Reach out and I'll respond within 24 hours.</p>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
 
-        <div class="contact-details">
-            <h3>Direct Contact</h3>
-            <p><strong>Email:</strong> <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a></p>
-            <p><strong>Office:</strong> <a href="tel:6789295905">(678) 929-5905</a></p>
-            <p><strong>Mobile/Text:</strong> <a href="tel:4147366228">(414) 736-6228</a></p>
-            <p><strong>Hours:</strong> Flexible scheduling including evenings and weekends</p>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p><a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a></p>
+            </div>
+
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p><a href="tel:4147366228">(414) 736-6228</a></p>
+            </div>
+
+            <div class="contact-item">
+                <h3>Office</h3>
+                <p>(678) 929-5905</p>
+            </div>
+
+            <div class="states">
+                <h3>Licensed In</h3>
+                <div class="states-list">
+                    <span class="state-tag">Georgia</span>
+                    <span class="state-tag">Illinois</span>
+                    <span class="state-tag">Wisconsin</span>
+                </div>
+            </div>
         </div>
 
-        <div class="contact-details" style="margin-top: 24px;">
-            <h3>Location</h3>
-            <p><strong>Address:</strong> 162 Prospect Place, Alpharetta, GA 30005</p>
-            <p style="font-size: 0.875rem; color: #6B6B6B;">In-person sessions available upon request. Telehealth sessions available for GA, IL, WI residents.</p>
-        </div>
-    </div>
-
-    <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="first-name">First Name *</label>
-                    <input type="text" id="first-name" name="first_name" required>
+        <div class="contact-form">
+            <h2>Request a Consultation</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="last-name">Last Name *</label>
-                    <input type="text" id="last-name" name="last_name" required>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state">
+                            <option value="">Select your state</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone (optional)</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
-                    <label for="state">State *</label>
-                    <select id="state" name="state" required>
-                        <option value="">Select state</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Illinois">Illinois</option>
-                        <option value="Wisconsin">Wisconsin</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="session-type">Session Type</label>
-                    <select id="session-type" name="session_type">
-                        <option value="">Select type</option>
-                        <option value="Individual">Individual Therapy</option>
-                        <option value="Couples">Couples Therapy</option>
+                    <label for="service">Service Interest</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service</option>
+                        <option value="Individual Therapy">Individual Therapy</option>
+                        <option value="Couples Therapy">Couples Therapy</option>
                         <option value="Telehealth">Telehealth</option>
-                        <option value="Unsure">Not sure yet</option>
+                        <option value="Not Sure">Not Sure</option>
                     </select>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="message">What brings you to therapy?</label>
-                <textarea id="message" name="message" placeholder="Tell me a bit about what you're struggling with..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="message">What brings you to therapy?</label>
+                    <textarea id="message" name="message" placeholder="Briefly describe what you are looking for help with..."></textarea>
+                </div>
 
-            <button type="submit" class="btn-primary">Send Message</button>
+                <button type="submit" class="submit-btn">Request Consultation</button>
+                <p class="form-note">I will respond within 24-48 hours.</p>
+            </form>
+        </div>
+    </section>
 
-            <div class="note">
-                <strong>Confidentiality:</strong> Your information is private. I'll respond within 24 hours.
-            </div>
-        </form>
-    </div>
-</div>
-
-<footer class="footer">
-    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
-    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
-    <p>Licensed in Georgia, Illinois & Wisconsin</p>
-    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
-</footer>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
 </body>
 </html>

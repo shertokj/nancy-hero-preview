@@ -3,196 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Client Paperwork - Nancy Shertok, MSW, LCSW</title>
+    <title>Client Intake Form | Nancy Shertok, LCSW</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            line-height: 1.7;
+            background: #FFFFFF;
+            color: #2D2D2D;
+            line-height: 1.8;
         }
+
+        /* Navigation */
         .nav {
             background: #FFFFFF;
-            padding: 24px 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E8E4DD;
         }
+
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #C96A4D;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
-        .nav-links a {
-            color: #2D2D2D;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #C96A4D;
-        }
-        .hero {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 96px 48px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 1.4rem;
             color: #1A1A1A;
-            margin-bottom: 24px;
-        }
-        .hero p {
-            font-size: 1.125rem;
-            color: #2D2D2D;
-            margin-bottom: 16px;
-        }
-        .form-selection {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 48px 64px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 32px;
-        }
-        .form-card {
-            background: #FFFFFF;
-            padding: 48px 32px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .form-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-        .form-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            color: #1A1A1A;
-            margin-bottom: 16px;
-        }
-        .form-card p {
-            color: #6B6B6B;
-            font-size: 1rem;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        .form-card .btn {
-            display: inline-block;
-            background: #C96A4D;
-            color: #FFFFFF;
-            padding: 16px 32px;
-            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.2s;
+            letter-spacing: -0.5px;
         }
-        .form-card .btn:hover {
-            background: #E88A7A;
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
         }
-        .note {
-            max-width: 800px;
+
+        .nav-links a {
+            color: #6B6B6B;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1A1A1A;
+        }
+
+        /* Page Header */
+        .page-header {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 32px 48px 64px;
+            padding: 96px 48px 64px;
             text-align: center;
         }
-        .note-card {
-            background: #E8F5E9;
-            border-left: 4px solid #4CAF50;
-            padding: 24px;
-            border-radius: 8px;
-            font-size: 0.9375rem;
-            color: #2D2D2D;
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
         }
-        .footer {
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #6B6B6B;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Form Section */
+        .form-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 48px 96px;
+        }
+
+        .intake-form {
+            background: #FDFBF7;
+            padding: 48px;
+            border-radius: 8px;
+        }
+
+        .form-section-title {
+            font-size: 1.2rem;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+            margin-top: 32px;
+            font-weight: 600;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #E8E4DD;
+        }
+
+        .form-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #E8E4DD;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #1A1A1A;
+            background: #FFFFFF;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1A1A1A;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-group-inline {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .form-group-inline input[type="radio"],
+        .form-group-inline input[type="checkbox"] {
+            width: auto;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        .submit-btn {
+            width: 100%;
             background: #1A1A1A;
             color: #FFFFFF;
-            padding: 64px 48px;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 32px;
+        }
+
+        .submit-btn:hover {
+            background: #2D2D2D;
+        }
+
+        .form-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: #6B6B6B;
+        }
+
+        .required {
+            color: #C96A4D;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: #E8E4DD;
+            padding: 48px;
             text-align: center;
         }
-        .footer p {
-            margin-bottom: 16px;
-            font-size: 0.875rem;
-            color: #9B9B9B;
-        }
+
         .footer a {
-            color: #C96A4D;
+            color: #E8E4DD;
             text-decoration: none;
         }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
         @media (max-width: 968px) {
             .nav {
                 flex-direction: column;
                 gap: 16px;
+                padding: 16px 24px;
             }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 24px;
             }
-            .form-selection {
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .form-section {
+                padding: 0 24px 64px;
+            }
+
+            .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .intake-form {
+                padding: 32px 24px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+        </div>
+    </nav>
 
-<nav class="nav">
-    <a href="index.html" class="nav-logo">Nancy Shertok</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</nav>
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Client Intake Form</h1>
+        <p>
+            Please complete this form before your first session. Your information 
+            is kept confidential and helps me provide the best possible care.
+        </p>
+    </section>
 
-<div class="hero">
-    <h1>New Client Paperwork</h1>
-    <p>Save time by completing your intake forms online before our first session. Your information is sent directly to me and kept strictly confidential.</p>
-</div>
+    <!-- Form Section -->
+    <section class="form-section">
+        <form class="intake-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <!-- Personal Information -->
+            <h2 class="form-section-title">Personal Information</h2>
 
-<div class="form-selection">
-    <div class="form-card">
-        <h3>LYRA Clients</h3>
-        <p>If you're using LYRA benefits through your employer, complete this form.</p>
-        <a href="contact.html" class="btn">Contact for LYRA Form</a>
-    </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first_name">First Name <span class="required">*</span></label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name <span class="required">*</span></label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+            </div>
 
-    <div class="form-card">
-        <h3>All Other Clients</h3>
-        <p>For private pay, Aetna, or out-of-network clients, complete this form.</p>
-        <a href="contact.html" class="btn">Contact for Intake Form</a>
-    </div>
-</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
 
-<div class="note">
-    <div class="note-card">
-        <strong>Need help?</strong> If you're not sure which form to complete, just reach out at <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> and I'll help you figure it out.
-    </div>
-</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth <span class="required">*</span></label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State of Residence <span class="required">*</span></label>
+                    <select id="state" name="state" required>
+                        <option value="">Select state</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                    </select>
+                </div>
+            </div>
 
-<footer class="footer">
-    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
-    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
-    <p>Licensed in Georgia, Illinois & Wisconsin</p>
-    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
-</footer>
+            <!-- Emergency Contact -->
+            <h2 class="form-section-title">Emergency Contact</h2>
 
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="emergency_name">Name <span class="required">*</span></label>
+                    <input type="text" id="emergency_name" name="emergency_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emergency_phone">Phone <span class="required">*</span></label>
+                    <input type="tel" id="emergency_phone" name="emergency_phone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emergency_relationship">Relationship</label>
+                <input type="text" id="emergency_relationship" name="emergency_relationship">
+            </div>
+
+            <!-- Presenting Concerns -->
+            <h2 class="form-section-title">Presenting Concerns</h2>
+
+            <div class="form-group">
+                <label>What brings you to therapy? (Check all that apply)</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_anxiety" name="concerns" value="Anxiety">
+                        <label for="concern_anxiety">Anxiety</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_depression" name="concerns" value="Depression">
+                        <label for="concern_depression">Depression</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_relationships" name="concerns" value="Relationship Issues">
+                        <label for="concern_relationships">Relationship Issues</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_work" name="concerns" value="Work/Career">
+                        <label for="concern_work">Work/Career</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_grief" name="concerns" value="Grief/Loss">
+                        <label for="concern_grief">Grief/Loss</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_trauma" name="concerns" value="Trauma">
+                        <label for="concern_trauma">Trauma</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_transitions" name="concerns" value="Life Transitions">
+                        <label for="concern_transitions">Life Transitions</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="concern_other" name="concerns" value="Other">
+                        <label for="concern_other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goals">What are your goals for therapy?</label>
+                <textarea id="goals" name="goals" placeholder="Describe what you hope to achieve..."></textarea>
+            </div>
+
+            <!-- Session Preferences -->
+            <h2 class="form-section-title">Session Preferences</h2>
+
+            <div class="form-group">
+                <label>Preferred Session Type</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="radio" id="type_telehealth" name="session_type" value="Telehealth">
+                        <label for="type_telehealth">Telehealth</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="type_inperson" name="session_type" value="In-Person">
+                        <label for="type_inperson">In-Person</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="type_flexible" name="session_type" value="Flexible">
+                        <label for="type_flexible">Flexible</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="insurance">Insurance Provider (if applicable)</label>
+                <select id="insurance" name="insurance">
+                    <option value="">Select or leave blank for self-pay</option>
+                    <option value="Aetna">Aetna</option>
+                    <option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option>
+                    <option value="Cigna">Cigna</option>
+                    <option value="United Healthcare">United Healthcare</option>
+                    <option value="Oscar">Oscar</option>
+                    <option value="Oxford">Oxford</option>
+                    <option value="Other">Other</option>
+                    <option value="Self-Pay">Self-Pay</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="additional_info">Anything else you would like me to know?</label>
+                <textarea id="additional_info" name="additional_info" placeholder="Any additional information, questions, or concerns..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Intake Form</button>
+            <p class="form-note">
+                This information is confidential and protected by HIPAA. Please bring 
+                a valid ID and insurance card to your first session.
+            </p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
 </body>
 </html>

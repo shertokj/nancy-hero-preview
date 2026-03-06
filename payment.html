@@ -3,260 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rates & Payment - Nancy Shertok, MSW, LCSW</title>
+    <title>Payment & Insurance | Nancy Shertok, LCSW</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #FDFBF7;
-            color: #1A1A1A;
-            line-height: 1.7;
+            background: #FFFFFF;
+            color: #2D2D2D;
+            line-height: 1.8;
         }
+
+        /* Navigation */
         .nav {
             background: #FFFFFF;
-            padding: 24px 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #E8E4DD;
         }
+
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #C96A4D;
+            font-size: 1.4rem;
+            color: #1A1A1A;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
+
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
         }
+
         .nav-links a {
-            color: #2D2D2D;
+            color: #6B6B6B;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 0.95rem;
             transition: color 0.2s;
         }
+
         .nav-links a:hover {
-            color: #C96A4D;
+            color: #1A1A1A;
         }
-        .hero {
-            max-width: 1200px;
+
+        /* Page Header */
+        .page-header {
+            max-width: 900px;
             margin: 0 auto;
+            padding: 96px 48px 64px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: #6B6B6B;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Fees Section */
+        .fees-section {
+            background: #FDFBF7;
+            padding: 64px 48px;
+        }
+
+        .fees-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .fee-card {
+            background: #FFFFFF;
+            padding: 40px 32px;
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
+            text-align: center;
+        }
+
+        .fee-card h3 {
+            font-size: 1.1rem;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .fee-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+        }
+
+        .fee-card .duration {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
+        .fees-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6B6B6B;
+            padding: 24px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
+        }
+
+        /* Insurance Section */
+        .insurance-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 96px 48px;
+        }
+
+        .insurance-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1A1A1A;
+            margin-bottom: 32px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .insurance-section > p {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #6B6B6B;
+            max-width: 650px;
+            margin: 0 auto 48px;
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .insurance-item {
+            background: #FDFBF7;
+            padding: 20px 24px;
+            border-radius: 8px;
+            text-align: center;
+            color: #1A1A1A;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .superbill-note {
+            background: #FDFBF7;
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid #1A1A1A;
+        }
+
+        .superbill-note h3 {
+            font-size: 1.1rem;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .superbill-note p {
+            font-size: 0.95rem;
+            color: #6B6B6B;
+            line-height: 1.7;
+        }
+
+        /* Payment Methods */
+        .payment-section {
+            background: #FDFBF7;
+            padding: 64px 48px;
+        }
+
+        .payment-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .payment-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1A1A1A;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            background: #FFFFFF;
+            padding: 24px 40px;
+            border-radius: 8px;
+            border: 1px solid #E8E4DD;
+            font-size: 0.95rem;
+            color: #1A1A1A;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
             padding: 96px 48px;
             text-align: center;
         }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: #1A1A1A;
-            margin-bottom: 24px;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: #2D2D2D;
+
+        .cta-content {
             max-width: 600px;
             margin: 0 auto;
         }
-        .pricing-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 48px 64px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        .pricing-card {
-            background: #FFFFFF;
-            padding: 48px 32px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-        .pricing-card h3 {
+
+        .cta-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             color: #1A1A1A;
-            margin-bottom: 16px;
-        }
-        .pricing-card .price {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #C96A4D;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .pricing-card .duration {
-            color: #6B6B6B;
-            font-size: 0.875rem;
             margin-bottom: 24px;
-        }
-        .pricing-card .btn {
-            display: inline-block;
-            background: #C96A4D;
-            color: #FFFFFF;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
             font-weight: 600;
-            font-size: 0.875rem;
-            transition: background 0.2s;
         }
-        .pricing-card .btn:hover {
-            background: #E88A7A;
-        }
-        .info-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 64px 48px;
-        }
-        .info-card {
-            background: #FFFFFF;
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+        .cta-section p {
+            font-size: 1.05rem;
+            color: #6B6B6B;
             margin-bottom: 32px;
         }
-        .info-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #1A1A1A;
-            margin-bottom: 24px;
-        }
-        .info-card p {
-            margin-bottom: 16px;
-            color: #2D2D2D;
-        }
-        .info-card ul {
-            margin-left: 24px;
-            margin-bottom: 16px;
-        }
-        .info-card li {
-            margin-bottom: 8px;
-            color: #2D2D2D;
-        }
-        .info-card .highlight {
-            background: #E8F5E9;
-            border-left: 4px solid #4CAF50;
-            padding: 16px;
-            margin-top: 24px;
-            font-size: 0.9375rem;
-        }
-        .footer {
+
+        .cta-section .cta {
+            display: inline-block;
             background: #1A1A1A;
             color: #FFFFFF;
-            padding: 64px 48px;
+            padding: 14px 40px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+
+        .cta-section .cta:hover {
+            background: #2D2D2D;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: #E8E4DD;
+            padding: 48px;
             text-align: center;
         }
-        .footer p {
-            margin-bottom: 16px;
-            font-size: 0.875rem;
-            color: #9B9B9B;
-        }
+
         .footer a {
-            color: #C96A4D;
+            color: #E8E4DD;
             text-decoration: none;
         }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
         @media (max-width: 968px) {
             .nav {
                 flex-direction: column;
                 gap: 16px;
+                padding: 16px 24px;
             }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 24px;
             }
-            .hero h1 {
-                font-size: 2.5rem;
+
+            .page-header h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
-
-<nav class="nav">
-    <a href="index.html" class="nav-logo">Nancy Shertok</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="payment.html">Payment</a>
-    </div>
-</nav>
-
-<div class="hero">
-    <h1>Rates & Payment</h1>
-    <p>Transparent pricing with flexible payment options.</p>
-</div>
-
-<div class="pricing-section">
-    <div class="pricing-card">
-        <h3>Individual Therapy</h3>
-        <div class="price">$195</div>
-        <div class="duration">per 50-minute session</div>
-        <a href="contact.html" class="btn">Schedule Session</a>
-    </div>
-
-    <div class="pricing-card">
-        <h3>Couples Therapy</h3>
-        <div class="price">$250</div>
-        <div class="duration">per 80-minute session</div>
-        <a href="contact.html" class="btn">Schedule Session</a>
-    </div>
-
-    <div class="pricing-card">
-        <h3>Free Consultation</h3>
-        <div class="price">$0</div>
-        <div class="duration">15-minute phone call</div>
-        <a href="contact.html" class="btn">Schedule Call</a>
-    </div>
-</div>
-
-<div class="info-section">
-    <div class="info-card">
-        <h2>Insurance</h2>
-        <p><strong>In-Network:</strong> Aetna</p>
-        <p><strong>Out-of-Network Benefits:</strong> If you have out-of-network benefits, I can provide a superbill for reimbursement. Many clients receive 50-80% reimbursement.</p>
-        <div class="highlight">
-            <strong>Not sure about your benefits?</strong> Call your insurance and ask:
-            <ul style="margin-top: 12px; margin-left: 24px;">
-                <li>Do I have out-of-network mental health benefits?</li>
-                <li>What's my deductible?</li>
-                <li>What percentage is reimbursed?</li>
-                <li>How do I submit claims?</li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
-    </div>
+    </nav>
 
-    <div class="info-card">
-        <h2>Payment Methods</h2>
-        <p>Accepted payment methods:</p>
-        <ul>
-            <li>Credit Cards: Visa, Discover, American Express</li>
-            <li>HSA/FSA Cards</li>
-            <li>Zelle, Venmo</li>
-            <li>Payment due at time of session</li>
-        </ul>
-    </div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Payment & Insurance</h1>
+        <p>
+            Transparent pricing with flexible payment options. I accept insurance 
+            and provide superbills for out-of-network reimbursement.
+        </p>
+    </section>
 
-    <div class="info-card">
-        <h2>Cancellation Policy</h2>
-        <p>24-hour notice required for all cancellations.</p>
-        <p>Late cancellations or no-shows may be charged the full session fee.</p>
-        <p><em>Emergencies happen - just let me know as soon as possible.</em></p>
-    </div>
-</div>
+    <!-- Fees Section -->
+    <section class="fees-section">
+        <div class="fees-content">
+            <div class="fees-grid">
+                <div class="fee-card">
+                    <h3>Individual Session</h3>
+                    <p class="price">$175</p>
+                    <p class="duration">50 minutes</p>
+                </div>
+                <div class="fee-card">
+                    <h3>Couples Session</h3>
+                    <p class="price">$200</p>
+                    <p class="duration">50 minutes</p>
+                </div>
+                <div class="fee-card">
+                    <h3>Initial Consultation</h3>
+                    <p class="price">Free</p>
+                    <p class="duration">15 minutes</p>
+                </div>
+            </div>
+            <p class="fees-note">
+                Session fees are due at the time of service. I accept all major 
+                credit cards, HSA/FSA cards, and cash.
+            </p>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p><strong>Nancy Shertok, MSW, LCSW</strong></p>
-    <p>Email: <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> | Phone: <a href="tel:4147366228">(414) 736-6228</a></p>
-    <p>Licensed in Georgia, Illinois & Wisconsin</p>
-    <p style="margin-top: 32px;">&copy; 2026 Nancy Shertok. All rights reserved.</p>
-</footer>
+    <!-- Insurance Section -->
+    <section class="insurance-section">
+        <h2>Insurance Accepted</h2>
+        <p>
+            I am in-network with the following insurance providers. Please contact 
+            your insurance company to verify your mental health benefits before our first session.
+        </p>
+        <div class="insurance-grid">
+            <div class="insurance-item">Aetna</div>
+            <div class="insurance-item">Blue Cross Blue Shield</div>
+            <div class="insurance-item">Cigna</div>
+            <div class="insurance-item">United Healthcare</div>
+            <div class="insurance-item">Oscar</div>
+            <div class="insurance-item">Oxford</div>
+        </div>
+        <div class="superbill-note">
+            <h3>Out-of-Network Benefits</h3>
+            <p>
+                If I am not in-network with your insurance, I can provide a superbill 
+                (detailed receipt) that you can submit to your insurance company for 
+                potential reimbursement. Many plans offer out-of-network benefits that 
+                cover 50-80% of session costs.
+            </p>
+        </div>
+    </section>
 
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <div class="payment-content">
+            <h2>Payment Methods</h2>
+            <div class="payment-methods">
+                <div class="payment-method">Credit Card</div>
+                <div class="payment-method">Debit Card</div>
+                <div class="payment-method">HSA / FSA</div>
+                <div class="payment-method">Cash</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Questions About Payment?</h2>
+            <p>
+                I am happy to discuss fees, insurance, and payment options during 
+                your free consultation.
+            </p>
+            <a href="contact.html" class="cta">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
 </body>
 </html>
