@@ -1,0 +1,516 @@
+/* Nancy Shertok Website - Shared Styles
+ * Includes: accessibility fixes, button system, responsive typography, Alpine.js components
+ * Version: 2.0 (2026-03-07)
+ */
+
+/* ========================================
+   ACCESSIBILITY FIXES
+   ======================================== */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    z-index: 1000;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: top 0.2s;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
+/* Focus Indicators */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #1A1A1A;
+    outline-offset: 2px;
+}
+
+/* Focus for dark backgrounds */
+.footer a:focus {
+    outline-color: #FFFFFF;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   BUTTON SYSTEM (Standardized)
+   ======================================== */
+
+/* Primary CTA Button */
+.btn-primary,
+.cta {
+    display: inline-block;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 14px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.cta:hover {
+    background: #2D2D2D;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active,
+.cta:active {
+    transform: translateY(0);
+}
+
+/* Secondary/Smaller Button */
+.btn-secondary {
+    display: inline-block;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #2D2D2D;
+    transform: translateY(-1px);
+}
+
+/* Full-width button (forms) */
+.btn-full,
+.submit-btn {
+    width: 100%;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-full:hover,
+.submit-btn:hover {
+    background: #2D2D2D;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   TYPOGRAPHY FIXES
+   ======================================== */
+
+/* Standardized Heading Sizes */
+.page-header h1,
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.hero h1 {
+    margin-bottom: 32px;
+}
+
+/* Improved tagline contrast (WCAG AA) */
+.hero .tagline {
+    font-size: 1.15rem;
+    color: #4A4A4A; /* Changed from #6B6B6B for 5.7:1 contrast */
+    font-weight: 300;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+/* Section headings */
+.services h2,
+.specialties h2,
+.approaches h2,
+.credentials h2,
+.cta-section h2,
+.faq-category h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #1A1A1A;
+    margin-bottom: 48px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Card headings - increased size */
+.service-item h3,
+.service-card h3,
+.approach-item h3 {
+    font-size: 1.25rem;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* ========================================
+   CARD SYSTEM (Standardized)
+   ======================================== */
+
+.service-item,
+.service-card,
+.faq-item,
+.approach-item,
+.credential-item {
+    background: #FFFFFF;
+    padding: 36px;
+    border-radius: 8px;
+    border: 1px solid #E8E4DD;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.service-item:hover,
+.service-card:hover,
+.approach-item:hover,
+.credential-item:hover {
+    border-color: #1A1A1A;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   FORM STYLING (Standardized)
+   ======================================== */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #1A1A1A;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #E8E4DD;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #1A1A1A;
+    background: #FFFFFF;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1A1A1A;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.required {
+    color: #1A1A1A;
+}
+
+/* ========================================
+   ALPINE.JS MOBILE MENU
+   ======================================== */
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #1A1A1A;
+    cursor: pointer;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.hamburger-icon {
+    display: block;
+    line-height: 1;
+}
+
+@media (max-width: 968px) {
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links:not(.nav-links-mobile) {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 0 0 0;
+        border-top: 1px solid #E8E4DD;
+        margin-top: 16px;
+        width: 100%;
+    }
+
+    .nav-links-mobile a {
+        color: #6B6B6B;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1.05rem;
+        transition: color 0.2s;
+        padding: 8px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links-mobile a:hover {
+        color: #1A1A1A;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+    }
+}
+
+/* ========================================
+   ALPINE.JS FAQ ACCORDION
+   ======================================== */
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.faq-question span:first-child {
+    font-size: 1.1rem;
+    color: #1A1A1A;
+    font-weight: 600;
+    text-align: left;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: #6B6B6B;
+    flex-shrink: 0;
+}
+
+.faq-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    overflow: hidden;
+}
+
+.faq-answer p {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero h1,
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .hero .description,
+    .page-header p {
+        font-size: 0.95rem;
+    }
+
+    .services h2,
+    .specialties h2,
+    .approaches h2,
+    .credentials h2,
+    .cta-section h2,
+    .faq-category h2 {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+    }
+
+    .service-card h3,
+    .approach-item h3,
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p,
+    .approach-item p,
+    .faq-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1,
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE NAVIGATION
+   ======================================== */
+
+@media (max-width: 968px) {
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 24px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .nav-links a {
+        padding: 8px 16px;
+        border-radius: 4px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links a:hover {
+        background: #FDFBF7;
+        color: #1A1A1A;
+    }
+}
+
+/* ========================================
+   RESPONSIVE FOOTER
+   ======================================== */
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
+/* ========================================
+   RESPONSIVE FORMS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 48px;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-emphasis {
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.text-strong {
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

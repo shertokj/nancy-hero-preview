@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
     <title>Nancy Shertok, LCSW | Confidential Therapy for Professionals</title>
+    <meta name="description" content="Confidential therapy for high-functioning professionals in Georgia, Illinois, and Wisconsin. Nancy Shertok, LCSW provides direct, collaborative therapy for anxiety, burnout, and relationship challenges.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psychotherapy123.com/">
+    <meta property="og:title" content="Nancy Shertok, LCSW | Confidential Therapy for Professionals">
+    <meta property="og:description" content="Confidential therapy for high-functioning professionals. A space where you do not have to perform.">
+    <meta property="og:image" content="https://shertokj.github.io/nancy-hero-preview/og-image.jpg">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared.css">
+    
     <style>
         * {
             margin: 0;
@@ -69,24 +87,6 @@
             background: #FFFFFF;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: #1A1A1A;
-            line-height: 1.3;
-            margin-bottom: 32px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero .tagline {
-            font-size: 1.15rem;
-            color: #6B6B6B;
-            font-weight: 300;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
         .hero .description {
             font-size: 1.05rem;
             color: #2D2D2D;
@@ -102,23 +102,6 @@
             font-weight: 500;
         }
 
-        .hero .cta {
-            display: inline-block;
-            background: #1A1A1A;
-            color: #FFFFFF;
-            padding: 14px 40px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            transition: background 0.2s;
-        }
-
-        .hero .cta:hover {
-            background: #2D2D2D;
-        }
-
         /* Services Section */
         .services {
             background: #FDFBF7;
@@ -130,33 +113,10 @@
             margin: 0 auto;
         }
 
-        .services h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: #1A1A1A;
-            margin-bottom: 48px;
-            text-align: center;
-            font-weight: 600;
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 24px;
-        }
-
-        .service-item {
-            background: #FFFFFF;
-            padding: 32px;
-            border-radius: 8px;
-            border: 1px solid #E8E4DD;
-        }
-
-        .service-item h3 {
-            font-size: 1.1rem;
-            color: #1A1A1A;
-            margin-bottom: 12px;
-            font-weight: 600;
         }
 
         .service-item p {
@@ -194,60 +154,127 @@
             color: #6B6B6B;
         }
     </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Psychologist",
+        "name": "Nancy Shertok, LCSW",
+        "description": "Confidential therapy for high-functioning professionals navigating anxiety, burnout, and relationship challenges.",
+        "url": "https://psychotherapy123.com",
+        "telephone": "+1-414-736-6228",
+        "email": "yourtherapyconnection@gmail.com",
+        "areaServed": [
+            {"@type": "State", "name": "Georgia"},
+            {"@type": "State", "name": "Illinois"},
+            {"@type": "State", "name": "Wisconsin"}
+        ],
+        "medicalSpecialty": "Psychotherapy",
+        "priceRange": "$175-200",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+            "https://www.psychologytoday.com/us/therapists/nancy-shertok"
+        ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
         <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <div class="nav-links">
+        
+        <!-- Mobile Menu Toggle -->
+        <button 
+            class="mobile-menu-toggle" 
+            @click="mobileMenuOpen = !mobileMenuOpen" 
+            :aria-expanded="mobileMenuOpen" 
+            aria-controls="mobile-nav" 
+            aria-label="Toggle navigation menu"
+        >
+            <span class="hamburger-icon">
+                <span x-show="!mobileMenuOpen">&#9776;</span>
+                <span x-show="mobileMenuOpen" x-cloak>&#10005;</span>
+            </span>
+        </button>
+        
+        <!-- Desktop Navigation -->
+        <div class="nav-links" aria-hidden="false">
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
             <a href="payment.html">Payment</a>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <div 
+            class="nav-links nav-links-mobile" 
+            id="mobile-nav" 
+            x-show="mobileMenuOpen" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            @click.away="mobileMenuOpen = false"
+            :aria-hidden="!mobileMenuOpen"
+            x-cloak
+        >
+            <a href="about.html" @click="mobileMenuOpen = false">About</a>
+            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
+            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
+            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Confidential Therapy for Professionals</h1>
-        <p class="tagline">A space where you do not have to perform</p>
-        <p class="description">
-            Success does not make you immune to stress. I provide confidential therapy 
-            for high-functioning professionals navigating anxiety, burnout, and relationship 
-            challenges. My approach is direct, collaborative, and tailored to your unique 
-            pressures.
-        </p>
-        <p class="states">Serving Georgia, Illinois, and Wisconsin</p>
-        <a href="contact.html" class="cta">Schedule Free Consultation</a>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Confidential Therapy for Professionals</h1>
+            <p class="tagline">A space where you do not have to perform</p>
+            <p class="description">
+                Success does not make you immune to stress. I provide confidential therapy 
+                for high-functioning professionals navigating anxiety, burnout, and relationship 
+                challenges. My approach is direct, collaborative, and tailored to your unique 
+                pressures.
+            </p>
+            <p class="states">Serving Georgia, Illinois, and Wisconsin</p>
+            <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="services-content">
-            <h2>Specialized Support</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Persistent Anxiety & Stress</h3>
-                    <p>Managing the weight of constant pressure and expectations.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Leadership Pressure & Burnout</h3>
-                    <p>Navigating high-stakes roles while maintaining well-being.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Relationship Challenges</h3>
-                    <p>Building meaningful connections amid demanding schedules.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Life & Career Transitions</h3>
-                    <p>Finding clarity during periods of significant change.</p>
+        <!-- Services Section -->
+        <section class="services">
+            <div class="services-content">
+                <h2>Specialized Support</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Persistent Anxiety & Stress</h3>
+                        <p>Managing the weight of constant pressure and expectations.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Leadership Pressure & Burnout</h3>
+                        <p>Navigating high-stakes roles while maintaining well-being.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Relationship Challenges</h3>
+                        <p>Building meaningful connections amid demanding schedules.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Life & Career Transitions</h3>
+                        <p>Finding clarity during periods of significant change.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-links">
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
@@ -257,5 +284,8 @@
         </div>
         <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
     </footer>
+    
+    <!-- Hide Alpine.js flash -->
+    <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>

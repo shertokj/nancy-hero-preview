@@ -3,423 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
     <title>Contact | Nancy Shertok, LCSW - Confidential Therapy for Professionals</title>
+    <meta name="description" content="Schedule a free 15-minute consultation. Contact Nancy Shertok, LCSW for confidential therapy in Georgia, Illinois, and Wisconsin.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            color: #2D2D2D;
-            line-height: 1.8;
-        }
-
-        /* Navigation */
-        .nav {
-            background: #FFFFFF;
-            padding: 20px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #E8E4DD;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #1A1A1A;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: #6B6B6B;
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #1A1A1A;
-        }
-
-        /* Page Header */
-        .page-header {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 96px 48px 64px;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: #1A1A1A;
-            line-height: 1.3;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-        }
-
-        .page-header p {
-            font-size: 1.05rem;
-            color: #6B6B6B;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Contact Content */
-        .contact-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 48px 96px;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 64px;
-        }
-
-        /* Contact Info */
-        .contact-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #1A1A1A;
-            margin-bottom: 32px;
-            font-weight: 600;
-        }
-
-        .contact-item {
-            margin-bottom: 32px;
-        }
-
-        .contact-item h3 {
-            font-size: 0.85rem;
-            color: #6B6B6B;
-            margin-bottom: 8px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-item p {
-            font-size: 1.05rem;
-            color: #1A1A1A;
-        }
-
-        .contact-item a {
-            color: #1A1A1A;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .states {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid #E8E4DD;
-        }
-
-        .states h3 {
-            font-size: 0.85rem;
-            color: #6B6B6B;
-            margin-bottom: 16px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .states-list {
-            display: flex;
-            gap: 16px;
-        }
-
-        .state-tag {
-            background: #FDFBF7;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: #1A1A1A;
-            font-weight: 500;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: #FDFBF7;
-            padding: 48px;
-            border-radius: 8px;
-        }
-
-        .contact-form h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #1A1A1A;
-            margin-bottom: 32px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            color: #1A1A1A;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #E8E4DD;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            color: #1A1A1A;
-            background: #FFFFFF;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #1A1A1A;
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: #1A1A1A;
-            color: #FFFFFF;
-            padding: 16px 32px;
-            border: none;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: #2D2D2D;
-        }
-
-        .form-note {
-            margin-top: 16px;
-            font-size: 0.85rem;
-            color: #6B6B6B;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1A1A1A;
-            color: #E8E4DD;
-            padding: 48px;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #E8E4DD;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        .footer p {
-            font-size: 0.9rem;
-            color: #6B6B6B;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #2D2D2D; line-height: 1.8; }
+        .nav { background: #FFFFFF; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E8E4DD; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; text-decoration: none; font-weight: 600; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { color: #6B6B6B; text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #1A1A1A; }
+        .page-header { max-width: 900px; margin: 0 auto; padding: 96px 48px 64px; text-align: center; }
+        .page-header p { font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto; line-height: 1.8; }
+        .contact-section { max-width: 900px; margin: 0 auto; padding: 0 48px 96px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #1A1A1A; margin-bottom: 32px; font-weight: 600; }
+        .contact-item { margin-bottom: 32px; }
+        .contact-item h3 { font-size: 0.85rem; color: #6B6B6B; margin-bottom: 8px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .contact-item p { font-size: 1.05rem; color: #1A1A1A; }
+        .contact-item a { color: #1A1A1A; text-decoration: none; }
+        .contact-item a:hover { text-decoration: underline; }
+        .states { margin-top: 48px; padding-top: 32px; border-top: 1px solid #E8E4DD; }
+        .states h3 { font-size: 0.85rem; color: #6B6B6B; margin-bottom: 16px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .states-list { display: flex; gap: 16px; }
+        .state-tag { background: #FDFBF7; padding: 8px 16px; border-radius: 4px; font-size: 0.9rem; color: #1A1A1A; font-weight: 500; }
+        .contact-form { background: #FDFBF7; padding: 48px; border-radius: 8px; }
+        .contact-form h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #1A1A1A; margin-bottom: 32px; font-weight: 600; }
+        .form-note { margin-top: 16px; font-size: 0.85rem; color: #6B6B6B; }
+        .footer { background: #1A1A1A; color: #E8E4DD; padding: 48px; text-align: center; }
+        .footer a { color: #E8E4DD; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
+        .footer p { font-size: 0.9rem; color: #6B6B6B; }
         @media (max-width: 968px) {
-            .nav {
-                flex-direction: column;
-                gap: 16px;
-                padding: 16px 24px;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 24px;
-            }
-
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-                padding: 0 24px 64px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 32px 24px;
-            }
+            .contact-section { grid-template-columns: 1fr; padding: 0 24px 64px; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form { padding: 32px 24px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
         <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <div class="nav-links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="payment.html">Payment</a>
+        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
+        </button>
+        <div class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html" aria-current="page">Contact</a><a href="payment.html">Payment</a></div>
+        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
+            <a href="about.html" @click="mobileMenuOpen = false">About</a>
+            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
+            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
+            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Contact</h1>
-        <p>
-            Ready to take the first step? Schedule a free 15-minute consultation 
-            to see if we are a good fit.
-        </p>
-    </section>
+    <main id="main-content">
+        <section class="page-header">
+            <h1>Contact</h1>
+            <p>Schedule a free 15-minute consultation to see if we are a good fit.</p>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-info">
-            <h2>Get in Touch</h2>
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
 
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a></p>
-            </div>
-
-            <div class="contact-item">
-                <h3>Phone</h3>
-                <p><a href="tel:4147366228">(414) 736-6228</a></p>
-            </div>
-
-            <div class="contact-item">
-                <h3>Office</h3>
-                <p>(678) 929-5905</p>
-            </div>
-
-            <div class="states">
-                <h3>Licensed In</h3>
-                <div class="states-list">
-                    <span class="state-tag">Georgia</span>
-                    <span class="state-tag">Illinois</span>
-                    <span class="state-tag">Wisconsin</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-form">
-            <h2>Request a Consultation</h2>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a></p>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p><a href="tel:4147366228">(414) 736-6228</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Office</h3>
+                    <p>(678) 929-5905</p>
+                </div>
+
+                <div class="states">
+                    <h3>Licensed In</h3>
+                    <div class="states-list">
+                        <span class="state-tag">Georgia</span>
+                        <span class="state-tag">Illinois</span>
+                        <span class="state-tag">Wisconsin</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Request a Consultation</h2>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" x-data="{ form: { name: '', email: '', phone: '', state: '', service: '', message: '' }, errors: {} }" @submit.prevent="Object.keys(errors).length === 0 && $el.submit()">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" x-model="form.name" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" x-model="form.email" required aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" x-model="form.phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select id="state" name="state" x-model="form.state">
+                                <option value="">Select your state</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Illinois">Illinois</option>
+                                <option value="Wisconsin">Wisconsin</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="form-group">
-                        <label for="state">State</label>
-                        <select id="state" name="state">
-                            <option value="">Select your state</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Illinois">Illinois</option>
-                            <option value="Wisconsin">Wisconsin</option>
-                            <option value="Other">Other</option>
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" x-model="form.service">
+                            <option value="">Select a service</option>
+                            <option value="Individual Therapy">Individual Therapy</option>
+                            <option value="Couples Therapy">Couples Therapy</option>
+                            <option value="Telehealth">Telehealth</option>
+                            <option value="Not Sure">Not Sure</option>
                         </select>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="service">Service Interest</label>
-                    <select id="service" name="service">
-                        <option value="">Select a service</option>
-                        <option value="Individual Therapy">Individual Therapy</option>
-                        <option value="Couples Therapy">Couples Therapy</option>
-                        <option value="Telehealth">Telehealth</option>
-                        <option value="Not Sure">Not Sure</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="message">What brings you to therapy?</label>
+                        <textarea id="message" name="message" x-model="form.message" placeholder="Briefly describe what you are looking for help with..."></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">What brings you to therapy?</label>
-                    <textarea id="message" name="message" placeholder="Briefly describe what you are looking for help with..."></textarea>
-                </div>
+                    <button type="submit" class="btn-full">Request Consultation</button>
+                    <p class="form-note">I will respond within 24-48 hours.</p>
+                </form>
+            </div>
+        </section>
+    </main>
 
-                <button type="submit" class="submit-btn">Request Consultation</button>
-                <p class="form-note">I will respond within 24-48 hours.</p>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="payment.html">Payment</a>
-            <a href="faq.html">FAQ</a>
+            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
         </div>
         <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
     </footer>
+    
+    <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>
