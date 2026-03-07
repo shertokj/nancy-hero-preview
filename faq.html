@@ -3,49 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
-    <title>FAQ | Nancy Shertok, LCSW - Confidential Therapy for Professionals</title>
-    <meta name="description" content="Frequently asked questions about therapy, insurance, scheduling, and what to expect. Find answers to common questions about working with Nancy Shertok, LCSW.">
-    
+    <meta name="theme-color" content="#f8f6f3">
+    <title>FAQ | Nancy Shertok, LCSW</title>
+    <meta name="description" content="Frequently asked questions about therapy, insurance, scheduling, and what to expect.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="css/shared.css">
-    
+
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #2D2D2D; line-height: 1.8; }
-        .nav { background: #FFFFFF; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E8E4DD; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; text-decoration: none; font-weight: 600; letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: #6B6B6B; text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: #1A1A1A; }
-        .page-header { max-width: 900px; margin: 0 auto; padding: 96px 48px 64px; text-align: center; }
-        .page-header p { font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto; line-height: 1.8; }
-        .faq-section { max-width: 800px; margin: 0 auto; padding: 0 48px 96px; }
-        .faq-category { margin-bottom: 48px; }
-        .faq-category h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #1A1A1A; margin-bottom: 24px; font-weight: 600; padding-bottom: 16px; border-bottom: 1px solid #E8E4DD; }
-        .faq-item { margin-bottom: 24px; padding: 32px; background: #FDFBF7; border-radius: 8px; }
-        .faq-item p { font-size: 0.95rem; color: #6B6B6B; line-height: 1.7; }
-        .faq-item ul { margin-top: 12px; padding-left: 20px; }
-        .faq-item li { font-size: 0.95rem; color: #6B6B6B; line-height: 1.7; margin-bottom: 8px; }
-        .cta-section { background: #FDFBF7; padding: 96px 48px; text-align: center; }
-        .cta-content { max-width: 600px; margin: 0 auto; }
-        .cta-section p { font-size: 1.05rem; color: #6B6B6B; margin-bottom: 32px; }
-        .footer { background: #1A1A1A; color: #E8E4DD; padding: 48px; text-align: center; }
-        .footer a { color: #E8E4DD; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
-        .footer p { font-size: 0.9rem; color: #6B6B6B; }
-        @media (max-width: 968px) {
-            .faq-section { padding: 0 24px 64px; }
-            .faq-item { padding: 24px; }
+        .faq-category {
+            margin-bottom: 48px;
+        }
+
+        .faq-category-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item {
+            margin-bottom: 1px;
+            background: var(--card);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 32px;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            text-align: left;
+            cursor: pointer;
+            color: var(--fg);
+        }
+
+        .faq-question:hover {
+            background: var(--bg);
+        }
+
+        .faq-icon {
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+            color: #999;
+        }
+
+        .faq-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 32px 24px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .faq-question,
+            .faq-answer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
         }
     </style>
-    
-    <!-- FAQ Schema -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -56,7 +99,7 @@
                 "name": "How do I schedule an appointment?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form on this website."
+                    "text": "You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form."
                 }
             },
             {
@@ -69,10 +112,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Do you offer in-person or telehealth sessions?",
+                "name": "Do you offer telehealth?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "I offer both. Telehealth sessions are available to clients in Georgia, Illinois, and Wisconsin. In-person sessions are available at my office in Georgia."
+                    "text": "Yes. Telehealth sessions are available to clients in Georgia, Illinois, and Wisconsin."
                 }
             }
         ]
@@ -80,140 +123,134 @@
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
-        </button>
-        <div class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a></div>
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
     </nav>
 
-    <main id="main-content">
+    <div class="page">
         <section class="page-header">
             <h1>Frequently Asked Questions</h1>
-            <p>Find answers to common questions about therapy, insurance, and what to expect when working with me.</p>
+            <p>Answers to common questions about therapy, insurance, and what to expect.</p>
         </section>
 
-        <section class="faq-section" x-data="{ expanded: null }">
+        <section class="section" style="border-bottom: none;" x-data="{ expanded: null }">
             <div class="faq-category">
-                <h2>Getting Started</h2>
+                <div class="faq-category-title">Getting Started</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q1' ? null : 'q1'" :aria-expanded="expanded === 'q1'" aria-controls="a1">
+                    <button class="faq-question" @click="expanded = expanded === 'q1' ? null : 'q1'">
                         <span>How do I schedule an appointment?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q1' }">&#9660;</span>
                     </button>
-                    <div id="a1" class="faq-answer" x-show="expanded === 'q1'" x-collapse>
-                        <p>You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form on this website. During the consultation, we will discuss your needs and determine if we are a good fit.</p>
+                    <div class="faq-answer" x-show="expanded === 'q1'" x-collapse>
+                        <p>You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form. During the consultation, we will discuss your needs and determine if we are a good fit.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q2' ? null : 'q2'" :aria-expanded="expanded === 'q2'" aria-controls="a2">
+                    <button class="faq-question" @click="expanded = expanded === 'q2' ? null : 'q2'">
                         <span>What should I expect in the first session?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q2' }">&#9660;</span>
                     </button>
-                    <div id="a2" class="faq-answer" x-show="expanded === 'q2'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q2'" x-collapse>
                         <p>The first session is an intake where I gather information about your history, current concerns, and goals for therapy. It is also an opportunity for you to ask questions and get a sense of my approach.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q3' ? null : 'q3'" :aria-expanded="expanded === 'q3'" aria-controls="a3">
+                    <button class="faq-question" @click="expanded = expanded === 'q3' ? null : 'q3'">
                         <span>Do you offer in-person or telehealth sessions?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q3' }">&#9660;</span>
                     </button>
-                    <div id="a3" class="faq-answer" x-show="expanded === 'q3'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q3'" x-collapse>
                         <p>I offer both. Telehealth sessions are conducted via a secure video platform and are available to clients in Georgia, Illinois, and Wisconsin. In-person sessions are available at my office in Georgia.</p>
                     </div>
                 </div>
             </div>
 
             <div class="faq-category">
-                <h2>Insurance & Payment</h2>
+                <div class="faq-category-title">Insurance & Payment</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q4' ? null : 'q4'" :aria-expanded="expanded === 'q4'" aria-controls="a4">
+                    <button class="faq-question" @click="expanded = expanded === 'q4' ? null : 'q4'">
                         <span>Do you accept insurance?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q4' }">&#9660;</span>
                     </button>
-                    <div id="a4" class="faq-answer" x-show="expanded === 'q4'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q4'" x-collapse>
                         <p>Yes. I am in-network with Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Oscar, and Oxford. I recommend contacting your insurance company before our first session to verify your mental health benefits.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q5' ? null : 'q5'" :aria-expanded="expanded === 'q5'" aria-controls="a5">
+                    <button class="faq-question" @click="expanded = expanded === 'q5' ? null : 'q5'">
                         <span>What if you are not in-network with my insurance?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q5' }">&#9660;</span>
                     </button>
-                    <div id="a5" class="faq-answer" x-show="expanded === 'q5'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q5'" x-collapse>
                         <p>I can provide a superbill (detailed receipt) that you can submit to your insurance company for potential out-of-network reimbursement. Many plans cover 50-80% of session costs through out-of-network benefits.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q6' ? null : 'q6'" :aria-expanded="expanded === 'q6'" aria-controls="a6">
+                    <button class="faq-question" @click="expanded = expanded === 'q6' ? null : 'q6'">
                         <span>What forms of payment do you accept?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q6' }">&#9660;</span>
                     </button>
-                    <div id="a6" class="faq-answer" x-show="expanded === 'q6'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q6'" x-collapse>
                         <p>I accept all major credit cards, debit cards, HSA/FSA cards, and cash. Payment is due at the time of service.</p>
                     </div>
                 </div>
             </div>
 
             <div class="faq-category">
-                <h2>Therapy Process</h2>
+                <div class="faq-category-title">Therapy Process</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q7' ? null : 'q7'" :aria-expanded="expanded === 'q7'" aria-controls="a7">
+                    <button class="faq-question" @click="expanded = expanded === 'q7' ? null : 'q7'">
                         <span>How long does therapy typically last?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q7' }">&#9660;</span>
                     </button>
-                    <div id="a7" class="faq-answer" x-show="expanded === 'q7'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q7'" x-collapse>
                         <p>The length of therapy varies depending on your goals and concerns. Some clients see significant progress in 8-12 sessions, while others benefit from longer-term support. We will regularly assess your progress and adjust as needed.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q8' ? null : 'q8'" :aria-expanded="expanded === 'q8'" aria-controls="a8">
+                    <button class="faq-question" @click="expanded = expanded === 'q8' ? null : 'q8'">
                         <span>How often will we meet?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q8' }">&#9660;</span>
                     </button>
-                    <div id="a8" class="faq-answer" x-show="expanded === 'q8'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q8'" x-collapse>
                         <p>Most clients meet with me once a week, especially in the beginning. As you make progress, we may shift to bi-weekly or monthly sessions. Frequency is always based on your needs and preferences.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q9' ? null : 'q9'" :aria-expanded="expanded === 'q9'" aria-controls="a9">
+                    <button class="faq-question" @click="expanded = expanded === 'q9' ? null : 'q9'">
                         <span>What is your cancellation policy?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q9' }">&#9660;</span>
                     </button>
-                    <div id="a9" class="faq-answer" x-show="expanded === 'q9'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q9'" x-collapse>
                         <p>I require 24 hours notice for cancellations. Sessions cancelled with less than 24 hours notice will be charged the full session fee. I understand that emergencies happen and will work with you on a case-by-case basis.</p>
                     </div>
                 </div>
             </div>
 
             <div class="faq-category">
-                <h2>Confidentiality</h2>
+                <div class="faq-category-title">Confidentiality</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q10' ? null : 'q10'" :aria-expanded="expanded === 'q10'" aria-controls="a10">
+                    <button class="faq-question" @click="expanded = expanded === 'q10' ? null : 'q10'">
                         <span>Is everything I share confidential?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q10' }">&#9660;</span>
                     </button>
-                    <div id="a10" class="faq-answer" x-show="expanded === 'q10'" x-collapse>
+                    <div class="faq-answer" x-show="expanded === 'q10'" x-collapse>
                         <p>Yes, with a few legal exceptions. I am required by law to break confidentiality if there is risk of harm to yourself or others, suspected child or elder abuse, or if I receive a court order. We will discuss confidentiality in detail during our first session.</p>
                     </div>
                 </div>
@@ -221,21 +258,24 @@
         </section>
 
         <section class="cta-section">
-            <div class="cta-content">
-                <h2>Have More Questions?</h2>
-                <p>I am happy to answer any questions during your free consultation.</p>
-                <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
-            </div>
+            <h2>Have more questions?</h2>
+            <p>I am happy to answer any questions during your free consultation.</p>
+            <a href="contact.html" class="btn-primary">Schedule consultation</a>
         </section>
-    </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
+
     <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>

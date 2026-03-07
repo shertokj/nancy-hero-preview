@@ -3,150 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#f8f6f3">
     <title>Privacy Policy | Nancy Shertok, LCSW</title>
-    <meta name="description" content="Privacy policy and notice of privacy practices for Nancy Shertok, LCSW. How your health information is protected under HIPAA.">
-    
+    <meta name="description" content="Privacy policy and notice of privacy practices. How your health information is protected under HIPAA.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="css/shared.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #2D2D2D; line-height: 1.8; }
-        .nav { background: #FFFFFF; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E8E4DD; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; text-decoration: none; font-weight: 600; letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: #6B6B6B; text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: #1A1A1A; }
-        .page-header { max-width: 900px; margin: 0 auto; padding: 96px 48px 64px; text-align: center; }
-        .page-header p { font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto; line-height: 1.8; }
-        .content-section { max-width: 800px; margin: 0 auto; padding: 0 48px 96px; }
-        .last-updated { font-size: 0.9rem; color: #6B6B6B; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #E8E4DD; }
-        .content-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #1A1A1A; margin-top: 48px; margin-bottom: 16px; font-weight: 600; }
-        .content-section h2:first-of-type { margin-top: 0; }
-        .content-section p { font-size: 0.95rem; color: #2D2D2D; line-height: 1.8; margin-bottom: 16px; }
-        .content-section ul { margin: 16px 0; padding-left: 24px; }
-        .content-section li { font-size: 0.95rem; color: #2D2D2D; line-height: 1.8; margin-bottom: 8px; }
-        .highlight-box { background: #FDFBF7; padding: 24px 32px; border-radius: 8px; border-left: 4px solid #1A1A1A; margin: 24px 0; }
-        .highlight-box p { margin-bottom: 0; }
-        .footer { background: #1A1A1A; color: #E8E4DD; padding: 48px; text-align: center; }
-        .footer a { color: #E8E4DD; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
-        .footer p { font-size: 0.9rem; color: #6B6B6B; }
-        @media (max-width: 968px) { .content-section { padding: 0 24px 64px; } }
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        .privacy-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .privacy-content p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .privacy-content ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .privacy-content li {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: var(--card);
+            padding: 24px 32px;
+            border-left: 4px solid var(--fg);
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--fg);
+        }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
-        </button>
-        <div class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a></div>
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
     </nav>
 
-    <main id="main-content">
+    <div class="page">
         <section class="page-header">
             <h1>Privacy Policy</h1>
             <p>Your privacy is protected by law. This policy explains how I handle your personal and health information.</p>
         </section>
 
-        <section class="content-section">
-            <p class="last-updated">Last Updated: January 2026</p>
+        <section class="section" style="border-bottom: none;">
+            <div class="privacy-content">
+                <p class="last-updated">Last Updated: January 2026</p>
 
-            <h2>Notice of Privacy Practices</h2>
-            <p>This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.</p>
+                <h2>Notice of Privacy Practices</h2>
+                <p>This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.</p>
 
-            <div class="highlight-box">
-                <p><strong>Your Information. Your Rights. My Responsibilities.</strong><br>Your privacy is protected by state and federal law, including HIPAA.</p>
-            </div>
+                <div class="highlight-box">
+                    <p><strong>Your Information. Your Rights. My Responsibilities.</strong><br>Your privacy is protected by state and federal law, including HIPAA.</p>
+                </div>
 
-            <h2>Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Get a copy of your health and claims records</li>
-                <li>Ask me to correct your health records</li>
-                <li>Request confidential communications</li>
-                <li>Ask me to limit what I use or share</li>
-                <li>Get a list of those with whom I have shared your information</li>
-                <li>Get a copy of this privacy notice</li>
-                <li>Choose someone to act for you</li>
-                <li>File a complaint if you feel your rights are violated</li>
-            </ul>
+                <h2>Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Get a copy of your health and claims records</li>
+                    <li>Ask me to correct your health records</li>
+                    <li>Request confidential communications</li>
+                    <li>Ask me to limit what I use or share</li>
+                    <li>Get a list of those with whom I have shared your information</li>
+                    <li>Get a copy of this privacy notice</li>
+                    <li>Choose someone to act for you</li>
+                    <li>File a complaint if you feel your rights are violated</li>
+                </ul>
 
-            <h2>How I Use and Share Your Information</h2>
-            <p>I may use and share your information to:</p>
-            <ul>
-                <li>Treat you by providing, coordinating, or managing your mental health care</li>
-                <li>Run my organization and contact you when necessary</li>
-                <li>Pay for your services through your health plan</li>
-                <li>Administer your health plan</li>
-                <li>Help with public health and safety issues</li>
-                <li>Do research under strict federal rules</li>
-                <li>Comply with the law</li>
-                <li>Respond to organ and tissue donation requests</li>
-                <li>Work with a medical examiner or funeral director</li>
-                <li>Address workers' compensation, law enforcement, and other government requests</li>
-                <li>Respond to lawsuits and legal actions</li>
-            </ul>
+                <h2>How I Use and Share Your Information</h2>
+                <p>I may use and share your information to:</p>
+                <ul>
+                    <li>Treat you by providing, coordinating, or managing your mental health care</li>
+                    <li>Run my organization and contact you when necessary</li>
+                    <li>Pay for your services through your health plan</li>
+                    <li>Administer your health plan</li>
+                    <li>Help with public health and safety issues</li>
+                    <li>Do research under strict federal rules</li>
+                    <li>Comply with the law</li>
+                    <li>Address workers' compensation, law enforcement, and other government requests</li>
+                    <li>Respond to lawsuits and legal actions</li>
+                </ul>
 
-            <h2>Confidentiality in Therapy</h2>
-            <p>Everything you share in therapy is confidential with a few legal exceptions. I am required by law to break confidentiality if:</p>
-            <ul>
-                <li>There is immediate risk of harm to yourself or others</li>
-                <li>I suspect child abuse or neglect</li>
-                <li>I suspect elder abuse or neglect</li>
-                <li>I receive a court order or subpoena</li>
-            </ul>
-            <p>These exceptions are rare, and I will always discuss them with you if they become relevant to our work together.</p>
+                <h2>Confidentiality in Therapy</h2>
+                <p>Everything you share in therapy is confidential with a few legal exceptions. I am required by law to break confidentiality if:</p>
+                <ul>
+                    <li>There is immediate risk of harm to yourself or others</li>
+                    <li>I suspect child abuse or neglect</li>
+                    <li>I suspect elder abuse or neglect</li>
+                    <li>I receive a court order or subpoena</li>
+                </ul>
+                <p>These exceptions are rare, and I will always discuss them with you if they become relevant to our work together.</p>
 
-            <h2>My Responsibilities</h2>
-            <p>I am required by law to:</p>
-            <ul>
-                <li>Maintain the privacy and security of your protected health information</li>
-                <li>Follow the duties and privacy practices described in this notice</li>
-                <li>Not use or share your information other than as described here</li>
-                <li>Notify you if there is a breach of your health information</li>
-            </ul>
+                <h2>My Responsibilities</h2>
+                <p>I am required by law to:</p>
+                <ul>
+                    <li>Maintain the privacy and security of your protected health information</li>
+                    <li>Follow the duties and privacy practices described in this notice</li>
+                    <li>Not use or share your information other than as described here</li>
+                    <li>Notify you if there is a breach of your health information</li>
+                </ul>
 
-            <h2>Changes to This Policy</h2>
-            <p>I can change the terms of this notice, and the changes will apply to all information I have about you. The new notice will be available upon request.</p>
+                <h2>Changes to This Policy</h2>
+                <p>I can change the terms of this notice, and the changes will apply to all information I have about you. The new notice will be available upon request.</p>
 
-            <h2>Questions or Complaints</h2>
-            <p>If you have questions about this notice or would like to file a complaint, please contact me at:</p>
-            <ul>
-                <li><strong>Email:</strong> yourtherapyconnection@gmail.com</li>
-                <li><strong>Phone:</strong> (414) 736-6228</li>
-            </ul>
-            <p>You may also file a complaint with the U.S. Department of Health and Human Services Office for Civil Rights by sending a letter to 200 Independence Avenue, S.W., Washington, D.C. 20201, calling 1-877-696-6775, or visiting <a href="https://www.hhs.gov/ocr/privacy/hipaa/complaints/" target="_blank" rel="noopener">www.hhs.gov/ocr/privacy/hipaa/complaints/</a>.</p>
-            <p>I will not retaliate against you for filing a complaint.</p>
+                <h2>Questions or Complaints</h2>
+                <p>If you have questions about this notice or would like to file a complaint, please contact me:</p>
+                <ul>
+                    <li><strong>Email:</strong> yourtherapyconnection@gmail.com</li>
+                    <li><strong>Phone:</strong> (414) 736-6228</li>
+                </ul>
+                <p>You may also file a complaint with the U.S. Department of Health and Human Services Office for Civil Rights by sending a letter to 200 Independence Avenue, S.W., Washington, D.C. 20201, calling 1-877-696-6775, or visiting <a href="https://www.hhs.gov/ocr/privacy/hipaa/complaints/" target="_blank" rel="noopener" style="color: var(--fg); text-decoration: underline;">www.hhs.gov/ocr/privacy/hipaa/complaints/</a>.</p>
+                <p>I will not retaliate against you for filing a complaint.</p>
 
-            <div class="highlight-box">
-                <p><strong>Need Help?</strong><br>If you have questions or concerns about your privacy rights, please do not hesitate to contact me. Your trust is essential to our work together.</p>
+                <div class="highlight-box">
+                    <p><strong>Need Help?</strong><br>If you have questions or concerns about your privacy rights, please contact me. Your trust is essential to our work together.</p>
+                </div>
             </div>
         </section>
-    </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
-    <style>[x-cloak] { display: none !important; }</style>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
 </body>
 </html>

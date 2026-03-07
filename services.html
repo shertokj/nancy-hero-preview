@@ -3,131 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
-    <title>Services | Nancy Shertok, LCSW - Confidential Therapy for Professionals</title>
-    <meta name="description" content="Individual therapy, couples therapy, and telehealth services for professionals. Specializing in anxiety, burnout, relationship challenges. Licensed in GA, IL, WI.">
-    
-    <!-- Fonts -->
+    <meta name="theme-color" content="#f8f6f3">
+    <title>Services | Nancy Shertok, LCSW</title>
+    <meta name="description" content="Individual therapy, couples therapy, and telehealth services. Specializing in anxiety, burnout, and relationship challenges.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Shared Styles -->
-    <link rel="stylesheet" href="css/shared.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            color: #2D2D2D;
-            line-height: 1.8;
+        .services-types {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-bottom: 80px;
         }
-        .nav {
-            background: #FFFFFF;
-            padding: 20px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #E8E4DD;
-        }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #1A1A1A;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a {
-            color: #6B6B6B;
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: #1A1A1A; }
-        .page-header {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 96px 48px 64px;
+
+        .service-type {
+            background: var(--bg);
+            padding: 40px 32px;
             text-align: center;
         }
-        .page-header p {
-            font-size: 1.05rem;
-            color: #6B6B6B;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.8;
+
+        .service-type h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
         }
-        .services-section {
-            background: #FDFBF7;
-            padding: 64px 48px;
-        }
-        .services-grid {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            color: #6B6B6B;
-            line-height: 1.7;
+
+        .service-type p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
             margin-bottom: 24px;
         }
-        .specialties {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 96px 48px;
-        }
-        .specialty-grid {
+
+        .specialties-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
         }
+
         .specialty-item {
-            background: #FFFFFF;
-            padding: 20px 24px;
-            border-radius: 8px;
-            border: 1px solid #E8E4DD;
+            background: var(--bg);
+            padding: 24px;
             text-align: center;
-            color: #2D2D2D;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--fg);
+            transition: background 0.2s;
         }
-        .cta-section {
-            background: #FDFBF7;
-            padding: 96px 48px;
-            text-align: center;
+
+        .specialty-item:hover {
+            background: var(--card);
         }
-        .cta-content { max-width: 600px; margin: 0 auto; }
-        .cta-section p {
-            font-size: 1.05rem;
-            color: #6B6B6B;
-            margin-bottom: 32px;
+
+        @media (max-width: 900px) {
+            .services-types {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
-        .footer {
-            background: #1A1A1A;
-            color: #E8E4DD;
-            padding: 48px;
-            text-align: center;
+
+        @media (max-width: 600px) {
+            .services-types,
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        .footer a { color: #E8E4DD; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
-        .footer p { font-size: 0.9rem; color: #6B6B6B; }
     </style>
-    
-    <!-- Schema.org Service -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -144,71 +94,64 @@
             {
                 "@type": "Service",
                 "name": "Couples Therapy",
-                "description": "Research-based Gottman Method for improving communication and rebuilding connection.",
+                "description": "Research-based Gottman Method for improving communication.",
                 "provider": {"@type": "Psychologist", "name": "Nancy Shertok, LCSW"},
                 "offers": {"@type": "Offer", "price": "200", "priceCurrency": "USD"}
-            },
-            {
-                "@type": "Service",
-                "name": "Telehealth",
-                "description": "Secure video sessions available in Georgia, Illinois, and Wisconsin.",
-                "provider": {"@type": "Psychologist", "name": "Nancy Shertok, LCSW"}
             }
         ]
     }
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
-        </button>
-        <div class="nav-links"><a href="about.html">About</a><a href="services.html" aria-current="page">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a></div>
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html" aria-current="page">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
     </nav>
 
-    <main id="main-content">
+    <div class="page">
         <section class="page-header">
             <h1>Services</h1>
-            <p>One-size-fits-all does not work in therapy. I tailor my approach to your unique needs, providing practical tools and strategies you can use right away.</p>
+            <p>One-size-fits-all does not work in therapy. I tailor my approach to your needs, providing practical tools and strategies you can use right away.</p>
         </section>
 
-        <section class="services-section">
-            <div class="services-grid">
-                <div class="service-card">
+        <section class="section">
+            <div class="section-header">
+                <h2>Service Types</h2>
+            </div>
+            <div class="services-types">
+                <div class="service-type">
                     <h3>Individual Therapy</h3>
-                    <p>Whether you are dealing with anxiety, depression, grief, or life transitions, individual therapy provides a confidential space to explore, heal, and grow.</p>
-                    <a href="contact.html" class="btn-secondary">Schedule Session</a>
+                    <p>Whether dealing with anxiety, depression, grief, or life transitions, individual therapy provides a confidential space to explore, heal, and grow.</p>
+                    <a href="contact.html" class="btn-secondary">Schedule</a>
                 </div>
-                <div class="service-card">
+                <div class="service-type">
                     <h3>Couples Therapy</h3>
-                    <p>Using the Gottman Method, I help couples rebuild connection, improve communication, and rediscover intimacy. Research-based and results-driven.</p>
-                    <a href="contact.html" class="btn-secondary">Schedule Session</a>
+                    <p>Using the Gottman Method, I help couples rebuild connection, improve communication, and rediscover intimacy.</p>
+                    <a href="contact.html" class="btn-secondary">Schedule</a>
                 </div>
-                <div class="service-card">
+                <div class="service-type">
                     <h3>Telehealth</h3>
                     <p>Licensed in Georgia, Illinois, and Wisconsin. Secure video sessions from your home, office, or anywhere you feel comfortable.</p>
-                    <a href="contact.html" class="btn-secondary">Schedule Session</a>
+                    <a href="contact.html" class="btn-secondary">Schedule</a>
                 </div>
-                <div class="service-card">
+                <div class="service-type">
                     <h3>Deaf & Hard of Hearing</h3>
-                    <p>Accessible therapy for Deaf and Hard of Hearing clients. I provide a supportive environment for all communication needs.</p>
-                    <a href="contact.html" class="btn-secondary">Schedule Session</a>
+                    <p>Accessible therapy for Deaf and Hard of Hearing clients. A supportive environment for all communication needs.</p>
+                    <a href="contact.html" class="btn-secondary">Schedule</a>
                 </div>
             </div>
         </section>
 
-        <section class="specialties">
-            <h2>Specialty Areas</h2>
-            <div class="specialty-grid">
+        <section class="section">
+            <div class="section-header">
+                <h2>Specialty Areas</h2>
+            </div>
+            <div class="specialties-grid">
                 <div class="specialty-item">Anxiety & Depression</div>
                 <div class="specialty-item">Grief & Loss</div>
                 <div class="specialty-item">Life Transitions</div>
@@ -225,21 +168,22 @@
         </section>
 
         <section class="cta-section">
-            <div class="cta-content">
-                <h2>Schedule Your Free Consultation</h2>
-                <p>A 15-minute call to discuss your needs.</p>
-                <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
-            </div>
+            <h2>Ready to get started?</h2>
+            <p>Free 15-minute consultation to discuss your needs.</p>
+            <a href="contact.html" class="btn-primary">Schedule consultation</a>
         </section>
-    </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
-    <style>[x-cloak] { display: none !important; }</style>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
 </body>
 </html>

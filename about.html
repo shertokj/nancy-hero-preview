@@ -3,344 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
-    <title>About Nancy Shertok, LCSW | Confidential Therapy for Professionals</title>
-    <meta name="description" content="Nancy Shertok, LCSW has over 30 years of experience helping professionals navigate anxiety, burnout, and relationship challenges. Licensed in Georgia, Illinois, and Wisconsin.">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://psychotherapy123.com/about.html">
-    <meta property="og:title" content="About Nancy Shertok, LCSW">
-    <meta property="og:description" content="30+ years experience helping professionals. Direct, collaborative approach.">
-    
-    <!-- Fonts -->
+    <meta name="theme-color" content="#f8f6f3">
+    <title>About | Nancy Shertok, LCSW</title>
+    <meta name="description" content="30+ years helping professionals navigate anxiety, burnout, and relationship challenges. Licensed in Georgia, Illinois, and Wisconsin.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Shared Styles -->
-    <link rel="stylesheet" href="css/shared.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            color: #2D2D2D;
-            line-height: 1.8;
-        }
-
-        /* Navigation */
-        .nav {
-            background: #FFFFFF;
-            padding: 20px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #E8E4DD;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #1A1A1A;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: #6B6B6B;
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #1A1A1A;
-        }
-
-        /* About Hero */
         .about-hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 96px 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
-            align-items: center;
+            padding: 140px 0 80px;
+            border-bottom: 1px solid var(--border);
+            align-items: start;
+        }
+
+        .about-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 32px;
         }
 
         .about-content p {
             font-size: 1.05rem;
-            color: #2D2D2D;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 24px;
         }
 
         .about-photo {
             width: 100%;
-            aspect-ratio: 3/4;
-            background: #FDFBF7;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .about-photo img {
-            width: 100%;
-            height: 100%;
+            aspect-ratio: 4/5;
             object-fit: cover;
+            background: var(--border);
         }
 
-        /* Credentials Section */
-        .credentials {
-            background: #FDFBF7;
-            padding: 96px 48px;
+        .approaches-section {
+            padding: 80px 0;
         }
 
-        .credentials-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .credential-grid {
+        .approaches-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
         }
 
-        .credential-item {
-            background: #FFFFFF;
+        .approach-item {
+            background: var(--bg);
             padding: 32px;
-            border-radius: 8px;
-            border: 1px solid #E8E4DD;
-            text-align: center;
         }
 
-        .credential-item h3 {
-            font-size: 0.85rem;
-            color: #6B6B6B;
+        .approach-item h3 {
+            font-size: 1.1rem;
             margin-bottom: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .credential-item p {
-            font-size: 1.05rem;
-            color: #1A1A1A;
-            font-weight: 500;
-        }
-
-        .credential-item a {
-            color: #1A1A1A;
-            text-decoration: none;
-        }
-
-        .credential-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Approaches Section */
-        .approaches {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 96px 48px;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
         }
 
         .approach-item p {
-            font-size: 0.95rem;
-            color: #6B6B6B;
+            color: var(--muted);
+            font-size: 0.9rem;
             line-height: 1.7;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: #FDFBF7;
-            padding: 96px 48px;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-section p {
-            font-size: 1.05rem;
-            color: #6B6B6B;
-            margin-bottom: 32px;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1A1A1A;
-            color: #E8E4DD;
-            padding: 48px;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #E8E4DD;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        .footer p {
-            font-size: 0.9rem;
-            color: #6B6B6B;
-        }
-
-        @media (max-width: 968px) {
+        @media (max-width: 900px) {
             .about-hero {
                 grid-template-columns: 1fr;
-                gap: 48px;
-                padding: 64px 24px;
+                gap: 40px;
             }
 
             .about-photo {
-                order: -1;
                 max-width: 400px;
                 margin: 0 auto;
             }
+
+            .approaches-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-    
-    <!-- Schema.org Structured Data -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Nancy Shertok",
         "jobTitle": "Licensed Clinical Social Worker",
-        "description": "Psychotherapist with 30+ years experience helping professionals navigate anxiety, burnout, and relationship challenges.",
-        "url": "https://psychotherapy123.com",
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "New York University"
-        },
-        "knowsAbout": ["Cognitive Behavioral Therapy", "Gottman Method", "Psychodynamic Therapy", "Anxiety", "Burnout", "Relationship Issues"]
+        "description": "Psychotherapist with 30+ years experience helping professionals.",
+        "alumniOf": {"@type": "CollegeOrUniversity", "name": "New York University"},
+        "knowsAbout": ["Cognitive Behavioral Therapy", "Gottman Method", "Psychodynamic Therapy", "Anxiety", "Burnout"]
     }
     </script>
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon">
-                <span x-show="!mobileMenuOpen">&#9776;</span>
-                <span x-show="mobileMenuOpen" x-cloak>&#10005;</span>
-            </span>
-        </button>
-        
-        <div class="nav-links" aria-hidden="false">
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
             <a href="about.html" aria-current="page">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
             <a href="payment.html">Payment</a>
         </div>
-        
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
-        </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- About Hero -->
+    <div class="page">
         <section class="about-hero">
             <div class="about-content">
                 <h1>About Nancy</h1>
-                <p>
-                    I have spent over 30 years helping professionals navigate anxiety, burnout, 
-                    and relationship challenges. My approach is direct, collaborative, and tailored 
-                    to the unique pressures you face.
-                </p>
-                <p>
-                    I graduated from New York University and am licensed in Georgia, Illinois, 
-                    and Wisconsin. What matters more than credentials is this: I have helped 
-                    hundreds of clients feel like themselves again.
-                </p>
-                <p>
-                    I will not just nod and ask how that makes you feel. I will give you 
-                    practical tools and strategies you can use right away.
-                </p>
+                <p>I have spent over 30 years helping professionals navigate anxiety, burnout, and relationship challenges. My approach is direct and collaborative - I will give you practical tools and strategies you can use right away.</p>
+                <p>I graduated from New York University and am licensed in Georgia, Illinois, and Wisconsin. What matters more than credentials is this: I have helped hundreds of clients feel like themselves again.</p>
             </div>
-            <div class="about-photo">
-                <img src="nancy-photo.jpg" alt="Nancy Shertok, LCSW - Professional portrait">
-            </div>
+            <img src="nancy-photo.jpg" alt="Nancy Shertok, LCSW" class="about-photo">
         </section>
 
-        <!-- Credentials Section -->
-        <section class="credentials">
-            <div class="credentials-content">
-                <h2>Credentials & Licenses</h2>
-                <div class="credential-grid">
-                    <div class="credential-item">
-                        <h3>Education</h3>
-                        <p>MSW, New York University</p>
-                    </div>
-                    <div class="credential-item">
-                        <h3>Licenses</h3>
-                        <p>LCSW (GA, IL, WI)</p>
-                    </div>
-                    <div class="credential-item">
-                        <h3>Experience</h3>
-                        <p>30+ Years Practice</p>
-                    </div>
-                    <div class="credential-item">
-                        <h3>Verified</h3>
-                        <p><a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener">Psychology Today</a></p>
-                    </div>
-                </div>
+        <div class="credentials-bar">
+            <div class="credential">
+                <div class="credential-label">EDUCATION</div>
+                <div class="credential-value">MSW, NYU</div>
             </div>
-        </section>
+            <div class="credential">
+                <div class="credential-label">LICENSES</div>
+                <div class="credential-value">GA, IL, WI</div>
+            </div>
+            <div class="credential">
+                <div class="credential-label">EXPERIENCE</div>
+                <div class="credential-value">30+ Years</div>
+            </div>
+            <div class="credential">
+                <div class="credential-label">VERIFIED</div>
+                <div class="credential-value"><a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Psychology Today</a></div>
+            </div>
+        </div>
 
-        <!-- Approaches Section -->
-        <section class="approaches">
-            <h2>Treatment Approaches</h2>
-            <div class="approach-grid">
+        <section class="approaches-section">
+            <div class="section-header">
+                <h2>Treatment Approaches</h2>
+            </div>
+            <div class="approaches-grid">
                 <div class="approach-item">
                     <h3>Cognitive Behavioral Therapy</h3>
                     <p>Identify and change negative thought patterns that affect your emotions and behavior.</p>
@@ -360,28 +162,23 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section class="cta-section">
-            <div class="cta-content">
-                <h2>Schedule Your Free Consultation</h2>
-                <p>A 15-minute call to determine if we are a good fit.</p>
-                <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
-            </div>
+            <h2>Ready to get started?</h2>
+            <p>Free 15-minute consultation to see if we are a good fit.</p>
+            <a href="contact.html" class="btn-primary">Schedule consultation</a>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="payment.html">Payment</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
-    <style>[x-cloak] { display: none !important; }</style>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
 </body>
 </html>

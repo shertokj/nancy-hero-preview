@@ -3,105 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#f8f6f3">
     <title>Payment & Insurance | Nancy Shertok, LCSW</title>
-    <meta name="description" content="Transparent pricing for therapy services. Individual $175, Couples $200. Insurance accepted: Aetna, BCBS, Cigna, United. Superbills provided.">
-    
+    <meta name="description" content="Transparent pricing for therapy services. Individual $175, Couples $200. Insurance accepted. Superbills provided.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="css/shared.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #2D2D2D; line-height: 1.8; }
-        .nav { background: #FFFFFF; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E8E4DD; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; text-decoration: none; font-weight: 600; letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: #6B6B6B; text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: #1A1A1A; }
-        .page-header { max-width: 900px; margin: 0 auto; padding: 96px 48px 64px; text-align: center; }
-        .page-header p { font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto; line-height: 1.8; }
-        .fees-section { background: #FDFBF7; padding: 64px 48px; }
-        .fees-content { max-width: 900px; margin: 0 auto; }
-        .fees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px; }
-        .fee-card { background: #FFFFFF; padding: 40px 32px; border-radius: 8px; border: 1px solid #E8E4DD; text-align: center; }
-        .fee-card h3 { font-size: 1.1rem; color: #1A1A1A; margin-bottom: 16px; font-weight: 600; }
-        .fee-card .price { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #1A1A1A; margin-bottom: 8px; }
-        .fee-card .duration { font-size: 0.9rem; color: #6B6B6B; }
-        .fees-note { text-align: center; font-size: 0.95rem; color: #6B6B6B; padding: 24px; background: #FFFFFF; border-radius: 8px; border: 1px solid #E8E4DD; }
-        .insurance-section { max-width: 900px; margin: 0 auto; padding: 96px 48px; }
-        .insurance-section > p { text-align: center; font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto 48px; }
-        .insurance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
-        .insurance-item { background: #FDFBF7; padding: 20px 24px; border-radius: 8px; text-align: center; color: #1A1A1A; font-size: 0.95rem; font-weight: 500; }
-        .superbill-note { background: #FDFBF7; padding: 32px; border-radius: 8px; border-left: 4px solid #1A1A1A; }
-        .superbill-note h3 { font-size: 1.1rem; color: #1A1A1A; margin-bottom: 12px; font-weight: 600; }
-        .superbill-note p { font-size: 0.95rem; color: #6B6B6B; line-height: 1.7; }
-        .payment-section { background: #FDFBF7; padding: 64px 48px; }
-        .payment-content { max-width: 900px; margin: 0 auto; text-align: center; }
-        .payment-methods { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-        .payment-method { background: #FFFFFF; padding: 24px 40px; border-radius: 8px; border: 1px solid #E8E4DD; font-size: 0.95rem; color: #1A1A1A; font-weight: 500; }
-        .cta-section { padding: 96px 48px; text-align: center; }
-        .cta-content { max-width: 600px; margin: 0 auto; }
-        .cta-section p { font-size: 1.05rem; color: #6B6B6B; margin-bottom: 32px; }
-        .footer { background: #1A1A1A; color: #E8E4DD; padding: 48px; text-align: center; }
-        .footer a { color: #E8E4DD; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
-        .footer p { font-size: 0.9rem; color: #6B6B6B; }
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-bottom: 48px;
+        }
+
+        .fee-card {
+            background: var(--bg);
+            padding: 48px 32px;
+            text-align: center;
+        }
+
+        .fee-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .fee-card .price {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .fee-card .duration {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .fees-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--muted);
+            padding: 24px;
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-bottom: 48px;
+        }
+
+        .insurance-item {
+            background: var(--bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .superbill-box {
+            background: var(--card);
+            padding: 32px;
+            border-left: 4px solid var(--fg);
+        }
+
+        .superbill-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .superbill-box p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            background: var(--card);
+            padding: 16px 32px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .fees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insurance-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .insurance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
-        </button>
-        <div class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html" aria-current="page">Payment</a></div>
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html" aria-current="page">Payment</a>
         </div>
     </nav>
 
-    <main id="main-content">
+    <div class="page">
         <section class="page-header">
             <h1>Payment & Insurance</h1>
             <p>Transparent pricing with flexible payment options. I accept insurance and provide superbills for out-of-network reimbursement.</p>
         </section>
 
-        <section class="fees-section">
-            <div class="fees-content">
-                <div class="fees-grid">
-                    <div class="fee-card">
-                        <h3>Individual Session</h3>
-                        <p class="price">$175</p>
-                        <p class="duration">50 minutes</p>
-                    </div>
-                    <div class="fee-card">
-                        <h3>Couples Session</h3>
-                        <p class="price">$200</p>
-                        <p class="duration">50 minutes</p>
-                    </div>
-                    <div class="fee-card">
-                        <h3>Initial Consultation</h3>
-                        <p class="price">Free</p>
-                        <p class="duration">15 minutes</p>
-                    </div>
-                </div>
-                <p class="fees-note">Session fees are due at the time of service. I accept all major credit cards, HSA/FSA cards, and cash.</p>
+        <section class="section">
+            <div class="section-header">
+                <h2>Session Fees</h2>
             </div>
+            <div class="fees-grid">
+                <div class="fee-card">
+                    <h3>Individual Session</h3>
+                    <p class="price">$175</p>
+                    <p class="duration">50 minutes</p>
+                </div>
+                <div class="fee-card">
+                    <h3>Couples Session</h3>
+                    <p class="price">$200</p>
+                    <p class="duration">50 minutes</p>
+                </div>
+                <div class="fee-card">
+                    <h3>Initial Consultation</h3>
+                    <p class="price">Free</p>
+                    <p class="duration">15 minutes</p>
+                </div>
+            </div>
+            <p class="fees-note">Session fees are due at the time of service. I accept all major credit cards, HSA/FSA cards, and cash.</p>
         </section>
 
-        <section class="insurance-section">
-            <h2>Insurance Accepted</h2>
-            <p>I am in-network with the following insurance providers. Please contact your insurance company to verify your mental health benefits before our first session.</p>
+        <section class="section">
+            <div class="section-header">
+                <h2>Insurance Accepted</h2>
+            </div>
+            <p style="text-align: center; color: var(--muted); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Please contact your insurance company to verify your mental health benefits before our first session.
+            </p>
             <div class="insurance-grid">
                 <div class="insurance-item">Aetna</div>
                 <div class="insurance-item">Blue Cross Blue Shield</div>
@@ -110,40 +172,41 @@
                 <div class="insurance-item">Oscar</div>
                 <div class="insurance-item">Oxford</div>
             </div>
-            <div class="superbill-note">
+            <div class="superbill-box">
                 <h3>Out-of-Network Benefits</h3>
-                <p>If I am not in-network with your insurance, I can provide a superbill (detailed receipt) that you can submit to your insurance company for potential reimbursement. Many plans offer out-of-network benefits that cover 50-80% of session costs.</p>
+                <p>If I am not in-network with your insurance, I can provide a superbill (detailed receipt) that you can submit for potential reimbursement. Many plans offer out-of-network benefits that cover 50-80% of session costs.</p>
             </div>
         </section>
 
-        <section class="payment-section">
-            <div class="payment-content">
+        <section class="section" style="border-bottom: none;">
+            <div class="section-header" style="justify-content: center;">
                 <h2>Payment Methods</h2>
-                <div class="payment-methods">
-                    <div class="payment-method">Credit Card</div>
-                    <div class="payment-method">Debit Card</div>
-                    <div class="payment-method">HSA / FSA</div>
-                    <div class="payment-method">Cash</div>
-                </div>
+            </div>
+            <div class="payment-methods">
+                <div class="payment-method">Credit Card</div>
+                <div class="payment-method">Debit Card</div>
+                <div class="payment-method">HSA / FSA</div>
+                <div class="payment-method">Cash</div>
             </div>
         </section>
 
         <section class="cta-section">
-            <div class="cta-content">
-                <h2>Questions About Payment?</h2>
-                <p>I am happy to discuss fees, insurance, and payment options during your free consultation.</p>
-                <a href="contact.html" class="btn-primary">Schedule Free Consultation</a>
-            </div>
+            <h2>Questions about payment?</h2>
+            <p>I am happy to discuss fees, insurance, and payment options during your free consultation.</p>
+            <a href="contact.html" class="btn-primary">Schedule consultation</a>
         </section>
-    </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
-    <style>[x-cloak] { display: none !important; }</style>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
 </body>
 </html>
