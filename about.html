@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
-    <title>About | Nancy Shertok, LCSW</title>
-    <meta name="description" content="30+ years helping professionals navigate anxiety, burnout, and relationship challenges. Licensed in Georgia, Illinois, and Wisconsin.">
+    <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
+    <meta name="description" content="30+ years helping people navigate anxiety, burnout, and relationship challenges. Licensed in Georgia, Illinois, and Wisconsin.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,25 +14,35 @@
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
+        /* Soft background */
+        body {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
+            background-attachment: fixed;
+        }
+
+        .page {
+            background: transparent;
+        }
+
         .about-hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            padding: 140px 0 80px;
+            gap: 60px;
+            padding: 100px 0 60px;
             border-bottom: 1px solid var(--border);
             align-items: start;
         }
 
         .about-content h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 32px;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin-bottom: 24px;
         }
 
         .about-content p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #555;
-            line-height: 1.9;
-            margin-bottom: 24px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         .about-photo {
@@ -43,7 +53,7 @@
         }
 
         .approaches-section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .approaches-grid {
@@ -55,24 +65,28 @@
 
         .approach-item {
             background: var(--bg);
-            padding: 32px;
+            padding: 28px;
         }
 
         .approach-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
         }
 
         .approach-item p {
             color: var(--muted);
             font-size: 0.9rem;
-            line-height: 1.7;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            padding: 60px 0;
         }
 
         @media (max-width: 900px) {
             .about-hero {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 32px;
             }
 
             .about-photo {
@@ -113,11 +127,11 @@
     <div class="page">
         <section class="about-hero">
             <div class="about-content">
-                <h1>About Nancy</h1>
-                <p>I have spent over 30 years helping professionals navigate anxiety, burnout, and relationship challenges. My approach is direct and collaborative - I will give you practical tools and strategies you can use right away.</p>
-                <p>I graduated from New York University and am licensed in Georgia, Illinois, and Wisconsin. What matters more than credentials is this: I have helped hundreds of clients feel like themselves again.</p>
+                <h1>Nancy Shertok, MSW, LCSW</h1>
+                <p>Nancy Shertok graduated from New York University (NYU) and has been in private practice for over thirty years. She has a wealth of experience as a psychotherapist, marriage counselor, and life coach. Clients appreciate her direct approach yet compassionate style, to renew hope and offer effective solutions.</p>
+                <p>I have spent over 30 years helping people navigate anxiety, burnout, and relationship challenges. My approach is direct and collaborative - I will give you practical tools and strategies you can use right away.</p>
             </div>
-            <img src="nancy-photo.jpg" alt="Nancy Shertok, LCSW" class="about-photo">
+            <img src="nancy-photo.jpg" alt="Nancy Shertok, MSW, LCSW" class="about-photo">
         </section>
 
         <div class="credentials-bar">
@@ -166,7 +180,7 @@
         <section class="cta-section">
             <h2>Ready to get started?</h2>
             <p>Free 15-minute consultation to see if we are a good fit.</p>
-            <a href="contact.html" class="btn-primary">Schedule consultation</a>
+            <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
         <footer class="footer">

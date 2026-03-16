@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
-    <title>Services | Nancy Shertok, LCSW</title>
+    <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
     <meta name="description" content="Individual therapy, couples therapy, and telehealth services. Specializing in anxiety, burnout, and relationship challenges.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,30 +14,53 @@
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
+        /* Soft background */
+        body {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
+            background-attachment: fixed;
+        }
+
+        .page {
+            background: transparent;
+        }
+
         .services-types {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
             background: var(--border);
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .service-type {
             background: var(--bg);
-            padding: 40px 32px;
+            padding: 32px 28px;
             text-align: center;
         }
 
         .service-type h3 {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
         }
 
         .service-type p {
             color: var(--muted);
             font-size: 0.9rem;
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+        }
+
+        .service-type ul {
+            text-align: left;
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .service-type li {
+            margin-bottom: 6px;
         }
 
         .specialties-grid {
@@ -49,7 +72,7 @@
 
         .specialty-item {
             background: var(--bg);
-            padding: 24px;
+            padding: 20px;
             text-align: center;
             font-size: 0.9rem;
             color: var(--fg);
@@ -58,6 +81,18 @@
 
         .specialty-item:hover {
             background: var(--card);
+        }
+
+        .page-header {
+            padding: 100px 0 40px;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .cta-section {
+            padding: 60px 0;
         }
 
         @media (max-width: 900px) {
@@ -142,7 +177,11 @@
                 </div>
                 <div class="service-type">
                     <h3>Deaf & Hard of Hearing</h3>
-                    <p>Accessible therapy for Deaf and Hard of Hearing clients. A supportive environment for all communication needs.</p>
+                    <ul>
+                        <li>Providing counseling to Deaf, hard of hearing, and hearing clients.</li>
+                        <li>Fluent in ASL with a <strong>SUPERIOR</strong> Sign Language Proficiency Interview (SLPI) rating.</li>
+                        <li>Counseling sessions are offered in American Sign Language (ASL) to Deaf clients.</li>
+                    </ul>
                     <a href="contact.html" class="btn-secondary">Schedule</a>
                 </div>
             </div>
@@ -171,7 +210,7 @@
         <section class="cta-section">
             <h2>Ready to get started?</h2>
             <p>Free 15-minute consultation to discuss your needs.</p>
-            <a href="contact.html" class="btn-primary">Schedule consultation</a>
+            <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
         <footer class="footer">

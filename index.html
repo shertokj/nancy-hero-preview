@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
-    <title>Nancy Shertok, LCSW | Therapy for Professionals</title>
-    <meta name="description" content="You check all the boxes. You are not supposed to struggle. Direct therapy for high-functioning professionals in Georgia, Illinois, and Wisconsin.">
+    <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
+    <meta name="description" content="A place to talk. A place to change. Psychotherapy for clarity, resilience, and real life. Licensed in Georgia, Illinois, and Wisconsin.">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://psychotherapy123.com/">
-    <meta property="og:title" content="Nancy Shertok, LCSW | Therapy for Professionals">
-    <meta property="og:description" content="You check all the boxes. You are not supposed to struggle.">
+    <meta property="og:title" content="Nancy Shertok, MSW, LCSW - Psychotherapist">
+    <meta property="og:description" content="A place to talk. A place to change. Psychotherapy for clarity, resilience, and real life.">
     <meta property="og:image" content="https://psychotherapy123.com/nancy-photo.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,21 @@
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
+        /* Soft background */
+        body {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
+            background-attachment: fixed;
+        }
+
+        .page {
+            background: transparent;
+        }
+
         .hero {
-            padding: 140px 0 80px;
+            padding: 100px 0 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 60px;
             align-items: start;
         }
 
@@ -33,17 +43,17 @@
         }
 
         .hero-eyebrow {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #999;
-            margin-bottom: 24px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
 
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             line-height: 1.1;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
         }
 
         .hero-title em {
@@ -51,11 +61,18 @@
             color: var(--accent);
         }
 
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--muted);
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             max-width: 480px;
         }
 
@@ -71,8 +88,8 @@
         }
 
         .hero-meta {
-            margin-top: 24px;
-            padding-top: 24px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -87,8 +104,8 @@
         .intro-section {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            padding: 80px 0;
+            gap: 48px;
+            padding: 60px 0;
             border-bottom: 1px solid var(--border);
         }
 
@@ -100,9 +117,9 @@
         }
 
         .intro-text {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #555;
-            line-height: 1.9;
+            line-height: 1.8;
             max-width: 600px;
         }
 
@@ -115,7 +132,7 @@
 
         .service-item {
             background: var(--bg);
-            padding: 40px;
+            padding: 32px;
             transition: background 0.3s;
         }
 
@@ -127,25 +144,42 @@
             font-size: 0.7rem;
             color: #999;
             letter-spacing: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .service-title {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
         }
 
         .service-desc {
             font-size: 0.9rem;
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.6;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .cta-section {
+            padding: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
         }
 
         @media (max-width: 900px) {
             .hero {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                padding-top: 100px;
+                gap: 32px;
+                padding-top: 80px;
             }
 
             .hero-photo {
@@ -160,7 +194,7 @@
 
             .intro-section {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 20px;
             }
 
             .services-grid {
@@ -204,15 +238,16 @@
     <div class="page">
         <section class="hero">
             <div class="hero-left">
-                <p class="hero-eyebrow">Psychotherapy for professionals</p>
-                <h1 class="hero-title">You check all<br>the boxes.<br><em>You're not supposed<br>to struggle.</em></h1>
+                <p class="hero-eyebrow">Nancy Shertok, MSW, LCSW</p>
+                <h1 class="hero-title">A place to talk.<br><em>A place to change.</em></h1>
+                <p class="hero-tagline">Psychotherapy for clarity, resilience, and real life.</p>
                 <p class="hero-subtitle">
-                    I work with high-functioning professionals navigating anxiety, burnout, and relationship challenges. Practical tools you can use right away.
+                    You check all the boxes. You are not supposed to struggle. <em>But sometimes you do.</em> I work with people navigating anxiety, burnout, and relationship challenges. Practical tools you can use right away.
                 </p>
-                <a href="contact.html" class="btn-primary">Schedule consultation</a>
+                <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
             </div>
             <div class="hero-right">
-                <img src="nancy-photo.jpg" alt="Nancy Shertok, LCSW" class="hero-photo">
+                <img src="nancy-photo.jpg" alt="Nancy Shertok, MSW, LCSW" class="hero-photo">
                 <div class="hero-meta">
                     <div><span>Georgia</span> · Illinois · Wisconsin</div>
                     <div><span>$175-200</span> per session</div>
@@ -272,7 +307,7 @@
         <section class="cta-section">
             <h2>Stop going through the motions. Start feeling like yourself again.</h2>
             <p>Free 15-minute consultation. No commitment required.</p>
-            <a href="contact.html" class="btn-primary">Schedule consultation</a>
+            <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
         <footer class="footer">
