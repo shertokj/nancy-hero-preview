@@ -207,27 +207,12 @@
                 <h2 class="form-section-title">Session Preferences</h2>
 
                 <div class="form-group">
-                    <label for="insurance">Insurance Provider (if applicable)</label>
-                    <select id="insurance" name="insurance" x-model="form.insurance">
-                        <option value="">Select or leave blank for self-pay</option>
-                        <option value="Aetna">Aetna</option>
-                        <option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option>
-                        <option value="Cigna">Cigna</option>
-                        <option value="United Healthcare">United Healthcare</option>
-                        <option value="Oscar">Oscar</option>
-                        <option value="Oxford">Oxford</option>
-                        <option value="Other">Other</option>
-                        <option value="Self-Pay">Self-Pay</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label for="additional_info">Anything else you would like me to know?</label>
                     <textarea id="additional_info" name="additional_info" x-model="form.additional_info" placeholder="Any additional information, questions, or concerns..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-full">Submit Intake Form</button>
-                <p class="form-note">This information is confidential and protected by HIPAA. Please bring a valid ID and insurance card to your first session.</p>
+                <p class="form-note">This information is confidential and protected by HIPAA. Please bring a valid ID to your first session.</p>
             </form>
         </section>
 
@@ -259,7 +244,7 @@
                     emergency_relationship: '',
                     concerns: [],
                     goals: '',
-                    insurance: '',
+
                     additional_info: ''
                 },
                 concerns: [

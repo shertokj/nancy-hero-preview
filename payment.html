@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
     <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
-    <meta name="description" content="Transparent pricing for therapy services. Individual $175, Couples $200. Insurance accepted. Superbills provided.">
+    <meta name="description" content="Transparent pricing for therapy services. Individual $175, Couples $200.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
-        /* Soft background */
         .page {
             background: transparent;
         }
@@ -58,38 +57,6 @@
             border: 1px solid var(--border);
         }
 
-        .insurance-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1px;
-            background: var(--border);
-            margin-bottom: 48px;
-        }
-
-        .insurance-item {
-            background: var(--bg);
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .superbill-box {
-            background: var(--card);
-            padding: 32px;
-            border-left: 4px solid var(--fg);
-        }
-
-        .superbill-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .superbill-box p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
         .payment-methods {
             display: flex;
             justify-content: center;
@@ -107,16 +74,6 @@
         @media (max-width: 900px) {
             .fees-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .insurance-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .insurance-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -136,8 +93,8 @@
 
     <main class="page" id="main">
         <section class="page-header">
-            <h1>Payment & Insurance</h1>
-            <p>Transparent pricing with flexible payment options. I accept insurance and provide superbills for out-of-network reimbursement.</p>
+            <h1>Payment</h1>
+            <p>Transparent pricing with flexible payment options.</p>
         </section>
 
         <section class="section">
@@ -164,27 +121,6 @@
             <p class="fees-note">Session fees are due at the time of service. I accept all major credit cards, HSA/FSA cards, and cash.</p>
         </section>
 
-        <section class="section">
-            <div class="section-header">
-                <h2>Insurance Accepted</h2>
-            </div>
-            <p style="text-align: center; color: var(--muted); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Please contact your insurance company to verify your mental health benefits before our first session.
-            </p>
-            <div class="insurance-grid">
-                <div class="insurance-item">Aetna</div>
-                <div class="insurance-item">Blue Cross Blue Shield</div>
-                <div class="insurance-item">Cigna</div>
-                <div class="insurance-item">United Healthcare</div>
-                <div class="insurance-item">Oscar</div>
-                <div class="insurance-item">Oxford</div>
-            </div>
-            <div class="superbill-box">
-                <h3>Out-of-Network Benefits</h3>
-                <p>If I am not in-network with your insurance, I can provide a superbill (detailed receipt) that you can submit for potential reimbursement. Many plans offer out-of-network benefits that cover 50-80% of session costs.</p>
-            </div>
-        </section>
-
         <section class="section" style="border-bottom: none;">
             <div class="section-header" style="justify-content: center;">
                 <h2>Payment Methods</h2>
@@ -199,7 +135,7 @@
 
         <section class="cta-section">
             <h2>Questions about payment?</h2>
-            <p>I am happy to discuss fees, insurance, and payment options during your free consultation.</p>
+            <p>I am happy to discuss fees and payment options during your free consultation.</p>
             <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
@@ -209,11 +145,10 @@
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
                 <a href="faq.html">FAQ</a>
-            <a href="payment.html">Payment</a>
-                <a href="faq.html">FAQ</a>
+                <a href="payment.html">Payment</a>
                 <a href="privacy-policy.html">Privacy</a>
             </div>
-            <div>Nancy Shertok, LCSW · 2026</div>
+            <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
     </main>
 </body>

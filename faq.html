@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
     <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
-    <meta name="description" content="Frequently asked questions about therapy, insurance, scheduling, and what to expect.">
+    <meta name="description" content="Frequently asked questions about therapy, scheduling, and what to expect.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,14 +109,6 @@
             },
             {
                 "@type": "Question",
-                "name": "Do you accept insurance?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. I am in-network with Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Oscar, and Oxford."
-                }
-            },
-            {
-                "@type": "Question",
                 "name": "Do you offer telehealth?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -144,7 +136,7 @@
     <main class="page" id="main">
         <section class="page-header">
             <h1>Frequently Asked Questions</h1>
-            <p>Answers to common questions about therapy, insurance, and what to expect.</p>
+            <p>Answers to common questions about therapy and what to expect.</p>
         </section>
 
         <section class="section" style="border-bottom: none;" x-data="{ expanded: null }">
@@ -183,34 +175,14 @@
             </div>
 
             <div class="faq-category">
-                <div class="faq-category-title">Insurance & Payment</div>
+                <div class="faq-category-title">Payment</div>
 
                 <div class="faq-item">
                     <button class="faq-question" @click="expanded = expanded === 'q4' ? null : 'q4'">
-                        <span>Do you accept insurance?</span>
+                        <span>What forms of payment do you accept?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q4' }">&#9660;</span>
                     </button>
                     <div class="faq-answer" x-show="expanded === 'q4'" x-collapse>
-                        <p>Yes. I am in-network with Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Oscar, and Oxford. I recommend contacting your insurance company before our first session to verify your mental health benefits.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q5' ? null : 'q5'">
-                        <span>What if you are not in-network with my insurance?</span>
-                        <span class="faq-icon" :class="{ 'rotated': expanded === 'q5' }">&#9660;</span>
-                    </button>
-                    <div class="faq-answer" x-show="expanded === 'q5'" x-collapse>
-                        <p>I can provide a superbill (detailed receipt) that you can submit to your insurance company for potential out-of-network reimbursement. Many plans cover 50-80% of session costs through out-of-network benefits.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q6' ? null : 'q6'">
-                        <span>What forms of payment do you accept?</span>
-                        <span class="faq-icon" :class="{ 'rotated': expanded === 'q6' }">&#9660;</span>
-                    </button>
-                    <div class="faq-answer" x-show="expanded === 'q6'" x-collapse>
                         <p>I accept all major credit cards, debit cards, HSA/FSA cards, and cash. Payment is due at the time of service.</p>
                     </div>
                 </div>
