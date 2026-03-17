@@ -1,4 +1,5 @@
 /* Magazine Design System for Nancy Shertok, LCSW */
+@import "shared.css";
 
 :root {
     --bg: #f8f6f3;
