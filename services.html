@@ -15,11 +15,6 @@
 
     <style>
         /* Soft background */
-        body {
-            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
-            background-attachment: fixed;
-        }
-
         .page {
             background: transparent;
         }
@@ -134,18 +129,20 @@
     </script>
 </head>
 <body>
-    <nav class="nav">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header><nav class="nav">
         <a href="index.html" class="nav-name">Nancy Shertok</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html" aria-current="page">Services</a>
             <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
         </div>
-    </nav>
+    </nav></header>
 
-    <div class="page">
+    <main class="page" id="main">
         <section class="page-header">
             <h1>Services</h1>
             <p>One-size-fits-all does not work in therapy. I tailor my approach to your needs, providing practical tools and strategies you can use right away.</p>
@@ -225,12 +222,13 @@
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+            <a href="payment.html">Payment</a>
                 <a href="faq.html">FAQ</a>
                 <a href="privacy-policy.html">Privacy</a>
             </div>
             <div>Nancy Shertok, LCSW · 2026</div>
         </footer>
-    </div>
+    </main>
 </body>
 </html>

@@ -20,12 +20,6 @@
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
-        /* Soft background */
-        body {
-            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
-            background-attachment: fixed;
-        }
-
         .page {
             background: transparent;
         }
@@ -52,8 +46,8 @@
 
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 16px;
+            line-height: 1.2;
+            margin-bottom: 24px;
         }
 
         .hero-title em {
@@ -214,18 +208,20 @@
     </script>
 </head>
 <body>
-    <nav class="nav">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header><nav class="nav">
         <a href="index.html" class="nav-name">Nancy Shertok</a>
         <div class="nav-links">
             <a href="index.html" aria-current="page">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
         </div>
-    </nav>
+    </nav></header>
 
-    <div class="page">
+    <main class="page" id="main">
         <section class="hero">
             <div class="hero-left">
                 <p class="hero-eyebrow">Nancy Shertok, MSW, LCSW</p>
@@ -303,12 +299,13 @@
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+            <a href="payment.html">Payment</a>
                 <a href="faq.html">FAQ</a>
                 <a href="privacy-policy.html">Privacy</a>
             </div>
             <div>Nancy Shertok, LCSW · 2026</div>
         </footer>
-    </div>
+    </main>
 </body>
 </html>
