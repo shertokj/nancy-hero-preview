@@ -3,74 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#f8f6f3">
     <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
     <meta name="description" content="Complete the client intake form before your first therapy session with Nancy Shertok, LCSW. Your information is kept confidential.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="css/shared.css">
-    
+    <link rel="stylesheet" href="css/magazine.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #2D2D2D; line-height: 1.8; }
-        .nav { background: #FFFFFF; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E8E4DD; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1A1A1A; text-decoration: none; font-weight: 600; letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: #6B6B6B; text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: #1A1A1A; }
-        .page-header { max-width: 900px; margin: 0 auto; padding: 96px 48px 64px; text-align: center; }
-        .page-header p { font-size: 1.05rem; color: #6B6B6B; max-width: 650px; margin: 0 auto; line-height: 1.8; }
-        .form-section { max-width: 700px; margin: 0 auto; padding: 0 48px 96px; }
-        .intake-form { background: #FDFBF7; padding: 48px; border-radius: 8px; }
-        .form-section-title { font-size: 1.2rem; color: #1A1A1A; margin-bottom: 24px; margin-top: 32px; font-weight: 600; padding-bottom: 12px; border-bottom: 1px solid #E8E4DD; }
-        .form-section-title:first-of-type { margin-top: 0; }
-        .checkbox-group { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; }
-        .checkbox-item input { width: auto; }
-        .checkbox-item label { margin-bottom: 0; font-weight: 400; }
-        .form-note { margin-top: 16px; font-size: 0.85rem; color: #6B6B6B; }
-        .required { color: #1A1A1A; }
-        .footer { background: #1A1A1A; color: #E8E4DD; padding: 48px; text-align: center; }
-        .footer a { color: #E8E4DD; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; }
-        .footer p { font-size: 0.9rem; color: #6B6B6B; }
-        @media (max-width: 968px) {
-            .form-section { padding: 0 24px 64px; }
-            .form-row { grid-template-columns: 1fr; }
-            .intake-form { padding: 32px 24px; }
+        /* Soft background */
+        body {
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 50%, #f8f6f3 100%);
+            background-attachment: fixed;
+        }
+
+        .page {
+            background: transparent;
+        }
+
+        .intake-form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 0 60px;
+        }
+
+        .intake-form-inner {
+            background: var(--card);
+            padding: 48px;
+            border: 1px solid var(--border);
+        }
+
+        .form-section-title {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--fg);
+            margin-bottom: 24px;
+            margin-top: 32px;
+            font-weight: 400;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .btn-full {
+            display: inline-block;
+            background: #2d2d2d;
+            color: var(--bg);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-full:hover {
+            background: var(--accent);
+        }
+
+        @media (max-width: 900px) {
+            .intake-form-inner {
+                padding: 32px 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <nav class="nav" role="navigation" aria-label="Main navigation" x-data="{ mobileMenuOpen: false }">
-        <a href="index.html" class="nav-logo">Nancy Shertok, LCSW</a>
-        <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :aria-expanded="mobileMenuOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
-            <span class="hamburger-icon"><span x-show="!mobileMenuOpen">&#9776;</span><span x-show="mobileMenuOpen" x-cloak>&#10005;</span></span>
-        </button>
-        <div class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a></div>
-        <div class="nav-links nav-links-mobile" id="mobile-nav" x-show="mobileMenuOpen" x-transition @click.away="mobileMenuOpen = false" x-cloak>
-            <a href="about.html" @click="mobileMenuOpen = false">About</a>
-            <a href="services.html" @click="mobileMenuOpen = false">Services</a>
-            <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
-            <a href="payment.html" @click="mobileMenuOpen = false">Payment</a>
+    <nav class="nav">
+        <a href="index.html" class="nav-name">Nancy Shertok</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="payment.html">Payment</a>
         </div>
     </nav>
 
-    <main id="main-content">
+    <div class="page">
         <section class="page-header">
             <h1>Client Intake Form</h1>
             <p>Please complete this form before your first session. Your information is kept confidential and helps me provide the best possible care.</p>
         </section>
 
-        <section class="form-section">
-            <form class="intake-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" x-data="intakeForm()" @submit.prevent="submitForm()">
+        <section class="intake-form">
+            <form class="intake-form-inner" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" x-data="intakeForm()" @submit.prevent="submitForm()">
                 <!-- Personal Information -->
                 <h2 class="form-section-title">Personal Information</h2>
 
@@ -178,15 +230,20 @@
                 <p class="form-note">This information is confidential and protected by HIPAA. Please bring a valid ID and insurance card to your first session.</p>
             </form>
         </section>
-    </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-links">
-            <a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
-        </div>
-        <p>&copy; 2026 Nancy Shertok, LCSW | <a href="privacy-policy.html">Privacy Policy</a></p>
-    </footer>
-    
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="payment.html">Payment</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div>Nancy Shertok, LCSW · 2026</div>
+        </footer>
+    </div>
+
     <script>
         function intakeForm() {
             return {
@@ -221,7 +278,7 @@
             }
         }
     </script>
-    
+
     <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>
