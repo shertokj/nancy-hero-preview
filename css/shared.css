@@ -146,7 +146,7 @@ select:focus {
 /* Standardized Heading Sizes */
 .page-header h1,
 .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-size: 2.8rem;
     font-weight: 600;
     color: #1A1A1A;
@@ -175,7 +175,7 @@ select:focus {
 .credentials h2,
 .cta-section h2,
 .faq-category h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-size: 2.2rem;
     color: #1A1A1A;
     margin-bottom: 48px;
