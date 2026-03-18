@@ -54,39 +54,6 @@ select:focus {
    CRISIS BANNER
    ======================================== */
 
-.crisis-banner-bar {
-    background: #1a1a1a;
-    color: var(--bg, #f8f6f3);
-    text-align: center;
-    padding: 10px 24px;
-    font-size: 0.85rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
-}
-
-.crisis-banner-bar a {
-    color: var(--bg, #f8f6f3);
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-.crisis-banner-bar a:hover {
-    color: var(--accent, #8b7355);
-}
-
-/* Push nav down when crisis banner present */
-body:has(.crisis-banner-bar) .nav {
-    top: 38px;
-}
-
-@media (max-width: 900px) {
-    body:has(.crisis-banner-bar) .nav {
-        top: 44px;
-    }
-}
 
 /* ========================================
    PAGE HEADER
