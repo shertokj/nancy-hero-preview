@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
-    <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
+    <title>FAQ | Nancy Shertok, MSW, LCSW</title>
     <meta name="description" content="Frequently asked questions about therapy, scheduling, and what to expect.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
-        /* Soft background */
-        .page {
-            background: transparent;
-        }
-
-        .faq-category {
-            margin-bottom: 48px;
-        }
+        .faq-category { margin-bottom: 48px; }
 
         .faq-category-title {
             font-size: 0.8rem;
@@ -35,10 +27,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .faq-item {
-            margin-bottom: 1px;
-            background: var(--card);
-        }
+        .faq-item { margin-bottom: 1px; background: var(--card); }
 
         .faq-question {
             width: 100%;
@@ -55,19 +44,7 @@
             color: var(--fg);
         }
 
-        .faq-question:hover {
-            background: var(--bg);
-        }
-
-        .faq-icon {
-            font-size: 0.7rem;
-            transition: transform 0.2s;
-            color: #999;
-        }
-
-        .faq-icon.rotated {
-            transform: rotate(180deg);
-        }
+        .faq-question:hover { background: var(--bg); }
 
         .faq-answer {
             padding: 0 32px 24px;
@@ -76,21 +53,11 @@
             line-height: 1.7;
         }
 
-        .faq-answer ul {
-            margin-top: 12px;
-            padding-left: 20px;
-        }
-
-        .faq-answer li {
-            margin-bottom: 8px;
-        }
+        .faq-answer ul { margin-top: 12px; padding-left: 20px; }
+        .faq-answer li { margin-bottom: 8px; }
 
         @media (max-width: 900px) {
-            .faq-question,
-            .faq-answer {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
+            .faq-question, .faq-answer { padding-left: 20px; padding-right: 20px; }
         }
     </style>
 
@@ -102,34 +69,43 @@
             {
                 "@type": "Question",
                 "name": "How do I schedule an appointment?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Call (414) 736-6228, email yourtherapyconnection@gmail.com, or use the contact form." }
             },
             {
                 "@type": "Question",
                 "name": "Do you offer telehealth?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Telehealth sessions are available to clients in Georgia, Illinois, and Wisconsin."
-                }
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Telehealth sessions are available to clients in Georgia, Illinois, and Wisconsin." }
             }
         ]
     }
     </script>
 </head>
 <body>
+    <div class="crisis-banner-bar">If you are in crisis, <a href="crisis-resources.html">call or text 988</a></div>
+
     <a href="#main" class="skip-link">Skip to content</a>
-    <header><nav class="nav">
+    <header><nav class="nav" x-data="{ open: false }">
         <a href="index.html" class="nav-name">Nancy Shertok</a>
-        <div class="nav-links">
+        <div class="nav-links nav-links-desktop">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.html" aria-current="page">FAQ</a>
             <a href="payment.html">Payment</a>
+            <a href="crisis-resources.html">Crisis Resources</a>
+        </div>
+        <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
+            <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
+        </button>
+        <div class="nav-links nav-links-mobile" x-show="open" x-cloak>
+            <a href="index.html" @click="open = false">Home</a>
+            <a href="about.html" @click="open = false">About</a>
+            <a href="services.html" @click="open = false">Services</a>
+            <a href="contact.html" @click="open = false">Contact</a>
+            <a href="faq.html" @click="open = false">FAQ</a>
+            <a href="payment.html" @click="open = false">Payment</a>
+            <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
         </div>
     </nav></header>
 
@@ -144,31 +120,31 @@
                 <div class="faq-category-title">Getting Started</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q1' ? null : 'q1'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q1'" @click="expanded = expanded === 'q1' ? null : 'q1'" :aria-controls="expanded === 'q1' ? 'a1' : null">
                         <span>How do I schedule an appointment?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q1' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q1'" x-collapse>
+                    <div class="faq-answer" id="a1" role="region" aria-labelledby="a1-btn" x-show="expanded === 'q1'" x-collapse>
                         <p>You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form. During the consultation, we will discuss your needs and determine if we are a good fit.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q2' ? null : 'q2'">
+                    <button class="faq-question" id="a1-btn" :aria-expanded="expanded === 'q2'" @click="expanded = expanded === 'q2' ? null : 'q2'">
                         <span>What should I expect in the first session?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q2' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q2'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q2'" x-collapse>
                         <p>The first session is an intake where I gather information about your history, current concerns, and goals for therapy. It is also an opportunity for you to ask questions and get a sense of my approach.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q3' ? null : 'q3'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q3'" @click="expanded = expanded === 'q3' ? null : 'q3'">
                         <span>Do you offer in-person or telehealth sessions?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q3' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q3'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q3'" x-collapse>
                         <p>I offer both. Telehealth sessions are conducted via a secure video platform and are available to clients in Georgia, Illinois, and Wisconsin. In-person sessions are available at my office in Georgia.</p>
                     </div>
                 </div>
@@ -178,11 +154,11 @@
                 <div class="faq-category-title">Payment</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q4' ? null : 'q4'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q4'" @click="expanded = expanded === 'q4' ? null : 'q4'">
                         <span>What forms of payment do you accept?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q4' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q4'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q4'" x-collapse>
                         <p>I accept all major credit cards, debit cards, HSA/FSA cards, and cash. Payment is due at the time of service.</p>
                     </div>
                 </div>
@@ -192,31 +168,31 @@
                 <div class="faq-category-title">Therapy Process</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q7' ? null : 'q7'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q7'" @click="expanded = expanded === 'q7' ? null : 'q7'">
                         <span>How long does therapy typically last?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q7' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q7'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q7'" x-collapse>
                         <p>The length of therapy varies depending on your goals and concerns. Some clients see significant progress in 8-12 sessions, while others benefit from longer-term support. We will regularly assess your progress and adjust as needed.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q8' ? null : 'q8'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q8'" @click="expanded = expanded === 'q8' ? null : 'q8'">
                         <span>How often will we meet?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q8' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q8'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q8'" x-collapse>
                         <p>Most clients meet with me once a week, especially in the beginning. As you make progress, we may shift to bi-weekly or monthly sessions. Frequency is always based on your needs and preferences.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q9' ? null : 'q9'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q9'" @click="expanded = expanded === 'q9' ? null : 'q9'">
                         <span>What is your cancellation policy?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q9' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q9'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q9'" x-collapse>
                         <p>I require 24 hours notice for cancellations. Sessions cancelled with less than 24 hours notice will be charged the full session fee. I understand that emergencies happen and will work with you on a case-by-case basis.</p>
                     </div>
                 </div>
@@ -226,11 +202,11 @@
                 <div class="faq-category-title">Confidentiality</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" @click="expanded = expanded === 'q10' ? null : 'q10'">
+                    <button class="faq-question" :aria-expanded="expanded === 'q10'" @click="expanded = expanded === 'q10' ? null : 'q10'">
                         <span>Is everything I share confidential?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q10' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" x-show="expanded === 'q10'" x-collapse>
+                    <div class="faq-answer" role="region" x-show="expanded === 'q10'" x-collapse>
                         <p>Yes, with a few legal exceptions. I am required by law to break confidentiality if there is risk of harm to yourself or others, suspected child or elder abuse, or if I receive a court order. We will discuss confidentiality in detail during our first session.</p>
                     </div>
                 </div>
@@ -244,18 +220,25 @@
         </section>
 
         <footer class="footer">
-            <div class="footer-links">
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-            <a href="payment.html">Payment</a>
+            <div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="payment.html">Payment</a>
+                    <a href="crisis-resources.html">Crisis Resources</a>
                     <a href="privacy-policy.html">Privacy</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> &middot;
+                    <a href="tel:4147366228">(414) 736-6228</a> &middot;
+                    <a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener">Psychology Today</a>
+                </div>
             </div>
-            <div>Nancy Shertok, LCSW · 2026</div>
+            <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
-    </div>
-
+    </main>
     <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>

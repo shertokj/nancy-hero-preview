@@ -1,13 +1,12 @@
 /* Nancy Shertok Website - Shared Styles
  * Includes: accessibility fixes, button system, responsive typography, Alpine.js components
- * Version: 2.0 (2026-03-07)
+ * Version: 3.0 (2026-03-17)
  */
 
 /* ========================================
    ACCESSIBILITY FIXES
    ======================================== */
 
-/* Skip Link */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -28,7 +27,6 @@
     outline: none;
 }
 
-/* Focus Indicators */
 a:focus,
 button:focus,
 input:focus,
@@ -38,12 +36,10 @@ select:focus {
     outline-offset: 2px;
 }
 
-/* Focus for dark backgrounds */
 .footer a:focus {
     outline-color: #FFFFFF;
 }
 
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -55,7 +51,45 @@ select:focus {
 }
 
 /* ========================================
-   PAGE HEADER (Standardized)
+   CRISIS BANNER
+   ======================================== */
+
+.crisis-banner-bar {
+    background: #1a1a1a;
+    color: var(--bg, #f8f6f3);
+    text-align: center;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+}
+
+.crisis-banner-bar a {
+    color: var(--bg, #f8f6f3);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.crisis-banner-bar a:hover {
+    color: var(--accent, #8b7355);
+}
+
+/* Push nav down when crisis banner present */
+body:has(.crisis-banner-bar) .nav {
+    top: 38px;
+}
+
+@media (max-width: 900px) {
+    body:has(.crisis-banner-bar) .nav {
+        top: 44px;
+    }
+}
+
+/* ========================================
+   PAGE HEADER
    ======================================== */
 
 .page-header {
@@ -64,10 +98,9 @@ select:focus {
 }
 
 /* ========================================
-   BUTTON SYSTEM (Standardized)
+   BUTTON SYSTEM
    ======================================== */
 
-/* Primary CTA Button */
 .btn-primary,
 .cta {
     display: inline-block;
@@ -95,28 +128,29 @@ select:focus {
     transform: translateY(0);
 }
 
-/* Secondary/Smaller Button */
+/* Secondary - outline style */
 .btn-secondary {
     display: inline-block;
-    background: #1A1A1A;
-    color: #FFFFFF;
+    background: transparent;
+    color: var(--fg, #1a1a1a);
     padding: 12px 28px;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 500;
     font-size: 0.9rem;
     letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.1s;
-    border: none;
+    transition: all 0.2s;
+    border: 1px solid var(--border, #e5e2dd);
     cursor: pointer;
 }
 
 .btn-secondary:hover {
-    background: #2D2D2D;
-    transform: translateY(-1px);
+    background: var(--fg, #1a1a1a);
+    color: var(--bg, #f8f6f3);
+    border-color: var(--fg, #1a1a1a);
 }
 
-/* Full-width button (forms) */
+/* Full-width button */
 .btn-full,
 .submit-btn {
     width: 100%;
@@ -140,14 +174,13 @@ select:focus {
 }
 
 /* ========================================
-   TYPOGRAPHY FIXES
+   TYPOGRAPHY
    ======================================== */
 
-/* Standardized Heading Sizes */
 .page-header h1,
 .hero h1 {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 2.8rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 600;
     color: #1A1A1A;
     line-height: 1.3;
@@ -159,31 +192,21 @@ select:focus {
     margin-bottom: 32px;
 }
 
-/* Improved tagline contrast (WCAG AA) */
 .hero .tagline {
     font-size: 1.15rem;
-    color: #4A4A4A; /* Changed from #6B6B6B for 5.7:1 contrast */
+    color: #4A4A4A;
     font-weight: 300;
     margin-bottom: 24px;
     font-style: italic;
 }
 
-/* Section headings */
-.services h2,
-.specialties h2,
-.approaches h2,
-.credentials h2,
-.cta-section h2,
-.faq-category h2 {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 2.2rem;
-    color: #1A1A1A;
-    margin-bottom: 48px;
+/* Section headings - use magazine.css weight:400, only size override */
+.cta-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     text-align: center;
-    font-weight: 600;
 }
 
-/* Card headings - increased size */
+/* Card headings */
 .service-item h3,
 .service-card h3,
 .approach-item h3 {
@@ -199,9 +222,7 @@ select:focus {
 
 .service-item,
 .service-card,
-.faq-item,
-.approach-item,
-.credential-item {
+.faq-item {
     background: #FFFFFF;
     padding: 36px;
     border-radius: 8px;
@@ -210,16 +231,14 @@ select:focus {
 }
 
 .service-item:hover,
-.service-card:hover,
-.approach-item:hover,
-.credential-item:hover {
+.service-card:hover {
     border-color: #1A1A1A;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
 }
 
 /* ========================================
-   FORM STYLING (Standardized)
+   FORM STYLING
    ======================================== */
 
 .form-group {
@@ -272,7 +291,7 @@ select:focus {
 }
 
 /* ========================================
-   ALPINE.JS MOBILE MENU
+   MOBILE MENU (Alpine.js)
    ======================================== */
 
 .mobile-menu-toggle {
@@ -287,29 +306,28 @@ select:focus {
     min-height: 44px;
 }
 
-.hamburger-icon {
+.mobile-menu-toggle .hamburger-icon {
     display: block;
     line-height: 1;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 900px) {
     .mobile-menu-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .nav-links:not(.nav-links-mobile) {
-        display: none;
+    .nav-links-desktop {
+        display: none !important;
     }
 
     .nav-links-mobile {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 24px 0 0 0;
-        border-top: 1px solid #E8E4DD;
-        margin-top: 16px;
+        gap: 0;
+        padding: 0;
+        margin-top: 0;
         width: 100%;
     }
 
@@ -319,23 +337,24 @@ select:focus {
         font-weight: 400;
         font-size: 1.05rem;
         transition: color 0.2s;
-        padding: 8px 0;
+        padding: 12px 0;
         min-height: 44px;
         display: flex;
         align-items: center;
+        border-bottom: 1px solid var(--border, #e5e2dd);
+    }
+
+    .nav-links-mobile a:last-child {
+        border-bottom: none;
     }
 
     .nav-links-mobile a:hover {
         color: #1A1A1A;
     }
-
-    .nav {
-        flex-wrap: wrap;
-    }
 }
 
 /* ========================================
-   ALPINE.JS FAQ ACCORDION
+   FAQ ACCORDION
    ======================================== */
 
 .faq-question {
@@ -379,6 +398,26 @@ select:focus {
 }
 
 /* ========================================
+   FOOTER CONTACT
+   ======================================== */
+
+.footer-contact {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #999;
+    line-height: 1.8;
+}
+
+.footer-contact a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: var(--fg);
+}
+
+/* ========================================
    RESPONSIVE TYPOGRAPHY
    ======================================== */
 
@@ -397,14 +436,8 @@ select:focus {
         font-size: 0.95rem;
     }
 
-    .services h2,
-    .specialties h2,
-    .approaches h2,
-    .credentials h2,
-    .cta-section h2,
-    .faq-category h2 {
+    .cta-section h2 {
         font-size: 1.8rem;
-        margin-bottom: 32px;
     }
 
     .service-card h3,
@@ -425,40 +458,15 @@ select:focus {
     .page-header h1 {
         font-size: 1.8rem;
     }
-
-    .nav-logo {
-        font-size: 1.2rem;
-    }
 }
 
 /* ========================================
    RESPONSIVE NAVIGATION
    ======================================== */
 
-@media (max-width: 968px) {
-    .nav {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 24px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 28px;
-    }
-
-    .nav-links a {
-        padding: 8px 16px;
-        border-radius: 4px;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-links a:hover {
-        background: #FDFBF7;
-        color: #1A1A1A;
+@media (max-width: 900px) {
+    .nav-links-desktop {
+        display: none !important;
     }
 }
 
@@ -492,7 +500,7 @@ select:focus {
     .form-group textarea,
     .form-group select {
         padding: 12px 14px;
-        font-size: 16px; /* Prevents zoom on iOS */
+        font-size: 16px;
         min-height: 48px;
     }
 }
@@ -511,7 +519,6 @@ select:focus {
     color: #1A1A1A;
 }
 
-/* Screen reader only */
 .sr-only {
     position: absolute;
     width: 1px;

@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f6f3">
-    <title>Nancy Shertok, MSW, LCSW - Psychotherapist</title>
+    <title>About | Nancy Shertok, MSW, LCSW</title>
     <meta name="description" content="30+ years helping people navigate anxiety, burnout, and relationship challenges. Licensed in Georgia, Illinois, and Wisconsin.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About | Nancy Shertok, MSW, LCSW">
+    <meta property="og:description" content="30+ years helping people navigate anxiety, burnout, and relationship challenges.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
-        .page {
-            background: transparent;
-        }
-
         .about-hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -48,9 +49,7 @@
             margin: 0 auto;
         }
 
-        .approaches-section {
-            padding: 60px 0;
-        }
+        .approaches-section { padding: 60px 0; }
 
         .approaches-grid {
             display: grid;
@@ -64,35 +63,15 @@
             padding: 28px;
         }
 
-        .approach-item h3 {
-            font-size: 1.05rem;
-            margin-bottom: 10px;
-        }
+        .approach-item h3 { font-size: 1.05rem; margin-bottom: 10px; }
+        .approach-item p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
 
-        .approach-item p {
-            color: var(--muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .cta-section {
-            padding: 100px 0;
-        }
+        .cta-section { padding: 100px 0; }
 
         @media (max-width: 900px) {
-            .about-hero {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .about-photo {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .approaches-grid {
-                grid-template-columns: 1fr;
-            }
+            .about-hero { grid-template-columns: 1fr; gap: 32px; }
+            .about-photo { max-width: 400px; margin: 0 auto; }
+            .approaches-grid { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -104,21 +83,36 @@
         "jobTitle": "Licensed Clinical Social Worker",
         "description": "Psychotherapist with 30+ years experience helping professionals.",
         "alumniOf": {"@type": "CollegeOrUniversity", "name": "New York University"},
-        "knowsAbout": ["Cognitive Behavioral Therapy", "Gottman Method", "Psychodynamic Therapy", "Anxiety", "Burnout"]
+        "knowsAbout": ["Cognitive Behavioral Therapy", "Gottman Method", "Psychodynamic Therapy", "EMDR", "Trauma-Focused Therapy", "Anxiety", "Burnout"]
     }
     </script>
 </head>
 <body>
+    <div class="crisis-banner-bar">If you are in crisis, <a href="crisis-resources.html">call or text 988</a></div>
+
     <a href="#main" class="skip-link">Skip to content</a>
-    <header><nav class="nav">
+    <header><nav class="nav" x-data="{ open: false }">
         <a href="index.html" class="nav-name">Nancy Shertok</a>
-        <div class="nav-links">
+        <div class="nav-links nav-links-desktop">
             <a href="index.html">Home</a>
             <a href="about.html" aria-current="page">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
             <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
+            <a href="crisis-resources.html">Crisis Resources</a>
+        </div>
+        <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
+            <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
+        </button>
+        <div class="nav-links nav-links-mobile" x-show="open" x-cloak>
+            <a href="index.html" @click="open = false">Home</a>
+            <a href="about.html" @click="open = false">About</a>
+            <a href="services.html" @click="open = false">Services</a>
+            <a href="contact.html" @click="open = false">Contact</a>
+            <a href="faq.html" @click="open = false">FAQ</a>
+            <a href="payment.html" @click="open = false">Payment</a>
+            <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
         </div>
     </nav></header>
 
@@ -147,7 +141,7 @@
             </div>
             <div class="credential">
                 <div class="credential-label">VERIFIED</div>
-                <div class="credential-value">Verified on <a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Psychology Today</a></div>
+                <div class="credential-value"><a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Psychology Today</a></div>
             </div>
         </div>
 
@@ -161,12 +155,20 @@
                     <p>Identify and change negative thought patterns that affect your emotions and behavior.</p>
                 </div>
                 <div class="approach-item">
+                    <h3>EMDR (Eye Movement Desensitization and Reprocessing)</h3>
+                    <p>Evidence-based approach for processing traumatic memories and reducing their emotional impact.</p>
+                </div>
+                <div class="approach-item">
                     <h3>Gottman Method</h3>
                     <p>Research-based approach for couples to improve communication and rebuild connection.</p>
                 </div>
                 <div class="approach-item">
                     <h3>Psychodynamic Therapy</h3>
                     <p>Explore how past experiences shape present behaviors and relationships.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Trauma-Focused Therapy</h3>
+                    <p>Specialized approaches including EMDR and CPT (Cognitive Processing Therapy) for healing from trauma.</p>
                 </div>
                 <div class="approach-item">
                     <h3>Integrative Approach</h3>
@@ -182,16 +184,25 @@
         </section>
 
         <footer class="footer">
-            <div class="footer-links">
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-            <a href="payment.html">Payment</a>
+            <div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="payment.html">Payment</a>
+                    <a href="crisis-resources.html">Crisis Resources</a>
                     <a href="privacy-policy.html">Privacy</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> &middot;
+                    <a href="tel:4147366228">(414) 736-6228</a> &middot;
+                    <a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener">Psychology Today</a>
+                </div>
             </div>
-            <div>Nancy Shertok, LCSW · 2026</div>
+            <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
     </main>
+    <style>[x-cloak] { display: none !important; }</style>
 </body>
 </html>
