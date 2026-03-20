@@ -13,6 +13,8 @@
     <meta property="og:description" content="A place to talk. A place to change. Psychotherapy for clarity, resilience, and real life.">
     <meta property="og:image" content="https://psychotherapy123.com/nancy-photo.jpg">
 
+    <link rel="canonical" href="https://psychotherapy123.com/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -169,6 +171,7 @@
             <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
             <a href="crisis-resources.html">Crisis Resources</a>
+            <a href="intake.html">Intake Forms</a>
         </div>
         <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
             <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
@@ -181,6 +184,7 @@
             <a href="faq.html" @click="open = false">FAQ</a>
             <a href="payment.html" @click="open = false">Payment</a>
             <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
+            <a href="intake.html" @click="open = false">Intake Forms</a>
         </div>
     </nav></header>
 
@@ -252,27 +256,27 @@
             <p>Free 15-minute consultation. No commitment required.</p>
             <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
-
-        <footer class="footer">
-            <div>
-                <div class="footer-links">
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="payment.html">Payment</a>
-                    <a href="crisis-resources.html">Crisis Resources</a>
-                    <a href="privacy-policy.html">Privacy</a>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> &middot;
-                    <a href="tel:4147366228">(414) 736-6228</a> &middot;
-                    <a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener">Psychology Today</a>
-                </div>
-            </div>
-            <div>Nancy Shertok, LCSW &middot; 2026</div>
-        </footer>
     </main>
-    <style>[x-cloak] { display: none !important; }</style>
+
+    <footer class="footer">
+        <div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+                <a href="payment.html">Payment</a>
+                <a href="intake.html">Intake Forms</a>
+                <a href="crisis-resources.html">Crisis Resources</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:yourtherapyconnection@gmail.com">yourtherapyconnection@gmail.com</a> &middot;
+                <a href="tel:4147366228">(414) 736-6228</a> &middot;
+                <a href="https://www.psychologytoday.com/us/therapists/nancy-shertok" target="_blank" rel="noopener">Psychology Today</a>
+            </div>
+        </div>
+        <div>Nancy Shertok, LCSW &middot; 2026</div>
+    </footer>
 </body>
 </html>

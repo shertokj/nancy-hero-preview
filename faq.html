@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="css/magazine.css">
 
     <style>
@@ -79,6 +80,14 @@
         ]
     }
     </script>
+
+    <link rel="canonical" href="https://psychotherapy123.com/faq/">
+    <link rel="canonical" href="https://psychotherapy123.com/faq/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psychotherapy123.com/faq/">
+    <meta property="og:title" content="Nancy Shertok, MSW, LCSW - Psychotherapist">
+    <meta property="og:image" content="https://psychotherapy123.com/nancy-photo.jpg">
 </head>
 <body>
 
@@ -93,6 +102,7 @@
             <a href="faq.html" aria-current="page">FAQ</a>
             <a href="payment.html">Payment</a>
             <a href="crisis-resources.html">Crisis Resources</a>
+            <a href="intake.html">Intake Forms</a>
         </div>
         <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
             <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
@@ -105,6 +115,7 @@
             <a href="faq.html" @click="open = false">FAQ</a>
             <a href="payment.html" @click="open = false">Payment</a>
             <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
+            <a href="intake.html" @click="open = false">Intake Forms</a>
         </div>
     </nav></header>
 
@@ -119,31 +130,31 @@
                 <div class="faq-category-title">Getting Started</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q1'" @click="expanded = expanded === 'q1' ? null : 'q1'" :aria-controls="expanded === 'q1' ? 'a1' : null">
+                    <button class="faq-question" id="q1-btn" :aria-expanded="expanded === 'q1'" @click="expanded = expanded === 'q1' ? null : 'q1'" :aria-controls="expanded === 'q1' ? 'a1' : null">
                         <span>How do I schedule an appointment?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q1' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" id="a1" role="region" aria-labelledby="a1-btn" x-show="expanded === 'q1'" x-collapse>
+                    <div class="faq-answer" id="a1" role="region" aria-labelledby="q1-btn" x-show="expanded === 'q1'" x-collapse>
                         <p>You can schedule a free 15-minute consultation by calling me at (414) 736-6228, emailing yourtherapyconnection@gmail.com, or using the contact form. During the consultation, we will discuss your needs and determine if we are a good fit.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" id="a1-btn" :aria-expanded="expanded === 'q2'" @click="expanded = expanded === 'q2' ? null : 'q2'">
+                    <button class="faq-question" id="q2-btn" :aria-expanded="expanded === 'q2'" @click="expanded = expanded === 'q2' ? null : 'q2'" :aria-controls="expanded === 'q2' ? 'a2' : null">
                         <span>What should I expect in the first session?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q2' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q2'" x-collapse>
+                    <div class="faq-answer" id="a2" role="region" aria-labelledby="q2-btn" x-show="expanded === 'q2'" x-collapse>
                         <p>The first session is an intake where I gather information about your history, current concerns, and goals for therapy. It is also an opportunity for you to ask questions and get a sense of my approach.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q3'" @click="expanded = expanded === 'q3' ? null : 'q3'">
+                    <button class="faq-question" id="q3-btn" :aria-expanded="expanded === 'q3'" @click="expanded = expanded === 'q3' ? null : 'q3'" :aria-controls="expanded === 'q3' ? 'a3' : null">
                         <span>Do you offer in-person or telehealth sessions?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q3' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q3'" x-collapse>
+                    <div class="faq-answer" id="a3" role="region" aria-labelledby="q3-btn" x-show="expanded === 'q3'" x-collapse>
                         <p>I offer both. Telehealth sessions are conducted via a secure video platform and are available to clients in Georgia, Illinois, and Wisconsin. In-person sessions are available at my office in Georgia.</p>
                     </div>
                 </div>
@@ -153,11 +164,11 @@
                 <div class="faq-category-title">Payment</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q4'" @click="expanded = expanded === 'q4' ? null : 'q4'">
+                    <button class="faq-question" id="q4-btn" :aria-expanded="expanded === 'q4'" @click="expanded = expanded === 'q4' ? null : 'q4'" :aria-controls="expanded === 'q4' ? 'a4' : null">
                         <span>What forms of payment do you accept?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q4' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q4'" x-collapse>
+                    <div class="faq-answer" id="a4" role="region" aria-labelledby="q4-btn" x-show="expanded === 'q4'" x-collapse>
                         <p>I accept all major credit cards, debit cards, HSA/FSA cards, and cash. Payment is due at the time of service.</p>
                     </div>
                 </div>
@@ -167,31 +178,31 @@
                 <div class="faq-category-title">Therapy Process</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q7'" @click="expanded = expanded === 'q7' ? null : 'q7'">
+                    <button class="faq-question" id="q7-btn" :aria-expanded="expanded === 'q7'" @click="expanded = expanded === 'q7' ? null : 'q7'" :aria-controls="expanded === 'q7' ? 'a7' : null">
                         <span>How long does therapy typically last?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q7' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q7'" x-collapse>
+                    <div class="faq-answer" id="a7" role="region" aria-labelledby="q7-btn" x-show="expanded === 'q7'" x-collapse>
                         <p>The length of therapy varies depending on your goals and concerns. Some clients see significant progress in 8-12 sessions, while others benefit from longer-term support. We will regularly assess your progress and adjust as needed.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q8'" @click="expanded = expanded === 'q8' ? null : 'q8'">
+                    <button class="faq-question" id="q8-btn" :aria-expanded="expanded === 'q8'" @click="expanded = expanded === 'q8' ? null : 'q8'" :aria-controls="expanded === 'q8' ? 'a8' : null">
                         <span>How often will we meet?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q8' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q8'" x-collapse>
+                    <div class="faq-answer" id="a8" role="region" aria-labelledby="q8-btn" x-show="expanded === 'q8'" x-collapse>
                         <p>Most clients meet with me once a week, especially in the beginning. As you make progress, we may shift to bi-weekly or monthly sessions. Frequency is always based on your needs and preferences.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q9'" @click="expanded = expanded === 'q9' ? null : 'q9'">
+                    <button class="faq-question" id="q9-btn" :aria-expanded="expanded === 'q9'" @click="expanded = expanded === 'q9' ? null : 'q9'" :aria-controls="expanded === 'q9' ? 'a9' : null">
                         <span>What is your cancellation policy?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q9' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q9'" x-collapse>
+                    <div class="faq-answer" id="a9" role="region" aria-labelledby="q9-btn" x-show="expanded === 'q9'" x-collapse>
                         <p>I require 24 hours notice for cancellations. Sessions cancelled with less than 24 hours notice will be charged the full session fee. I understand that emergencies happen and will work with you on a case-by-case basis.</p>
                     </div>
                 </div>
@@ -201,11 +212,11 @@
                 <div class="faq-category-title">Confidentiality</div>
 
                 <div class="faq-item">
-                    <button class="faq-question" :aria-expanded="expanded === 'q10'" @click="expanded = expanded === 'q10' ? null : 'q10'">
+                    <button class="faq-question" id="q10-btn" :aria-expanded="expanded === 'q10'" @click="expanded = expanded === 'q10' ? null : 'q10'" :aria-controls="expanded === 'q10' ? 'a10' : null">
                         <span>Is everything I share confidential?</span>
                         <span class="faq-icon" :class="{ 'rotated': expanded === 'q10' }">&#9660;</span>
                     </button>
-                    <div class="faq-answer" role="region" x-show="expanded === 'q10'" x-collapse>
+                    <div class="faq-answer" id="a10" role="region" aria-labelledby="q10-btn" x-show="expanded === 'q10'" x-collapse>
                         <p>Yes, with a few legal exceptions. I am required by law to break confidentiality if there is risk of harm to yourself or others, suspected child or elder abuse, or if I receive a court order. We will discuss confidentiality in detail during our first session.</p>
                     </div>
                 </div>
@@ -218,6 +229,7 @@
             <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
+    </main>
         <footer class="footer">
             <div>
                 <div class="footer-links">
@@ -237,7 +249,4 @@
             </div>
             <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
-    </main>
-    <style>[x-cloak] { display: none !important; }</style>
 </body>
-</html>

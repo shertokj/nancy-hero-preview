@@ -144,6 +144,10 @@ select:focus {
    TYPOGRAPHY
    ======================================== */
 
+h1 {
+    font-weight: 600;
+}
+
 .page-header h1,
 .hero h1 {
     font-family: 'Instrument Serif', Georgia, serif;
@@ -202,6 +206,14 @@ select:focus {
     border-color: #1A1A1A;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
+}
+
+/* Service description text (standalone, not in cards) */
+.service-desc-text {
+    color: var(--muted, #666);
+    max-width: 680px;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* ========================================
@@ -471,6 +483,9 @@ select:focus {
         min-height: 48px;
     }
 }
+
+/* Alpine.js cloak */
+[x-cloak] { display: none !important; }
 
 /* ========================================
    UTILITY CLASSES

@@ -79,6 +79,14 @@
             .contact-form-wrapper { padding: 32px; }
         }
     </style>
+
+    <link rel="canonical" href="https://psychotherapy123.com/contact/">
+    <link rel="canonical" href="https://psychotherapy123.com/contact/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psychotherapy123.com/contact/">
+    <meta property="og:title" content="Nancy Shertok, MSW, LCSW - Psychotherapist">
+    <meta property="og:image" content="https://psychotherapy123.com/nancy-photo.jpg">
 </head>
 <body>
 
@@ -93,6 +101,7 @@
             <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
             <a href="crisis-resources.html">Crisis Resources</a>
+            <a href="intake.html">Intake Forms</a>
         </div>
         <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
             <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
@@ -105,6 +114,7 @@
             <a href="faq.html" @click="open = false">FAQ</a>
             <a href="payment.html" @click="open = false">Payment</a>
             <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
+            <a href="intake.html" @click="open = false">Intake Forms</a>
         </div>
     </nav></header>
 
@@ -145,7 +155,7 @@
 
             <div class="contact-form-wrapper">
                 <h2>Request a Consultation</h2>
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form action="https://formspree.io/f/xpwzgkvl" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name <span class="required">*</span></label>
@@ -190,12 +200,13 @@
                         <textarea id="message" name="message" placeholder="Briefly describe what you are looking for help with..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">Schedule a Consultation</button>
+                    <button type="submit" class="btn-primary btn-full">Schedule a Consultation</button>
                     <p class="form-note">I will respond within 24-48 hours.</p>
                 </form>
             </div>
         </section>
 
+    </main>
         <footer class="footer">
             <div>
                 <div class="footer-links">
@@ -215,7 +226,4 @@
             </div>
             <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
-    </main>
-    <style>[x-cloak] { display: none !important; }</style>
 </body>
-</html>

@@ -8,6 +8,8 @@
     <meta name="description" content="Individual therapy, couples therapy, and telehealth services. Specializing in anxiety, burnout, and relationship challenges.">
 
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://psychotherapy123.com/nancy-photo.jpg">
+    <meta property="og:url" content="https://psychotherapy123.com/services/">
     <meta property="og:title" content="Services | Nancy Shertok, MSW, LCSW">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +38,6 @@
 
         .specialty-item:hover { background: var(--card); }
 
-        .section { padding: 40px 0; }
         .cta-section { padding: 100px 0; }
 
         .section-with-border {
@@ -76,6 +77,8 @@
         ]
     }
     </script>
+
+    <link rel="canonical" href="https://psychotherapy123.com/services/">
 </head>
 <body>
 
@@ -90,6 +93,7 @@
             <a href="faq.html">FAQ</a>
             <a href="payment.html">Payment</a>
             <a href="crisis-resources.html">Crisis Resources</a>
+            <a href="intake.html">Intake Forms</a>
         </div>
         <button class="mobile-menu-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle menu">
             <span class="hamburger-icon" x-text="open ? '\u2715' : '\u2630'"></span>
@@ -102,6 +106,7 @@
             <a href="faq.html" @click="open = false">FAQ</a>
             <a href="payment.html" @click="open = false">Payment</a>
             <a href="crisis-resources.html" @click="open = false">Crisis Resources</a>
+            <a href="intake.html" @click="open = false">Intake Forms</a>
         </div>
     </nav></header>
 
@@ -114,37 +119,37 @@
         <section class="section">
             <div class="section-header">
                 <h2>Individual Therapy</h2>
-                <p style="color: var(--muted); max-width: 500px; margin-bottom: 32px;">Whether dealing with anxiety, depression, grief, or life transitions, individual therapy provides a confidential space to explore, heal, and grow.</p>
-                <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
             </div>
+            <p class="service-desc-text">Whether dealing with anxiety, depression, grief, or life transitions, individual therapy provides a confidential space to explore, heal, and grow.</p>
+            <a href="contact.html" class="btn-primary" style="margin-top: 24px;">Schedule a Consultation</a>
         </section>
 
-        <section class="section section-with-border">
+        <section class="section">
             <div class="section-header">
                 <h2>Deaf &amp; Hard of Hearing</h2>
-                <p style="color: var(--muted); max-width: 500px; margin-bottom: 16px;">Providing counseling to Deaf, hard of hearing, and hearing clients. Fluent in ASL with a <strong>Superior</strong> SLPI rating.</p>
-                <ul style="color: var(--muted); margin-bottom: 24px; padding-left: 20px; line-height: 1.8;">
-                    <li>Counseling sessions offered in American Sign Language (ASL)</li>
-                    <li>Available for Deaf clients across all three licensed states</li>
-                </ul>
-                <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
             </div>
+            <p class="service-desc-text">Providing counseling to Deaf, hard of hearing, and hearing clients. Fluent in ASL with a <strong>Superior</strong> SLPI rating.</p>
+            <ul class="service-desc-text" style="padding-left: 20px; line-height: 1.8; margin-top: 8px;">
+                <li>Counseling sessions offered in American Sign Language (ASL)</li>
+                <li>Available for Deaf clients across all three licensed states</li>
+            </ul>
+            <a href="contact.html" class="btn-primary" style="margin-top: 24px;">Schedule a Consultation</a>
         </section>
 
-        <section class="section section-with-border">
+        <section class="section">
             <div class="section-header">
                 <h2>Couples Therapy</h2>
-                <p style="color: var(--muted); max-width: 500px; margin-bottom: 32px;">Using the Gottman Method, I help couples rebuild connection, improve communication, and rediscover intimacy.</p>
-                <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
             </div>
+            <p class="service-desc-text">Using the Gottman Method, I help couples rebuild connection, improve communication, and rediscover intimacy.</p>
+            <a href="contact.html" class="btn-primary" style="margin-top: 24px;">Schedule a Consultation</a>
         </section>
 
-        <section class="section section-with-border">
+        <section class="section">
             <div class="section-header">
                 <h2>Telehealth</h2>
-                <p style="color: var(--muted); max-width: 500px; margin-bottom: 32px;">Licensed in Georgia, Illinois, and Wisconsin. Secure video sessions from your home, office, or anywhere you feel comfortable. In-person sessions also available at my Georgia office.</p>
-                <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
             </div>
+            <p class="service-desc-text">Licensed in Georgia, Illinois, and Wisconsin. Secure video sessions from your home, office, or anywhere you feel comfortable. In-person sessions also available at my Georgia office.</p>
+            <a href="contact.html" class="btn-primary" style="margin-top: 24px;">Schedule a Consultation</a>
         </section>
 
         <section class="section">
@@ -173,6 +178,7 @@
             <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
         </section>
 
+    </main>
         <footer class="footer">
             <div>
                 <div class="footer-links">
@@ -192,7 +198,4 @@
             </div>
             <div>Nancy Shertok, LCSW &middot; 2026</div>
         </footer>
-    </main>
-    <style>[x-cloak] { display: none !important; }</style>
 </body>
-</html>
